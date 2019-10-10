@@ -1,0 +1,92 @@
+---- Sequences & Triggers for generating primary keys ----
+
+--------------------------------------------
+
+create sequence user_sequence;
+
+create or replace trigger user_on_insert
+  before insert on tbl_user
+  for each row
+begin
+  select user_sequence.nextval
+  into :new.id
+  from dual;
+end;
+
+--------------------------------------------
+
+create sequence retailer_sequence;
+
+create or replace trigger retailer_on_insert
+  before insert on tbl_retailer
+  for each row
+begin
+  select retailer_sequence.nextval
+  into :new.id
+  from dual;
+end;
+
+--------------------------------------------
+
+create sequence product_sequence
+
+CREATE OR REPLACE TRIGGER product_on_insert
+  BEFORE INSERT ON tbl_product
+  FOR EACH ROW
+BEGIN
+  SELECT product_sequence.nextval
+  INTO :new.id
+  FROM dual;
+END;
+
+--------------------------------------------
+
+create sequence order_sequence
+
+CREATE OR REPLACE TRIGGER order_on_insert
+  BEFORE INSERT ON tbl_order
+  FOR EACH ROW
+BEGIN
+  SELECT order_sequence.nextval
+  INTO :new.id
+  FROM dual;
+END;
+
+--------------------------------------------
+
+create sequence product_image_sequence
+
+CREATE OR REPLACE TRIGGER product_image_on_insert
+  BEFORE INSERT ON tbl_product_image
+  FOR EACH ROW
+BEGIN
+  SELECT order_sequence.nextval
+  INTO :new.id
+  FROM dual;
+END;
+
+--------------------------------------------
+
+create sequence product_discount_sequence
+
+CREATE OR REPLACE TRIGGER product_discount_on_insert
+  BEFORE INSERT ON tbl_product_discount
+  FOR EACH ROW
+BEGIN
+  SELECT order_sequence.nextval
+  INTO :new.id
+  FROM dual;
+END;
+
+--------------------------------------------
+
+create sequence cart_product_sequence
+
+CREATE OR REPLACE TRIGGER cart_product_on_insert
+  BEFORE INSERT ON tbl_cart_product
+  FOR EACH ROW
+BEGIN
+  SELECT order_sequence.nextval
+  INTO :new.id
+  FROM dual;
+END;
