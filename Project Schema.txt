@@ -1,0 +1,109 @@
+--- user table ---
+create table tbl_user(
+id number(10) primary key,
+name varchar2(50) not null,
+email varchar2(100) unique not null,
+password varchar2(255) not null,
+mobile_number number(10) unique not null,
+address varchar2(255) not null,
+created_at timestamp default CURRENT_TIMESTAMP not null,
+approved number(1) default 0 not null
+)
+
+--- retailer table ---
+create table tbl_retailer(
+id number(10) primary key,
+name varchar2(50) not null,
+email varchar2(100) unique not null,
+password varchar2(255) not null,
+mobile_number number(10) unique not null,
+address varchar2(255) not null,
+created_at timestamp default CURRENT_TIMESTAMP not null,
+approved number(1) default 0 not null
+)
+
+--- product table ---
+create table tbl_product(
+id number(10) primary key,
+name varchar2(100) not null,
+description varchar2(255),
+price number(8,2) not null,
+category varchar2(50) not null,
+brand varchar2(50) not null,
+quantity number(5),
+retailer_id number(10)
+)
+
+--- product_retailer_foreign_key ---
+alter table tbl_product
+add constraint product_retailer_fk
+foreign key (retailer_id) references tbl_retailer(id)s
+
+--- product_image table ---
+create table tbl_product_image(
+id number(10) primary key,
+image_path varchar2(255) not null,
+product_id number(10)
+)
+
+--- image_product_foreign_key ---
+alter table tbl_product_image
+add constraint image_product_fk
+foreign key (product_id) references tbl_product(id)
+
+--- product_discount table ---
+create table tbl_product_discount(
+id number(10) primary key,
+discount_percent number(2),
+product_id number(10)
+)
+
+--- discount_product_foreign_key ---
+alter table tbl_product_discount
+add constraint discount_product_fk
+foreign key (product_id) references tbl_product(id)
+
+--- cart table ---
+create table tbl_cart(
+id number(10) primary key,
+total_quantity number(10) not null,
+total_price number(8,2) not null,
+user_id number(10) not null
+)
+
+--- user_cart_foreign_key ---
+alter table tbl_cart
+add constraint user_cart_fk
+foreign key (user_id) references tbl_user(id)
+
+--- cart_product table ---
+create table tbl_cart_product(
+id number(10) primary key,
+quantity number(2),
+product_id number(10) not null,
+cart_id number(10) not null
+)
+
+--- product_cart_product_foreign_key ---
+alter table tbl_cart_product
+add constraint product_cart_product_fk
+foreign key (product_id) references tbl_product(id)
+
+--- cart_cart_product_foreign_key ---
+alter table tbl_cart_product
+add constraint cart_cart_product_fk
+foreign key (cart_id) references tbl_cart(id)
+
+--- order table ---
+create table tbl_order(
+id number(10) primary key,
+ordered_on timestamp default CURRENT_TIMESTAMP not null,
+total_price number(8,2) not null,
+mode_of_payment varchar2(20) not null,
+cart_id number(10) not null
+)
+
+--- cart_order_foreign_key ---
+alter table tbl_order
+add constraint cart_order_fk
+foreign key (cart_id) references tbl_cart(id)
