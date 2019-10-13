@@ -8,9 +8,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import com.lti.training.projectgladiator.entity.Cart;
 import com.lti.training.projectgladiator.entity.Product;
 import com.lti.training.projectgladiator.entity.Retailer;
 import com.lti.training.projectgladiator.entity.User;
+import com.lti.training.projectgladiator.entity.jointables.CartProduct;
 
 public class ProductDao extends GenericDao {
 
@@ -60,5 +62,14 @@ public class ProductDao extends GenericDao {
 		}
 		
 		return null;
+	}
+	
+	public void addProductToCart(Product product, Cart cart, int quantity) {
+		CartProduct cartProduct = new CartProduct();
+		cartProduct.setProduct(product);
+		cartProduct.setCart(cart);
+		cartProduct.setQuantity(quantity);
+		
+		upsert(cartProduct);
 	}
 }
