@@ -2,6 +2,7 @@ package com.lti.training.projectgladiator.entity;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -55,7 +56,7 @@ public class Product {
 	/*
 	 * Product-Cart_Product PK-FK
 	 */
-	@OneToMany(mappedBy = "product")
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
 	private Set<CartProduct> cartProducts;
 	
 	/*
