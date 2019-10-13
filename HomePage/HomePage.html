@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js"></script>
+    <title>Shop-e</title>
+</head>
+<style>
+        .column {
+          float: left;
+          width: 49%;
+          padding: 5px;
+        }
+        
+        /* Clearfix (clear floats) */
+        .row::after {
+          clear: both;
+          
+        }
+</style>
+<body>
+
+<div class="row">
+		<div class="column">
+
+    <table width = "70%" >        
+        <tr>
+        <td rowspan="4"><img src="C:\Users\pinto\OneDrive\Desktop\Logo\Logo 1.png" width="100px" height="90px"></td>
+        <td><font size="5px" color="maroon"><b>SHOP-E</b></font></td>
+        </tr>
+        <tr>
+        <td><font color="red">*</font>Rediscover A Great Shopping Tradition<font color="red">
+        </tr>
+        <tr>
+        <td><font color="red">*</font>Quality | Perfection | Customer Satisfaction</td></tr>
+    </table>
+</div>
+<div class="column"><br><br>
+	<table width = "100%" >
+		<tr><td>
+		<form>
+        <p align="right" style="text-align: right">
+        <input type="text" id="search" placeholder="Search">
+        <button type="button" id="search-button">Go</button></p>
+		</form>
+		</td></tr>
+	</table>
+	
+		</div>
+	</div>
+     <br>
+
+    <hr>
+
+    <ul>
+                  
+            <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Log</a>
+            </li>
+
+            <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Products</a>
+      
+            </li>
+
+            <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Comparator</a>
+      
+            </li>
+
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Categories</a>
+              <div class="dropdown-content">
+                <a href="#">Mobiles</a><hr>
+                <a href="#">Laptops</a><hr>
+                <a href="#">Groceries & Household Supplies</a><hr>
+                <a href="#">Clothing</a>
+              </div>
+            </li>
+
+            <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Cart</a>
+      
+            </li>
+                
+          
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Login</a>
+
+            </li>
+
+
+
+          </ul>
+          <br>
+          
+          <center>
+          
+          <div class="slideshow-container">
+          
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="C:\Users\pinto\OneDrive\Desktop\OnlineShopping\mobile.png" style="width:100%;  height:500px; 
+             background-size:cover;
+             background-position: center center;">
+            <div class="text">Mobiles</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 5</div>
+            <img src="C:\Users\pinto\OneDrive\Desktop\OnlineShopping\laptop.png" style="width:100%;  height:500px; 
+             background-size:cover;
+             background-position: center center;">
+            <div class="text">Laptops</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 5</div>
+            <img src="C:\Users\pinto\OneDrive\Desktop\OnlineShopping\groceries.png" style="width:100%;  height:500px; background-size:cover; background-position: center center;">
+            <div class="text">Groceries</div>
+          </div>
+          
+          
+          <div class="mySlides fade">
+            <div class="numbertext">4 / 5</div>
+            <img src="C:\Users\pinto\OneDrive\Desktop\OnlineShopping\healthcare.png" style="width:100%;  height:500px; background-size:cover; background-position: center center;">
+            <div class="text">Health Care</div>
+          </div>
+          
+          
+          <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="C:\Users\pinto\OneDrive\Desktop\OnlineShopping\clothing.png" style="width:100%;  height:500px; background-size:cover; background-position: center center;">
+            <div class="text">Clothing</div>
+          </div>
+          
+          </div>
+          </center>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot" ></span> 
+            <span class="dot" ></span> 
+            <span class="dot" ></span> 
+            <span class="dot" ></span> 
+            <span class="dot" ></span> 
+          </div>
+          
+          <script>
+          var slideIndex = 0;
+          showSlides();
+          
+          function showSlides() {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                 slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex> slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 4000); // Change image every 4 seconds
+          }
+          </script>
+          <hr>
+          <h2 style="text-align:center">Top Products</h2>
+          <div class="row">
+          <div class="column">
+
+          <div class="card">
+            <img src="C:\Users\pinto\OneDrive\Desktop\OnlineShopping\tp1.png" alt="One Plus 7T" style="width:100%" class="tp-image">
+            <h3>One Plus 7T</h3>
+            <p class="price">Rs 37,999</p>
+            <div class="content">
+            <p>Octa core Qualcomm Snapdragon 855. Connectivity options included in the device are Bluetooth, Wi-Fi, 3G and 4G</p>
+            </div>
+            <p><button>Add to Cart</button></p>
+          </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+                <img src="C:\Users\pinto\OneDrive\Desktop\OnlineShopping\tp2.png" alt="HP Pavilionx360" style="width:100%" class="tp-image">
+                <h3>HP Pavilionx360 Intel Core-i7</h3>
+                <p class="price">Rs 67,950</p>
+                <p>7th Gen Intel i5-7200U (2.5 GHz base processor speed, 3 MB SmartCache, 2 cores), Max Boost Clock Up to 3.1 GHz</p>
+                <p><button>Add to Cart</button></p>
+            </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+                <img src="C:\Users\pinto\OneDrive\Desktop\OnlineShopping\tp3.png" alt="Sunsilk Shampoo" style="width:100%" class="tp-image">
+                <h3>Sunsilk Shampoo</h3>
+                <p class="price">Rs 340</p>
+                <p>Sunsilk Lusciously Thick & Long shampoo, for visibly thicker hair. Provides hair with essential nutrient </p>
+                <p><button>Add to Cart</button></p>
+            </div>
+         </div>
+
+         <div class="column">
+                <div class="card">
+                      <img src="C:\Users\pinto\OneDrive\Desktop\OnlineShopping\tp4.png" alt="Denim Jeans" style="width:100%" class="tp-image">
+                      <h3>One Plus 7T</h3>
+                      <p class="price">Rs 37,999</p>
+                      <p>100% Cotton Fabrics: Good capability of tenderness, air permeability and moisture absorption feels soft and comfy</p>
+                      <p><button>Add to Cart</button></p>
+                  </div>
+               </div>
+    </div><hr>
+    <div class="footer">
+                    <p>© Copyright 2019, All Rights Reserved</p>
+    </div>
+
+</body>
+</html>
