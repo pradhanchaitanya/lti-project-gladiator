@@ -40,12 +40,12 @@ public class ProductTest {
 	public void addProductToCart() {
 		ProductService service = new ProductServiceImpl();
 		
-		Product product = service.fetchProductById(72);
+		Product product = service.fetchProductById(80);
 		
-		User user = new UserServiceImpl().fetchUserById(102);
+		User user = new UserServiceImpl().fetchUserById(104);
 		
 		Cart cart = new CartServiceImpl().fetchCartForUser(user);
 		
-		service.addProductToCart(product, cart, 3);
+		service.addProductToCart(product, cart, 5);
 	}
 }

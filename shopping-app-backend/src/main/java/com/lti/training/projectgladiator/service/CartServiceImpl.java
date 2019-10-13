@@ -27,7 +27,16 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public Cart fetchCartForUser(User user) {
 		CartDao dao = new CartDao();
-		return dao.fetchCartForUser(user);
+		Cart cart = (Cart) dao.fetchCartForUser(user);
+		
+		if (cart == null) {
+			Cart newCart = new Cart();
+			newCart.setUser(user);
+			addCartForUser(newCart, user);
+			return newCart;
+		}
+		
+		return cart;
 	}
 
 	

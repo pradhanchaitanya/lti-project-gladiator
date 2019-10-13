@@ -24,7 +24,7 @@ public class ProductServiceImpl implements ProductService {
 		
 		// update cart
 		double totalPrice = cart.getTotalPrice();
-		cart.setTotalPrice(totalPrice + product.getPrice());
+		cart.setTotalPrice(totalPrice + (quantity * product.getPrice()));
 		
 		int totalQuantity = cart.getTotalQuantity();
 		cart.setTotalQuantity(totalQuantity + quantity);
