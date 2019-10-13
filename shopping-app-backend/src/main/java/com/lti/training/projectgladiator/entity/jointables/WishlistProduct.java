@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.lti.training.projectgladiator.entity.Product;
@@ -19,10 +20,11 @@ public class WishlistProduct {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,
 					generator = "WISHLIST_PRODUCT_SEQUENCE")
+	@SequenceGenerator(sequenceName = "WISHLIST_PRODUCT_SEQUENCE", allocationSize = 1, name = "WISHLIST_PRODUCT_SEQUENCE")
 	@Column(name = "ID")
 	private long id;
 	
-	@Column(name = "ID")
+	@Column(name = "QUANTITY")
 	private int quantity;
 	
 	@ManyToOne

@@ -3,21 +3,28 @@ package com.lti.training.projectgladiator.entity;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import com.lti.training.projectgladiator.entity.jointables.CartProduct;
 import com.lti.training.projectgladiator.entity.jointables.WishlistProduct;
 
+@Entity
+@Table(name = "TBL_PRODUCT")
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, 
 					generator = "PRODUCT_SEQUENCE")
+	@SequenceGenerator(sequenceName = "PRODUCT_SEQUENCE", allocationSize = 1, name = "PRODUCT_SEQUENCE")
+	@Column(name = "ID")
 	private long id;
 	
 	@Column(name = "NAME")

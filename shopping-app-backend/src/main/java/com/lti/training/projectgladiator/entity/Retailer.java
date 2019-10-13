@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +20,7 @@ public class Retailer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, 
 					generator = "RETAILER_SEQUENCE")
+	@SequenceGenerator(sequenceName = "RETAILER_SEQUENCE", allocationSize = 1, name = "RETAILER_SEQUENCE")
 	@Column(name = "ID")
 	private long id;
 	

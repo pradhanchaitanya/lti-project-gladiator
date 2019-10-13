@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.lti.training.projectgladiator.entity.jointables.WishlistProduct;
@@ -19,12 +20,13 @@ public class Wishlist {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, 
-					generator = "USER_SEQUENCE")
+					generator = "WISHLIST_SEQUENCE")
+	@SequenceGenerator(sequenceName = "WISHLIST_SEQUENCE", allocationSize = 1, name = "WISHLIST_SEQUENCE")
 	@Column(name = "ID")
 	private long id;
 	
-	@Column(name = "QUANTITY")
-	private int quantity;
+	@Column(name = "TOTAL_QUANTITY")
+	private int totalQuantity;
 	
 	@OneToOne
 	private User user;
@@ -43,12 +45,12 @@ public class Wishlist {
 		this.id = id;
 	}
 
-	public int getQuantity() {
-		return quantity;
+	public int getTotalQuantity() {
+		return totalQuantity;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setTotalQuantity(int quantity) {
+		this.totalQuantity = quantity;
 	}
 
 	public User getUser() {

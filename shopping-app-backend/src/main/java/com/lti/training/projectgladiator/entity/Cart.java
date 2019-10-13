@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.lti.training.projectgladiator.entity.jointables.CartProduct;
@@ -21,6 +22,7 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, 
 					generator = "CART_SEQUENCE")
+	@SequenceGenerator(sequenceName = "CART_SEQUENCE", allocationSize = 1, name = "CART_SEQUENCE")
 	@Column(name = "ID")
 	private long id;
 	
