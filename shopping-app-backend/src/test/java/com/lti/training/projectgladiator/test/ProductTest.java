@@ -43,6 +43,7 @@ public class ProductTest {
 		Product product = service.fetchProductById(80);
 		
 		User user = new UserServiceImpl().fetchUserById(104);
+//		System.out.println(user);
 		
 		Cart cart = new CartServiceImpl().fetchCartForUser(user);
 		

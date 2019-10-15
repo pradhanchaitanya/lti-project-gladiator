@@ -52,11 +52,10 @@ public class GenericDao {
 			return entityManager.find(clazz, primaryKey);
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		} finally {
 			entityManager.close();
 			entityManagerFactory.close();
 		}
-		
-		return null;
 	}
 }

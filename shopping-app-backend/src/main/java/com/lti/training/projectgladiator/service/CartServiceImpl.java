@@ -32,7 +32,7 @@ public class CartServiceImpl implements CartService {
 		if (cart == null) {
 			Cart newCart = new Cart();
 			newCart.setUser(user);
-			user.setCart(newCart);
+			//user.setCart(newCart);
 			addCartForUser(newCart, user);
 			return newCart;
 		}

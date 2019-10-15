@@ -11,7 +11,7 @@ import com.lti.training.projectgladiator.entity.User;
 public class CartDao extends GenericDao {
 
 	public void addCartForUser(Cart cart, User user) {
-		cart.setUser(user);
+		//cart.setUser(user);
 		upsert(cart);
 	}
 	

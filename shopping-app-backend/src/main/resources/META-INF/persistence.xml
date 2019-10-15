@@ -9,7 +9,7 @@
         <properties>
         	<!-- Database Settings -->
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@192.168.101.12:1521:xe" />
             <property name="javax.persistence.jdbc.user" value="dev" />
             <property name="javax.persistence.jdbc.password" value="dev" />
             <!-- Hibernate Settings -->
