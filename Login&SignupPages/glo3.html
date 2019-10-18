@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main2.css" />
+</head>
+<style>
+body {
+    font-size: 13px;
+    line-height: 19px;
+    color: #111;
+    font-family: Arial,sans-serif;
+}
+button {
+    float: center;
+    width: calc(100% - 1000px);
+}
+legend { 
+  display: inline-block;
+  padding-left: 2px;
+  padding-right: 2px;
+  border: none;
+}
+.a-box {
+    display: block;
+    border-radius: 4px;
+    border: 1px #ddd solid;
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.a-divider-inner{
+    height: 24px;
+    margin-bottom: -18px;
+    background: -webkit-linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
+    background: linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
+    z-index: 0;
+    zoom: 1;
+}
+.a-spacing-extra-large, .a-ws .a-ws-spacing-extra-large {
+	background-position: center;
+	float: justify;
+    width: 300px;
+  height: 500px;  
+  padding: 40px;
+}
+
+.avatar{
+	width: 100px;
+	heigth:100px;
+	border-radius: 50%;
+	position:absolute;
+	top: -50px;
+	left: calc(50% - 50px);
+	
+}
+
+.btn {
+  width: 100%;
+  background-image: linear-gradient(white,orange);
+  border-width: thin;
+  border-color: orangered;
+  border-radius: 7px;
+  padding: 10px 120px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[type=text]{
+width : 100%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  resize: vertical;
+}
+input[type=number], select,option{
+width : 30%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  resize: vertical;
+}
+input[type=mobile]{
+width : 60%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  resize: vertical;
+}
+input[type=email] {
+width : 100%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  resize: vertical;
+}
+input[type=password] {
+width : 100%;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  resize: vertical;
+}
+
+input:focus{
+    outline:none;
+    border-color:orange;
+    box-shadow:0 0 5px orange;
+}
+.reqError{
+	color: #ff0000; /*Red Color*/
+	font-weight: bold;
+}
+
+</style>
+<script type="text/javascript">
+    //function to check validation (Required field)
+    function checkReqFields(){
+        var returnValue;
+        var element;
+        var name=document.getElementById("name").value;
+        var password=document.getElementById("password").value;
+        var email=document.getElementById("email").value;
+        
+        returnValue=true;
+        if(name.trim()==""){
+            element = document.getElementById("name");
+            document.getElementById("reqTxtName").innerHTML="! Name is required.";
+            element.style.border = "1px solid red";
+            returnValue=false;
+        }
+        if(password.trim()==""){
+            element = document.getElementById("password");
+            document.getElementById("reqTxtPassword").innerHTML="! Password is required.";
+            element.style.border = "1px solid red";
+            returnValue=false;
+        }	
+        if(email.trim()==""){
+            element = document.getElementById("email");
+            document.getElementById("reqTxtEmail").innerHTML="! Email is required.";
+            element.style.border = "1px solid red";
+            returnValue=false;
+        }	
+        						
+        return returnValue;
+    }
+    function validateEmail(email){
+        atpos = email.indexOf("@");
+        dotpos = email.lastIndexOf(".");
+        if(atpos < 1 || (dotpos - atpos < 2)){
+            document.getElementById("reqTxtEmail").innerHTML="* Enter valid email.";
+            element.style.border = "1px solid red";
+            returnValue=false;
+        }
+        return (true);
+    }
+
+</script>
+<body>
+  <center>
+ 
+  <form onsubmit="return checkReqFields()" ></form>
+    <div class="a-box a-spacing-extra-large">
+    <img src="avatar.png" class="avatar"><br>
+        <h1 style="text-align:justify;">Create Account</h1>
+        <div style="text-align:justify;">
+		<br>
+        <b>Your name</b> 
+        <br><input type="text" id="name" />
+        <span id="reqTxtName" class="reqError"></span>
+        
+        <br><br>
+        <b>Mobile number</b><br>
+		<select name="countryCode" id="">
+       
+                <option data-countryCode="GB" value="44" Selected>UK(+44)</option>
+                <option data-countryCode="US" value="1">USA(+1)</option>
+                <option data-countryCode="DZ" value="213">Algeria(+213)</option>
+                <option data-countryCode="AD" value="376">Andorra(+376)</option>
+                <option data-countryCode="AO" value="244">Angola(+244)</option>
+                <option data-countryCode="AI" value="1264">Anguilla(+1264)</option>
+        </select>
+        <input type="mobile" placeholder="Mobile number"/>  
+        <br><br>
+        <b>Email </b><br>
+        <input type="email" id="email" placeholder="Enter email" />
+        <span id="reqTxtEmail" class="reqError"></span>
+        <br><br>
+        <b>Password </b><br> 
+        <input type="password" id="password" placeholder="At least 6 characters" />
+        <span id="reqTxtPassword" class="reqError"></span>
+		<br>
+        <label><i style="color:blue;"><b>i</b></i>&nbsp;&nbsp;
+		Password must be atleast 6 characters</label>
+        <br>
+        <h4>We will send you a text to verify your phone.
+                Message and Data rates may apply.
+        </h4>
+        
+        <button onclick="checkReqFields()" class = "btn">Continue</button>
+        </div><br>
+     
+        <div class="a-divider-inner">
+
+        </div>
+        <div class="a-row">
+        <h5>Already have an account?<a href="sign in">Sign in</a></h5>
+        </div>
+    
+    </div>
+</form>  
+
+</center>
+</body>
+</html>
