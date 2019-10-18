@@ -1,68 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sign Up</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="signup.css" />
-    <script src="signup.js"></script>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Sign Up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" media="screen" href="signup.css" />
+<script src="signup.js"></script>
 </head>
 <body>
-  <!--  <div>
+	<!--  <div>
         <img src="logo.jpeg" style="height: 10%; width:12%;left: 55%;  padding: 2% 0% 0% 45%;">
     </div>
-   --> 
-    
-    <div id="outer">
-    <img src="avatar.png" class="avatar"><br>
-    <h1 style="color: rgb(64, 64, 64)">Create Account</h1>
-    <form name="myForm">
-        <div class="extra" >
-            <input type="text" class="input" autofocus="on" id="name" placeholder="Enter Name">
-            <p id="alert" style="color:rgb(255, 0, 0);text-align:left;" ></p>
-         
-        </div>
+   -->
 
-        <div class="extra"> 
-            <input type="email" class="input" id="EMail" placeholder="Enter EMail">
-            <p id="alert2" style="color:rgb(255, 0, 0);text-align:left;"></p>
-        </div>
-        
+	<div id="outer">
+		<img src="avatar.png" class="avatar"><br>
+		<h1 style="color: rgb(64, 64, 64)">Create Account</h1>
+		<form name="myForm">
+			<div class="extra">
+				<input type="text" class="input" autofocus="on" id="name"
+					placeholder="Enter Name">
+				<p id="alert" style="color: rgb(255, 0, 0); text-align: left;"></p>
 
-        <div class="extra">
-                <div></div>
-                
-                <select style="background: linear-gradient(to bottom,#f7f8fa,#e7e9ec); width: 55px; height: 30px;">
-                        <option value="+91">+91</option>
-                        <option value="+144">+144</option>
-                        <option value="+01">+01</option>
-                        <option value="+65">+65</option>
-                </select>
-                <!--<button>IN +91</button>-->
-            
-                <input type="tel" class="input" placeholder=" Enter Mobile number" id="Telephone" style="width: 80%; padding: 7px 0.5px;">
-                <p id="alert1" style="color:rgb(255, 0, 0);text-align:left;" ></p>
-            </div>
+			</div>
 
-        <div class="extra">
-     		 <input type="password" class="input" id="Password" placeholder="Enter Password">
-            <p id="alert3" style="color:rgb(255, 0, 0);text-align:left;" ></p>
-            <p>Passwords must be atleast 6 characters.</p>
-        </div>
- 
-        <!--
-        <div>
-            <p>We will send you a text to verify your phone.<br>
-            Message and Data rates may apply.</p>
-        </div>
-    	-->
-        <div>
-        <button type="button" onclick="return validateForm()" method="post" font-family="verdana" style="color: white"><strong>Sign In</strong></button>
-        </div>
-    
-    </form>
-</div>
+			<div class="extra">
+				<input type="email" class="input" id="EMail"
+					placeholder="Enter EMail">
+				<p id="alert2" style="color: rgb(255, 0, 0); text-align: left;"></p>
+			</div>
+			<div class="extra">
+				<input type="password" class="input" id="Password"
+					placeholder="Enter Password">
+				<p id="alert3" style="color: rgb(255, 0, 0); text-align: left;"></p>
+				<p>Passwords must be atleast 6 characters.</p>
+			</div>
+
+			<div class="extra">
+				<input type="tel" class="input" placeholder=" Enter Mobile number"
+					id="Telephone">
+				<p id="alert1" style="color: rgb(255, 0, 0); text-align: left;"></p>
+			</div>
+
+			<div class="extra">
+				<input type="text" class="input" placeholder=" Enter Address"
+					id="Address">
+				<p id="alert4" style="color: rgb(255, 0, 0); text-align: left;"></p>
+				</input>
+			</div>
+			<div>
+				<button type="button" onclick="return validateForm()" method="post"
+					font-family="verdana" style="color: white">
+					<strong>Sign In</strong>
+				</button>
+			</div>
+
+		</form>
+	</div>
 
 </body>
 </html>

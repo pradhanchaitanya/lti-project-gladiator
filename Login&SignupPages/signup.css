@@ -3,7 +3,7 @@
     top: 33%;
     left: 55%;
     width:20em;
-    height:34em;
+    height:40em;
     margin-top: -9em; /*set to a negative number 1/2 of your height*/
     margin-left: -15em; /*set to a negative number 1/2 of your width*/
     border: 2px solid rgb(168, 163, 163);
@@ -17,7 +17,7 @@
     top: 33%;
     left: 55%;
     width:20em;
-    height:15em;
+    height:23em;
     margin-top: -9em; /*set to a negative number 1/2 of your height*/
     margin-left: -15em; /*set to a negative number 1/2 of your width*/
     border: 2px solid rgb(168, 163, 163);
@@ -29,8 +29,8 @@
 body{
 	margin : 0;
 	padding : 0;
-    /* background-image: url('bg1.jpg');
- */    background-size: cover ;
+    background-image: url('bg1.jpg');
+   background-size: cover ;
     background-position : center ;
 
     
