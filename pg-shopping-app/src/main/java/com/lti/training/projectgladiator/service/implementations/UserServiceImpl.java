@@ -1,5 +1,6 @@
 package com.lti.training.projectgladiator.service.implementations;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,10 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public void addNewUser(User user) throws FailedUpsertException {
+		// applying SHA-512 hash
+		String hashedPassword = DigestUtils.sha512Hex(user.getPassword());
+		user.setPassword(hashedPassword);
+		
 		try {
 			userRepository.upsert(user);
 		} catch (FailedUpsertException e) {
@@ -44,5 +49,21 @@ public class UserServiceImpl implements UserService {
 		
 		return user;
 	}
+
+	@Override
+	public void updateUser(User user) throws FailedUpsertException, NoUserFoundException, MultipleUsersFoundException {
+		try {
+			User existingUser = userRepository.fetchUserByEmail(user.getEmail());
+			if (existingUser == null) {
+				throw new NoUserFoundException();
+			}
+			userRepository.upsert(user);
+		} catch (FailedUpsertException e) {
+			throw e;
+		} catch (MultipleUsersFoundException e) {
+			throw e;
+		}
+	}
+	
 
 }

@@ -10,4 +10,5 @@ public interface UserService {
 	void addNewUser(User user) throws FailedUpsertException;
 	User fetchUserById(long userId) throws NoUserFoundException, MultipleUsersFoundException;
 	User fetchUserByEmail(String email) throws NoUserFoundException, MultipleUsersFoundException;
+	void updateUser(User user) throws FailedUpsertException,NoUserFoundException, MultipleUsersFoundException;
 }

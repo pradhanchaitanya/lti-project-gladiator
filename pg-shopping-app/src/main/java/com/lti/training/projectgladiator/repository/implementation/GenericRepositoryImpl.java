@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
 import com.lti.training.projectgladiator.repository.GenericRepository;
 
-@Repository
+@Repository("genericRepo")
 public class GenericRepositoryImpl implements GenericRepository {
 
 	@PersistenceContext
