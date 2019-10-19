@@ -3,7 +3,6 @@
     top: 33%;
     left: 55%;
     width:20em;
-    height:40em;
     margin-top: -9em; /*set to a negative number 1/2 of your height*/
     margin-left: -15em; /*set to a negative number 1/2 of your width*/
     border: 2px solid rgb(168, 163, 163);
@@ -59,6 +58,16 @@ body{
 	left: calc(50% - 50px);
 	
 }
+#fpass{
+ float:right;
+}
+
+h1,h2{
+	color: rgb(64, 64, 64);
+}
+#alert,#alert1,#alert2,#alert3,#alert4{
+	 color:rgb(255, 0, 0);
+}
 
 input[type="text"],
 input[type="email"],
@@ -86,9 +95,8 @@ input:focus{
     border: 1px;
     outline-color: rgba(255, 51, 0, 0.815);
     box-shadow: 0px 0px 2px 2px orange;
-
-
 }
+
 button{
     width: 100%;
     padding: 2.5%;
