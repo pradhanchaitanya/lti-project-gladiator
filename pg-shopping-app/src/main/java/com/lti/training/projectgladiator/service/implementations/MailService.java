@@ -20,9 +20,6 @@ public class MailService {
 	public void setMailSender(JavaMailSender mailSender) {
 		this.mailSender = mailSender;
 	}
-
-//	@Autowired
-//	private MimeMessage mailMessage;
 	
 	public void sendWelcomeMail(User newUser) {
 		MimeMessage mailMessage = mailSender.createMimeMessage();
