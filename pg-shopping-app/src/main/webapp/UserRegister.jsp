@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" action="/user/register"" >
+	<form method="post" action="/user/register">
 		Enter name: <input name="name" /> <br />
 		Enter email: <input name="email" /> <br />
 		Enter mobile: <input name="mobileNumber" /> <br />

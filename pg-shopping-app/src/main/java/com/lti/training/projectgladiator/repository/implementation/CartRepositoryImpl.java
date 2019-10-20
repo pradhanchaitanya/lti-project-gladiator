@@ -1,12 +1,9 @@
 package com.lti.training.projectgladiator.repository.implementation;
 
-import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,20 +13,13 @@ import com.lti.training.projectgladiator.exceptions.NoCartFoundException;
 import com.lti.training.projectgladiator.model.Cart;
 import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.repository.CartRepository;
-import com.lti.training.projectgladiator.repository.GenericRepository;
 
 @Repository
-public class CartRepositoryImpl  implements CartRepository {
-	
-	@Autowired
-	private GenericRepository genericRepo;
-	
-	@Autowired
-	private EntityManager entityManager;
+public class CartRepositoryImpl extends GenericRepositoryImpl implements CartRepository {
 	
 	@Transactional
 	public void addCartForUser(Cart cart, User user) throws FailedUpsertException {
-		genericRepo.upsert(cart);
+		upsert(cart);
 	}
 	
 	public Cart fetchCartForUser(User user) throws NoCartFoundException, MultipleCartsFoundException {

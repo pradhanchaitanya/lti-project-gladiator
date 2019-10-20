@@ -6,7 +6,7 @@ import com.lti.training.projectgladiator.exceptions.NoCartFoundException;
 import com.lti.training.projectgladiator.model.Cart;
 import com.lti.training.projectgladiator.model.User;
 
-public interface CartRepository {
+public interface CartRepository extends GenericRepository {
 
 	public void addCartForUser(Cart cart, User user) throws FailedUpsertException;
 	public Cart fetchCartForUser(User user) throws NoCartFoundException, MultipleCartsFoundException;
