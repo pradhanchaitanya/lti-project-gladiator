@@ -1,6 +1,6 @@
 package com.lti.training.projectgladiator.exceptions;
 
-public class FailedUpsertException extends Exception {
+public class FailedUpsertException extends RuntimeException {
 
 	public FailedUpsertException() {
 		super();

@@ -1,6 +1,6 @@
 package com.lti.training.projectgladiator.exceptions;
 
-public class NoProductFoundException extends Exception {
+public class NoProductFoundException extends RuntimeException {
 
 	public NoProductFoundException() {
 		super();

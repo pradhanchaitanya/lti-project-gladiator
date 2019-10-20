@@ -1,45 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans 
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<!-- TODO: change packages -->
-	<context:component-scan base-package="com.lti.training.projectgladiator.repository,com.lti.training.projectgladiator.service" />
+		<!-- TODO: change packages -->
+		<context:component-scan
+				base-package="com.lti.training.projectgladiator.repository,com.lti.training.projectgladiator.service" />
 
-	<!-- DataSource configuration -->
-	<bean id="oracleDS" class="org.apache.commons.dbcp2.BasicDataSource"
-		destroy-method="close">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-		<property name="username" value="glad_dev" />
-		<property name="password" value="dev" />
-	</bean>
+		<!-- DataSource configuration -->
+		<bean id="oracleDS"
+				class="org.apache.commons.dbcp2.BasicDataSource"
+				destroy-method="close">
+				<property name="driverClassName"
+						value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url"
+						value="jdbc:oracle:thin:@localhost:1521:XE" />
+				<property name="username" value="glad_dev" />
+				<property name="password" value="dev" />
+		</bean>
 
-	<bean id="myEmf"
-		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="dataSource" ref="oracleDS" /><!--Database settings -->
-		<property name="packagesToScan" value="com.lti.training.projectgladiator.model" /> <!--@Entity class location -->
-		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
-		</property>
-		<property name="jpaProperties">
-			<props>
-				<prop key="hibernate.show_sql">true</prop>
-				<!-- <prop key="hibernate.format_sql">true</prop> -->
-			</props>
-		</property>
-	</bean>
+		<bean id="myEmf"
+				class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+				<property name="dataSource" ref="oracleDS" /><!--Database settings -->
+				<property name="packagesToScan"
+						value="com.lti.training.projectgladiator.model" /> <!--@Entity class location -->
+				<property name="jpaVendorAdapter">
+						<bean
+								class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+				</property>
+				<property name="jpaProperties">
+						<props>
+								<prop key="hibernate.show_sql">true</prop>
+								<prop key="hibernate.format_sql">true</prop>
+						</props>
+				</property>
+		</bean>
 
-	<!-- This bean will manage all the begin/commit/rollback -->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="myEmf" />
-	</bean>
-	<tx:annotation-driven />
+		<!-- This bean will manage all the begin/commit/rollback -->
+		<bean id="transactionManager"
+				class="org.springframework.orm.jpa.JpaTransactionManager">
+				<property name="entityManagerFactory" ref="myEmf" />
+		</bean>
+		<tx:annotation-driven />
+
+		<!-- Mail Sender Config -->
+		<bean id="mailSender"
+				class="org.springframework.mail.MailSender">
+				<property name="host" value="smtp.gmail.com" />
+				<property name="port" value="587" />
+				<property name="username"
+						value="chaitanya.pradhan1211@gmail.com" />
+				<property name="password" value="chaitu1211%" />
+
+				<property name="javaMailProperties">
+						<props>
+								<prop key="mail.smtp.auth">true</prop>
+								<prop key="mail.smtp.starttls.enable">true</prop>
+						</props>
+				</property>
+		</bean>
+
+		<!-- Mail Service Config -->
+		<bean id="mailService"
+				class="com.lti.training.projectgladiator.service.implementations.MailService">
+				<property name="mailSender" ref="mailSender" />
+		</bean>
 
 </beans>

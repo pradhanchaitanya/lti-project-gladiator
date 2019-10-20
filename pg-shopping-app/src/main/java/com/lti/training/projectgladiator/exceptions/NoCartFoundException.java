@@ -1,6 +1,6 @@
 package com.lti.training.projectgladiator.exceptions;
 
-public class NoCartFoundException extends Exception {
+public class NoCartFoundException extends RuntimeException {
 
 	public NoCartFoundException() {
 		super();

@@ -1,6 +1,6 @@
 package com.lti.training.projectgladiator.exceptions;
 
-public class MultipleUsersFoundException extends Exception {
+public class MultipleUsersFoundException extends RuntimeException {
 
 	public MultipleUsersFoundException() {
 		super();

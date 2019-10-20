@@ -1,6 +1,6 @@
 package com.lti.training.projectgladiator.exceptions;
 
-public class NoUserFoundException extends Exception {
+public class NoUserFoundException extends RuntimeException {
 
 	public NoUserFoundException() {
 		super();

@@ -16,11 +16,11 @@ public class GenericRepositoryImpl implements GenericRepository {
 	protected EntityManager entityManager;
 	
 	@Transactional
-	public void upsert(Object object)  throws FailedUpsertException {
-		entityManager.merge(object);
-		
-		if (!entityManager.contains(object)) {
-			throw new FailedUpsertException();
+	public void upsert(Object object) {
+		try {
+			entityManager.merge(object);
+		} catch (Exception e) {
+			throw new FailedUpsertException(e.getMessage(), e);
 		}
 	}
 	

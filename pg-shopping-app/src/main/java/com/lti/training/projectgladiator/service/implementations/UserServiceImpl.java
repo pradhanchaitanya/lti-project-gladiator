@@ -1,9 +1,9 @@
 package com.lti.training.projectgladiator.service.implementations;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lambdaworks.crypto.SCryptUtil;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
 import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
@@ -17,14 +17,18 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@Autowired
+	private MailService mailService;
+	
 	@Override
 	public void addNewUser(User user) throws FailedUpsertException {
 		// applying SHA-512 hash
-		String hashedPassword = DigestUtils.sha512Hex(user.getPassword());
+		String hashedPassword = SCryptUtil.scrypt(user.getPassword(), 16, 16, 16);
 		user.setPassword(hashedPassword);
 		
 		try {
 			userRepository.upsert(user);
+			mailService.sendWelcomeMail(user);
 		} catch (FailedUpsertException e) {
 			throw e;
 		}
@@ -64,6 +68,19 @@ public class UserServiceImpl implements UserService {
 			throw e;
 		}
 	}
-	
 
+	@Override
+	public User validateUser(User user) throws NoUserFoundException {
+		User existingUser = fetchUserByEmail(user.getEmail());
+		
+		// validate password
+		boolean matched = SCryptUtil.check(user.getPassword(), existingUser.getPassword());
+		
+		if (matched)
+			return existingUser;
+		
+		return null;
+	}
+	
+	
 }

@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>User Registration</title>
 </head>
 <body>
-	<form method="post" action="/user/register">
+	<form action="user/register.do" method="post">
 		Enter name: <input name="name" /> <br />
 		Enter email: <input name="email" /> <br />
 		Enter mobile: <input name="mobileNumber" /> <br />
@@ -15,6 +15,5 @@
 		Enter address: <input name="address" /> <br />
 		<button type="submit">Register</button>
 	</form>
-
 </body>
 </html>

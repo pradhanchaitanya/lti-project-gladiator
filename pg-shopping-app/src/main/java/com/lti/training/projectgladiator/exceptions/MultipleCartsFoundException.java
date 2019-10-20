@@ -1,6 +1,6 @@
 package com.lti.training.projectgladiator.exceptions;
 
-public class MultipleCartsFoundException extends Exception {
+public class MultipleCartsFoundException extends RuntimeException {
 
 	public MultipleCartsFoundException() {
 		super();

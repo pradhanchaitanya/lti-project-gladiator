@@ -16,8 +16,9 @@
 	<bean id="oracleDS" class="org.apache.commons.dbcp2.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@192.168.101.12:1521:XE" />
-		<property name="username" value="dev" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
+		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.101.12:1521:XE" /> -->
+		<property name="username" value="glad_dev" />
 		<property name="password" value="dev" />
 	</bean>
 
@@ -30,6 +31,7 @@
 		</property>
 		<property name="jpaProperties">
 			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
 			</props>
@@ -42,4 +44,40 @@
 	</bean>
 	<tx:annotation-driven />
 
+	<!-- Mail Sender Config -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.office365.com" />
+		<property name="port" value="587" />
+		<property name="username" value="chaitanya.pradhan@lntinfotech.com" />
+		<property name="password" value="chaitu1211%" />
+		
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+                <prop key="mail.smtp.connecttimeout">50000</prop>
+                <prop key="mail.smtp.timeout">30000</prop>
+                <prop key="mail.smtp.writetimeout">50000</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Pre-configured Message -->
+	<!-- 
+	<bean id="preConfiguredSimpleMailMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from" value="chaitanya.pradhan@lntinfotech.com"></property>
+    </bean>
+    
+    <bean id="preConfiguredJavaxMailMessage" class="javax.mail.internet.MimeMessage">
+        <property name="from" value="chaitanya.pradhan@lntinfotech.com"></property>
+    </bean>
+	-->
+	
+	<!-- Mail Service Config -->
+	<bean id="mailService" class="com.lti.training.projectgladiator.service.implementations.MailService">
+		<property name="mailSender" ref="mailSender" />
+	</bean>
+	
 </beans>

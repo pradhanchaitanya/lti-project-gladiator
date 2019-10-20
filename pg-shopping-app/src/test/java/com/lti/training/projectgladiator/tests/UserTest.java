@@ -32,10 +32,10 @@ public class UserTest {
 		UserService service = ctx.getBean(UserService.class);
 		
 		User user = new User();
-		user.setName("Gloria");
-		user.setEmail("gloria@lti.com");
-		user.setMobileNumber(987654321);
-		user.setPassword("gloria");
+		user.setName("Elton");
+		user.setEmail("elton@lti.com");
+		user.setMobileNumber(9876543210L);
+		user.setPassword("elton");
 		user.setAddress("Mumbai");
 		user.setCreatedAt(LocalDateTime.now());
 		
