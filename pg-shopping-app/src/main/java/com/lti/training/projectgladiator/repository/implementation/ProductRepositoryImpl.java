@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.Query;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,10 +17,14 @@ import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.Retailer;
 import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.model.jointables.CartProduct;
+import com.lti.training.projectgladiator.repository.CartRepository;
 import com.lti.training.projectgladiator.repository.ProductRepository;
 
 @Repository
 public class ProductRepositoryImpl extends GenericRepositoryImpl implements ProductRepository {
+	
+	@Autowired
+	private CartRepository cartRepository;
 	
 	@Transactional
 	public void addProductToCart(Product product, Cart cart, int quantity) throws FailedUpsertException {
@@ -28,6 +33,34 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		cartProduct.setCart(cart);
 		cartProduct.setQuantity(quantity);
 		
+		upsert(cartProduct);
+		
+		double totalPrice = cart.getTotalPrice();
+		cart.setTotalPrice(totalPrice + (quantity * product.getPrice()));
+		
+		int totalQuantity = cart.getTotalQuantity();
+		cart.setTotalQuantity(quantity + totalQuantity);
+		
+		cartRepository.updateCartForUser(cart);
+	}
+	
+	@Transactional
+	public void removeProductFromCart(Product product, Cart cart, int quantity) throws NoProductFoundException {
+		String jpql = "select cp from CartProduct cp where cp.cart.id = :cartId";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("cartId", cart.getId());
+		
+		CartProduct cartProduct = (CartProduct) query.getSingleResult();
+		
+		double totalPrice = cart.getTotalPrice();
+		cart.setTotalPrice(totalPrice - (quantity * product.getPrice()));
+		
+		int totalQuantity = cart.getTotalQuantity();
+		cart.setTotalQuantity(quantity - totalQuantity);
+		
+		cartRepository.updateCartForUser(cart);
+		
+		cartProduct.setCart(cart);
 		upsert(cartProduct);
 	}
 	

@@ -20,32 +20,32 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public void addNewProduct(Product product) throws FailedUpsertException {
-		// TODO Auto-generated method stub
-
+		productRepository.upsert(product);
 	}
 
 	@Override
 	public void addProductToCart(Product product, Cart cart, int quantity) throws FailedUpsertException {
-		// TODO Auto-generated method stub
-
+		productRepository.addProductToCart(product, cart, quantity);
+	}
+	
+	@Override
+	public void removeProductFromCart(Product product, Cart cart, int quantity) throws NoProductFoundException {
+		productRepository.removeProductFromCart(product, cart, quantity);
 	}
 
 	@Override
 	public Product fetchProductById(long productId) throws NoProductFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return productRepository.fetchById(Product.class, productId);
 	}
 
 	@Override
 	public Set<Product> fetchProductsByRetailer(Retailer retailer) throws NoProductFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return productRepository.fetchProductsByRetailer(retailer);
 	}
 
 	@Override
 	public Set<Product> fetchProductsFromCartOfUser(User user) throws NoProductFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return productRepository.fetchProductsFromCartOfUser(user);
 	}
 
 }

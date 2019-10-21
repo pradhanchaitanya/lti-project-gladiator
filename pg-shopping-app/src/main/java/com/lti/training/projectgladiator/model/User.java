@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "TBL_USER")
@@ -49,6 +50,9 @@ public class User {
 	
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Wishlist wishlist;
+	
+	@Transient
+	private Role role = Role.USER;
 
 	public long getId() {
 		return id;
@@ -129,5 +133,9 @@ public class User {
 	public void setWishlist(Wishlist wishlist) {
 		this.wishlist = wishlist;
 	}
-	
+
+	public Role getRole() {
+		return role;
+	}
+
 }

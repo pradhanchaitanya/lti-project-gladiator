@@ -27,6 +27,7 @@ public class MailService {
 		MimeMessageHelper mailHelper = new MimeMessageHelper(mailMessage);
 		
 		StringBuffer mailBody = new StringBuffer();
+		mailBody.append("<img src='https://github.com/pradhanchaitanya/lti-project-gladiator/blob/assets/Logo/Logo%201.PNG?raw=true'");
 		mailBody.append("<h1>Welcome to Shoppe!</h1>");
 		mailBody.append("<br/>");
 		mailBody.append("<div>");
@@ -40,7 +41,8 @@ public class MailService {
 			mailHelper.setFrom(from);
 			mailHelper.setTo(newUser.getEmail());
 			mailHelper.setSubject("Registration Successful");
-			mailHelper.setText(mailBody.toString(), true);
+			mailMessage.setContent(mailBody.toString(), "text/html");
+//			mailHelper.setText(mailBody.toString(), true);
 		} catch (MessagingException e) {
 			
 		}

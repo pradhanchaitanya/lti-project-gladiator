@@ -18,7 +18,7 @@ import com.lti.training.projectgladiator.repository.CartRepository;
 public class CartRepositoryImpl extends GenericRepositoryImpl implements CartRepository {
 	
 	@Transactional
-	public void addCartForUser(Cart cart, User user) throws FailedUpsertException {
+	public void addCartForUser(Cart cart) throws FailedUpsertException {
 		upsert(cart);
 	}
 	
@@ -39,5 +39,10 @@ public class CartRepositoryImpl extends GenericRepositoryImpl implements CartRep
 		}
 		
 		return cart;
+	}
+	
+	@Transactional
+	public void updateCartForUser(Cart cart) {
+		addCartForUser(cart);
 	}
 }

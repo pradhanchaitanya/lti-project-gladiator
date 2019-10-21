@@ -13,6 +13,7 @@ public interface ProductService {
 
 	void addNewProduct(Product product) throws FailedUpsertException;
 	void addProductToCart(Product product, Cart cart, int quantity) throws FailedUpsertException;
+	void removeProductFromCart(Product product, Cart cart, int quantity) throws NoProductFoundException;
 	Product fetchProductById(long productId) throws NoProductFoundException;
 	Set<Product> fetchProductsByRetailer(Retailer retailer) throws NoProductFoundException;
 	Set<Product> fetchProductsFromCartOfUser(User user) throws NoProductFoundException;

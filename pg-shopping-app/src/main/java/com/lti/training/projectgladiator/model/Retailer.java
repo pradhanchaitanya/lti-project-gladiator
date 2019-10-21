@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "TBL_RETAILER")
@@ -47,6 +48,9 @@ public class Retailer {
 	
 	@OneToMany(mappedBy = "retailer", cascade = CascadeType.ALL)
 	Set<Product> products;
+	
+	@Transient
+	private Role role = Role.RETAILER;
 
 	public long getId() {
 		return id;
@@ -111,4 +115,17 @@ public class Retailer {
 	public void setApproved(boolean isApproved) {
 		this.isApproved = isApproved;
 	}
+	
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+	
 }
