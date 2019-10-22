@@ -70,11 +70,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User validateUser(User user) throws NoUserFoundException {
-		User existingUser = fetchUserByEmail(user.getEmail());
+	public User validateUser(String email, String password) throws NoUserFoundException {
+		User existingUser = fetchUserByEmail(email);
 		
 		// validate password
-		boolean matched = SCryptUtil.check(user.getPassword(), existingUser.getPassword());
+		boolean matched = SCryptUtil.check(password, existingUser.getPassword());
 		
 		if (matched)
 			return existingUser;

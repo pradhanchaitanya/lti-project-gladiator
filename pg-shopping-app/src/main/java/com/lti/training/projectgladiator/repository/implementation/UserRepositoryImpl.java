@@ -19,7 +19,8 @@ public class UserRepositoryImpl extends GenericRepositoryImpl implements UserRep
 		Query query = entityManager.createQuery(jpql);
 		query.setParameter("email", email);
 		
-		User user = null;
+		User user = /*(User) query.getResultList().get(0); */ null;
+		
 		try {
 			user = (User) query.getSingleResult();
 		} catch (NoResultException e) {
