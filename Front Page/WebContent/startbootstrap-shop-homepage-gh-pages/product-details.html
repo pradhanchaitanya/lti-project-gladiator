@@ -38,7 +38,7 @@
 
 			<a class="navbar-brand" href="index.html"> <img
 				src="images/logo.png" width="50" height="50"
-				class="d-inline-block align-top" alt="" /> Shop-E
+				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -48,9 +48,13 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="#">Log <span
-							class="sr-only">(current)</span>
-					</a></li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">Log</a>
+						<div class="dropdown-menu" aria-labelledby="karlDropdown">
+							<a class="dropdown-item" href="userdashboard.html">Dashboard</a>
+						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -88,6 +92,7 @@
 	
 	<div class="container">
 		<div class="row">
+		
 			<div class="col-lg-3">
 				<h1 class="my-4">Categories</h1>
 				<div class="list-group">
@@ -97,13 +102,17 @@
 					<a href="clothings.html" class="list-group-item">Clothing</a>
 				</div>
 			</div> 
+			<div class="col-lg-9">
+				<img class="img-fluid rounded mb-4 "
+					src="images/discount.png" alt="">
+			</div>
 			
 			<section class="new_arrivals_area section_padding_100_0 clearfix">
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
 								<div class="section_heading text-center">
-									<h2>Top Products</h2>
+									<h2>Deal of the Day</h2>
 								</div>
 							</div>
 						</div>
