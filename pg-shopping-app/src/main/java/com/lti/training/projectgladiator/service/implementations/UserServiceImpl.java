@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 		
 		try {
 			userRepository.upsert(user);
-			mailService.sendWelcomeMail(user);
+			//mailService.sendWelcomeMail(user);
 		} catch (FailedUpsertException e) {
 			throw e;
 		}

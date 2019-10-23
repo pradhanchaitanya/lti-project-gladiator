@@ -43,8 +43,8 @@ public class MailService {
 			mailHelper.setSubject("Registration Successful");
 			mailMessage.setContent(mailBody.toString(), "text/html");
 //			mailHelper.setText(mailBody.toString(), true);
-		} catch (MessagingException e) {
-			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 		mailSender.send(mailMessage);
 	}

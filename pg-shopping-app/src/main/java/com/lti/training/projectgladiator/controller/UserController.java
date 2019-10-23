@@ -7,6 +7,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,14 +24,15 @@ import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.service.UserService;
 
 @Controller
-@SessionAttributes("user")
+@SessionAttributes({"user"})
 public class UserController {
 
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(path = "/user/register.do", method = RequestMethod.POST)
-	public String registerUser(UserDTO userData, Map model) {
+	@RequestMapping(path = "/registerUser.do", method = RequestMethod.POST)
+	public String registerUser(UserDTO userData, ModelMap model) {
+		//model.addAttribute("userDTO", new UserDTO());
 		
 		User user = new User();
 		user.setName(userData.getName());
@@ -43,30 +47,32 @@ public class UserController {
 			e.printStackTrace();
 			// display relevant error on page
 		}
-		model.put("name", user.getName());
-		return "redirect:userDashboard";
+		model.addAttribute("user", user);
+		return "redirect:/showDashboard.do";
 	}
 	
-	@RequestMapping(path = "/user/login.do", method = RequestMethod.POST)
-	public String loginUser(
-							@RequestParam("email") String email,
-							@RequestParam("password") String password, Map model) {
+	@RequestMapping("/showDashboard.do")
+	public String showDashboard() {
+		return "userDashboard.jsp";
+	}
+	
+	@RequestMapping(path = "/loginUser.do", method = RequestMethod.GET)
+	public String showLoginForUser() {
+		return "login.jsp";
+	}
+	
+	@RequestMapping(path = "/loginUser.do", method = RequestMethod.POST)
+	public String loginUser(@RequestParam("email") String email,
+							@RequestParam("password") String password, ModelMap model) {
 		User validatedUser = userService.validateUser(email, password);
 		
-		model.put("user", validatedUser);
-		model.put("name", validatedUser.getName());
-		return "../dashboard.jsp";
+		model.addAttribute("user", validatedUser);
+		return "redirect:/showDashboard.do";
 	}
-	
-//	@RequestMapping(path = "/user/dashboard")
-//	public String showDashboard(@ModelAttribute("user") User validatedUser, Map model) {
-//		model.put("user", validatedUser);
-//		return "../dashboard.jsp";
-//	}
-	
-	@RequestMapping(path = "/user/logout.do")
-	public String logout(Map model) {
-		model.remove("user");
-		return "../userLogin.jsp";
+
+	@RequestMapping(path = "/logoutUser.do")
+	public String logout(ModelMap model) {
+		model.clear();
+		return "redirect:/showHomepage.do";
 	}
 }
