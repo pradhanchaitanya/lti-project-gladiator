@@ -136,137 +136,150 @@ html, body, h1, h2, h3, h4, h5 {
 			</header>
 			<div class="w3-container">
 				<h5>Sell Products</h5>
-				
-	<!-- for Adding Products -->
-				
-				<div class="modal fade" id="modalAddProductForm" tabindex="-1" role="dialog" aria-labelledby= "myModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document" >
-<div class="modal-content" >
-<div class="modal-header text-center">
-<h4 class="modal-title w-100 font-weight-bold" >Add Product</h4>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="false">&times;</span></button>
-</div>
-<div class="modal-body mx-3">
 
-<div class="md-form mb-4">
-<input type="text" id="form" class="form-control validate">
-<label class="modal-title w-50 font-weight-bold" data-error="wrong" data-success="right" for="form" >Enter Name</label>
-</div>
+				<!-- for Adding Products -->
 
-<div class="md-form mb-4">
-<input type="text" id="form1" class="form-control validate">
-<label class="modal-title w-50 font-weight-bold" data-error="wrong" data-success="right" for="form1" >Description</label>
-</div>
+				<div class="modal fade" id="modalAddProductForm" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header text-center">
+								<h4 class="modal-title w-100 font-weight-bold">Add Product</h4>
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="false">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body mx-3">
 
-<div class="md-form mb-4">
-<input type="text" id="form2" class="form-control validate">
-<label class="modal-title w-50 font-weight-bold" data-error="wrong" data-success="right" for="form2" >Price</label>
-</div>
+								<div class="md-form mb-4">
+									<label class="modal-title w-50 font-weight-bold"
+										data-error="wrong" data-success="right" for="form">Enter
+										Name</label> <input type="text" id="form"
+										class="form-control validate">
+								</div>
 
-<div class="md-form mb-4">
-<input type="text" id="form3" class="form-control validate">
-<label class="modal-title w-50 font-weight-bold" data-error="wrong" data-success="right" for="form3" >Image</label>
-</div>
+								<div class="md-form mb-4">
+									<label class="modal-title w-50 font-weight-bold"
+										data-error="wrong" data-success="right" for="form1">Description</label>
+									<input type="text" id="form1" class="form-control validate">
+								</div>
 
-<div class="md-form mb-4">
-<input type="text" id="form4" class="form-control validate">
-<label class="modal-title w-50 font-weight-bold" data-error="wrong" data-success="right" for="form4" >Category</label>
-</div>
+								<div class="md-form mb-4">
+									<label class="modal-title w-50 font-weight-bold"
+										data-error="wrong" data-success="right" for="form2">Price</label>
+									<input type="text" id="form2" class="form-control validate">
+								</div>
 
-<div class="md-form mb-4">
-<input type="text" id="form5" class="form-control validate">
-<label class="modal-title w-50 font-weight-bold" data-error="wrong" data-success="right" for="form5" >Brand</label>
-</div>
+								<div class="md-form mb-4">
+									<label class="modal-title w-50 font-weight-bold"
+										data-error="wrong" data-success="right" for="form4">Category</label>
+									<input type="text" id="form4" class="form-control validate">
+								</div>
 
-<div class="md-form mb-4">
-<input type="number" id="form6" class="form-control validate">
-<label class="modal-title w-50 font-weight-bold" data-error="wrong" data-success="right" for="form6" >Quantity</label>
-</div>
+								<div class="md-form mb-4">
+									<label class="modal-title w-50 font-weight-bold"
+										data-error="wrong" data-success="right" for="form5">Brand</label>
+									<input type="text" id="form5" class="form-control validate">
+								</div>
 
-<div class="md-form mb-4">
-<input type="text" id="form7" class="form-control validate">
-<label class="modal-title w-50 font-weight-bold" data-error="wrong" data-success="right" for="form7" >Discount</label>
-</div>
+								<div class="md-form mb-4">
+									<label class="modal-title w-50 font-weight-bold"
+										data-error="wrong" data-success="right" for="form6">Quantity</label>
+									<input type="number" id="form6" class="form-control validate">
+								</div>
 
-</div>
+								<div class="md-form mb-4">
+									<label class="modal-title w-50 font-weight-bold"
+										data-error="wrong" data-success="right" for="form7">Discount</label>
+									<input type="text" id="form7" class="form-control validate">
+								</div>
 
-<div class="modal-footer d-flex justify-content-center">
+								<div class="md-form mb-4">
+									<label class="modal-title w-50 font-weight-bold"
+										data-error="wrong" data-success="right" for="form3">Image</label>
+									<input type="text" id="form3" class="form-control validate">
+								</div>
 
-<button class="btn btn-red" onclick="#">Submit</button>
-</div>
-</div>
-</div>
-</div>
+							</div>
 
-<div class="text-left" >
-<a href="" class="btn btn-rounded mb-4" data-toggle="modal" data-target="#modalAddProductForm">Add Products</a>
-</div>
-				
+							<div class="modal-footer d-flex justify-content-center">
+
+								<button class="modal-title w-50 font-weight-bold"
+									class="btn btn-red" onclick="#">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="text-left">
+					<a href="" class="btn btn-rounded mb-4" data-toggle="modal"
+						data-target="#modalAddProductForm">Add Products</a>
+				</div>
+<div>display details of retailer (Amit Shukla)</div>
 			</div>
 
-				<!-- ****** Footer Area Start ****** -->
-				<footer class="footer_area">
-					<div class="container">
-						<div class="row">
-							<!-- Single Footer Area Start -->
-							<div class="col-12 col-md-6 col-lg-3">
-								<div class="single_footer_area">
-									<div class="footer-logo">
-										<img src="images/logo.png" alt="" height="200px" width="200px">
-										<div class="copywrite_text d-flex align-items-center">
-											<p>
-												Copyright &copy;
-												<script>document.write(new Date().getFullYear());</script>
-												All rights reserved | Made By - CHAG
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- Single Footer Area Start -->
-							<div class="col-12 col-sm-6 col-md-3 col-lg-2">
-								<div class="single_footer_area">
-									<ul class="footer_widget_menu">
-										<li><a href="#">About</a></li>
-										<li><a href="#">Our Policies</a></li>
-										<li><a href="#">Contact Us</a></li>
-									</ul>
-								</div>
-							</div>
-							<!-- Single Footer Area Start -->
-							<div class="col-12 col-sm-6 col-md-3 col-lg-2">
-								<div class="single_footer_area">
-									<ul class="footer_widget_menu">
-										<li><a href="userdashboard.html">My Account</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="retailer.html">Afiliates</a></li>
-									</ul>
-								</div>
-							</div>
-							<!-- Single Footer Area Start -->
-							<div class="col-12 col-lg-5">
-								<div class="single_footer_area">
-									<div class="footer_heading mb-30">
-										<h6>Subscribe to our newsletter</h6>
-									</div>
-									<div class="subscribtion_form">
-										<form action="#" method="post">
-											<input type="email" name="mail" class="mail"
-												placeholder="Your email here">
-											<button type="submit" class="submit">Subscribe</button>
-										</form>
+			<!-- ****** Footer Area Start ****** -->
+			<footer class="footer_area">
+				<div class="container">
+					<div class="row">
+						<!-- Single Footer Area Start -->
+						<div class="col-12 col-md-6 col-lg-3">
+							<div class="single_footer_area">
+								<div class="footer-logo">
+									<img src="images/logo.png" alt="" height="200px" width="200px">
+									<div class="copywrite_text d-flex align-items-center">
+										<p>
+											Copyright &copy;
+											<script>document.write(new Date().getFullYear());</script>
+											All rights reserved | Made By - CHAG
 									</div>
 								</div>
 							</div>
 						</div>
-
+						<!-- Single Footer Area Start -->
+						<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+							<div class="single_footer_area">
+								<ul class="footer_widget_menu">
+									<li><a href="#">About</a></li>
+									<li><a href="#">Our Policies</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- Single Footer Area Start -->
+						<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+							<div class="single_footer_area">
+								<ul class="footer_widget_menu">
+									<li><a href="userdashboard.html">My Account</a></li>
+									<li><a href="cart.html">Cart</a></li>
+									<li><a href="retailer.html">Afiliates</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- Single Footer Area Start -->
+						<div class="col-12 col-lg-5">
+							<div class="single_footer_area">
+								<div class="footer_heading mb-30">
+									<h6>Subscribe to our newsletter</h6>
+								</div>
+								<div class="subscribtion_form">
+									<form action="#" method="post">
+										<input type="email" name="mail" class="mail"
+											placeholder="Your email here">
+										<button type="submit" class="submit">Subscribe</button>
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
-					<!-- </div> -->
-			</div>
-			</footer>
-			<!-- ****** Footer Area End ****** -->
+
+				</div>
+				<!-- </div> -->
 		</div>
+		</footer>
+		<!-- ****** Footer Area End ****** -->
+	</div>
 	</div>
 	<!-- /.wrapper end -->
 
