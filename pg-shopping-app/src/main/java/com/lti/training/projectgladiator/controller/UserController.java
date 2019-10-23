@@ -28,10 +28,9 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping(path = "/user/register.do", method = RequestMethod.POST)
-	public String registerUser(@ModelAttribute("user") User user,
-								UserDTO userData, Map model) {
+	public String registerUser(UserDTO userData, Map model) {
 		
-		user = new User();
+		User user = new User();
 		user.setName(userData.getName());
 		user.setEmail(userData.getEmail());
 		user.setMobileNumber(userData.getMobileNumber());
@@ -45,7 +44,7 @@ public class UserController {
 			// display relevant error on page
 		}
 		model.put("name", user.getName());
-		return "../welcomeUser.jsp";
+		return "redirect:userDashboard";
 	}
 	
 	@RequestMapping(path = "/user/login.do", method = RequestMethod.POST)

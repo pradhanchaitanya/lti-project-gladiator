@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans 
-	xmlns="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context"
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" 
 	xmlns:tx="http://www.springframework.org/schema/tx"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<!-- TODO: change packages -->
 	<context:component-scan base-package="com.lti.training.projectgladiator" />
@@ -17,7 +19,8 @@
 		destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.101.12:1521:XE" /> -->
+		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.101.12:1521:XE" 
+			/> -->
 		<property name="username" value="glad_dev" />
 		<property name="password" value="dev" />
 	</bean>
@@ -44,40 +47,53 @@
 	</bean>
 	<tx:annotation-driven />
 
+	<!-- Assets Config -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/views/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	
+	<mvc:resources mapping="/resources/**" location="/resources/"  
+	cache-period="31556926"/>
+
+    <mvc:annotation-driven />
+
 	<!-- Mail Sender Config -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.office365.com" />
 		<property name="port" value="587" />
 		<property name="username" value="chaitanya.pradhan@lntinfotech.com" />
 		<property name="password" value="chaitu1211%" />
-		
+
 		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.transport.protocol">smtp</prop>
-                <prop key="mail.smtp.auth">true</prop>
-                <prop key="mail.smtp.starttls.enable">true</prop>
-                <prop key="mail.debug">true</prop>
-                <prop key="mail.smtp.connecttimeout">50000</prop>
-                <prop key="mail.smtp.timeout">30000</prop>
-                <prop key="mail.smtp.writetimeout">50000</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.debug">true</prop>
+				<prop key="mail.smtp.connecttimeout">50000</prop>
+				<prop key="mail.smtp.timeout">30000</prop>
+				<prop key="mail.smtp.writetimeout">50000</prop>
 			</props>
 		</property>
 	</bean>
-	
+
 	<!-- Pre-configured Message -->
-	<!-- 
-	<bean id="preConfiguredSimpleMailMessage" class="org.springframework.mail.SimpleMailMessage">
-        <property name="from" value="chaitanya.pradhan@lntinfotech.com"></property>
-    </bean>
-    
-    <bean id="preConfiguredJavaxMailMessage" class="javax.mail.internet.MimeMessage">
-        <property name="from" value="chaitanya.pradhan@lntinfotech.com"></property>
-    </bean>
-	-->
-	
+	<!-- <bean id="preConfiguredSimpleMailMessage" class="org.springframework.mail.SimpleMailMessage"> 
+		<property name="from" value="chaitanya.pradhan@lntinfotech.com"></property> 
+		</bean> <bean id="preConfiguredJavaxMailMessage" class="javax.mail.internet.MimeMessage"> 
+		<property name="from" value="chaitanya.pradhan@lntinfotech.com"></property> 
+		</bean> -->
+
 	<!-- Mail Service Config -->
-	<bean id="mailService" class="com.lti.training.projectgladiator.service.implementations.MailService">
+	<bean id="mailService"
+		class="com.lti.training.projectgladiator.service.implementations.MailService">
 		<property name="mailSender" ref="mailSender" />
 	</bean>
-	
+
 </beans>
