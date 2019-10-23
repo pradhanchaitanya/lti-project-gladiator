@@ -2101,3 +2101,7 @@ img {
     line-height: 2;
     color: #9f9f9f;
 }
+
+.aboutus-img{
+	border-radius:55%;
+}
