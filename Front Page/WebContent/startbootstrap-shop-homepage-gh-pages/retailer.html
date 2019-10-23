@@ -46,15 +46,9 @@
 				aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+			
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
-						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Log</a>
-						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="userdashboard.html">Dashboard</a>
-						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -69,6 +63,13 @@
 					</li>
 					<li class="nav-item"><a class="nav-link" href="login.html">Login/SignUp</a>
 					</li>
+					
+				<form class="form-inline my-2 my-lg-0 ml-auto">
+				<input class="form-control" type="search" placeholder="Search"
+					aria-label="Search">&nbsp;&nbsp;&nbsp;
+				<button class="text-white bg-dark" class="btn btn-outline-black btn-md my-2 my-sm-0 ml-3"
+					type="submit">Search</button>
+			</form>
 				</ul>
 			</div>
 		</div>
@@ -142,5 +143,15 @@
 
 	</div>
 	<!-- /.container -->
+	
+	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+	<!-- Popper js -->
+	<script src="js/popper.min.js"></script>
+	<!-- Bootstrap js -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Plugins js -->
+	<script src="js/plugins.js"></script>
+	<!-- Active js -->
+	<script src="js/active.js"></script>
 	</body>
 	</html>
