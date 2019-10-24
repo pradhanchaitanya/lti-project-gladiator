@@ -3,7 +3,7 @@
   <display-name>pg-shopping-app</display-name>
    
   <welcome-file-list>
-    <welcome-file>/index.jsp</welcome-file>
+    <welcome-file>showHomepage.do</welcome-file>
   </welcome-file-list>
   
   
@@ -17,7 +17,7 @@
    
    <servlet-mapping>
       <servlet-name>front-controller</servlet-name>
-      <url-pattern>/</url-pattern>
+      <url-pattern>*.do</url-pattern>
    </servlet-mapping>
    
    <context-param>

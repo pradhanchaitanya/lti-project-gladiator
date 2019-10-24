@@ -24,11 +24,16 @@ import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.service.UserService;
 
 @Controller
-@SessionAttributes("user")
+@SessionAttributes({"user", "isError", "error"})
 public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@RequestMapping(path = "/registerUser.do", method = RequestMethod.GET)
+	public String showRegisterForUser() {
+		return "signup.jsp";
+	}
 	
 	@RequestMapping(path = "/registerUser.do", method = RequestMethod.POST)
 	public String registerUser(UserDTO userData, ModelMap model) {
@@ -43,9 +48,10 @@ public class UserController {
 		user.setCreatedAt(LocalDateTime.now());
 		try {
 			userService.addNewUser(user);
-		} catch (FailedUpsertException e) {
-			e.printStackTrace();
-			// display relevant error on page
+		} catch (Exception e) {
+			model.addAttribute("isError", true);
+			model.addAttribute("error", "Please enter valid data!");
+			return "redirect:/registerUser.do";
 		}
 		model.addAttribute("user", user);
 		return "redirect:/showDashboard.do";
@@ -73,6 +79,11 @@ public class UserController {
 		
 		model.addAttribute("user", validatedUser);
 		return "redirect:/showDashboard.do";
+	}
+	
+	@RequestMapping(path = "/showCart.do", method = RequestMethod.GET)
+	public String showCart(ModelMap model) {
+		return "cart.jsp";
 	}
 
 	@RequestMapping(path = "/logoutUser.do")

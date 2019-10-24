@@ -5,8 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.lambdaworks.crypto.SCryptUtil;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
+import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
 import com.lti.training.projectgladiator.model.Retailer;
+import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.repository.RetailerRepository;
 import com.lti.training.projectgladiator.service.RetailerService;
 
@@ -38,6 +40,29 @@ public class RetailerServiceImpl implements RetailerService {
 		}
 
 		return retailer;
+	}
+	
+	@Override
+	public Retailer fetchRetailerByEmail(String email) throws NoUserFoundException, MultipleUsersFoundException {
+		Retailer retailer = retailerRepository.fetchRetailerByEmail(email);
+		if (retailer == null) {
+			throw new NoUserFoundException();
+		}
+		
+		return retailer;
+	}
+	
+	@Override
+	public Retailer validateRetailer(String email, String password) throws NoUserFoundException {
+		Retailer existingRetailer = fetchRetailerByEmail(email);
+		
+		// validate password
+		boolean matched = SCryptUtil.check(password, existingRetailer.getPassword());
+		
+		if (matched)
+			return existingRetailer;
+		
+		return null;
 	}
 
 }

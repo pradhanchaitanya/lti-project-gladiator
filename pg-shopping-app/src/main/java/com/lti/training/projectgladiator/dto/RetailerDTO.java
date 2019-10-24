@@ -1,6 +1,6 @@
 package com.lti.training.projectgladiator.dto;
 
-public class UserDTO {
+public class RetailerDTO {
 
 	private String name;
 	private String email;

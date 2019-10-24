@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,25 +11,25 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
 <script src="main.js"></script>
 <title>Shop Homepage</title>
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/shop-homepage.css" rel="stylesheet">
+<link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
 <!-- Favicon  -->
-<link rel="icon" href="img/core-img/favicon.ico">
+<link rel="icon" href="<c:url value="/resources/img/core-img/favicon.ico" />">
 
 <!-- Core Style CSS -->
-<link rel="stylesheet" href="css/core-style.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/style.css" />">
 
 <!-- Responsive CSS -->
-<link href="css/responsive.css" rel="stylesheet">
+<link href="<c:url value="/resources/css/responsive.css" />" rel="stylesheet">
 
 </head>
 
@@ -37,7 +41,7 @@
 
 
 			<a class="navbar-brand" href="index.html"> <img
-				src="images/logo.png" width="50" height="50"
+				src="<c:url value="/resources/images/logo.png" />" width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
 
@@ -53,7 +57,7 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Log</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="userdashboard.html">Dashboard</a>
+							<a class="dropdown-item" href="#">Dashboard</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
@@ -81,7 +85,7 @@
 		<div class="row align-items-center my-5">
 			<div class="col-lg-7">
 				<img class="img-fluid rounded mb-4 mb-lg-0"
-					src="images/retailer.png" alt="">
+					src="<c:url value="/resources/images/retailer.png" />" alt="">
 			</div>
 			<!-- /.col-lg-8 -->
 			<div class="col-lg-5">

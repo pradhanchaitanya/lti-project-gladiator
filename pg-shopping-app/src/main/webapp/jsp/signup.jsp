@@ -22,7 +22,12 @@
         <img src="logo.jpeg" style="height: 10%; width:12%;left: 55%;  padding: 2% 0% 0% 45%;">
     </div>
    -->
-
+   <c:if test="${ isError == true}">
+   <script>
+   	alert(${ error })
+   </script>
+	</c:if>
+	
 	<div id="outer">
 		<img src="<c:url value="/resources/images/avatar.png" />" class="avatar"><br>
 		<h1 >Create Account</h1>

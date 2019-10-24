@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,29 +14,29 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" type="text/css" href="main.css">
-<script src="main.js"></script>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
+<script src="<c:url value="/resources/js/main.js" />"></script>
 <title>Shop Homepage</title>
 
 
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/shop-homepage.css" rel="stylesheet">
+<link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
 <!-- Favicon  -->
-<link rel="icon" href="img/core-img/favicon.ico">
+<link rel="icon" href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
 
 <!-- Core Style CSS -->
-<link rel="stylesheet" href="css/core1-style.css">
-<link rel="stylesheet" href="css/core-style.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="<c:url value="/resources/css/core1-style.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/style.css" />">
 
 <!-- Responsive CSS -->
-<link href="css/responsive.css" rel="stylesheet">
-<script src="main.js"></script>
+<link href="<c:url value="/resources/css/responsive.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/main.js" />"></script>
 </head>
 
 <body>
@@ -40,7 +47,7 @@
 
 
 			<a class="navbar-brand" href="index.html"> <img
-				src="images/logo.png" width="50" height="50"
+				src="<c:url value="/resources/images/logo.png" />" width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
 
@@ -101,7 +108,7 @@
  
   <!-- Left Column / Headphones Image -->
   <div class="left-column">
-    <img data-image="black" class="active" src="images/mi_k20.jpg"  alt="">
+    <img data-image="black" class="active" src="<c:url value="/resources/images/mi_k20.jpg" />"  alt="">
   </div>
  
  

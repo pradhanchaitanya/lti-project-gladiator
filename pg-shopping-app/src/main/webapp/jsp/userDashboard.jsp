@@ -71,7 +71,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
 							<a class="dropdown-item" href="#">Shop</a> <a
 								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="cart.html">Cart</a> <a
+								Details</a> <a class="dropdown-item" href="showCart.do">Cart</a> <a
 								class="dropdown-item" href="checkout.html">Checkout</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
@@ -103,10 +103,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Orders</a>
-    <a href="cart.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Cart Items</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  WishList</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>Orders</a>
+    <a href="showCart.do" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>Cart Items</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>WishList</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>Settings</a><br><br>
   </div>
 </nav>
 
@@ -209,7 +209,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="single_footer_area">
 									<div class="footer-logo">
-										<img src="images/logo.png" alt="" height="200px" width="200px">
+										<img src="<c:url value="/resources/images/logo.png" />" alt="" height="200px" width="200px">
 										<div class="copywrite_text d-flex align-items-center">
 											<p>
 												Copyright &copy;
@@ -223,9 +223,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 							<div class="col-12 col-sm-6 col-md-3 col-lg-2">
 								<div class="single_footer_area">
 									<ul class="footer_widget_menu">
-										<li><a href="#">About</a></li>
+										<li><a href="showAbout.do">About</a></li>
 										<li><a href="#">Our Policies</a></li>
-										<li><a href="#">Contact Us</a></li>
+										<li><a href="#"  data-toggle="modal" data-target="#modalContactForm">Contact Us</a></li>
 									</ul>
 								</div>
 							</div>
@@ -233,8 +233,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 							<div class="col-12 col-sm-6 col-md-3 col-lg-2">
 								<div class="single_footer_area">
 									<ul class="footer_widget_menu">
-										<li><a href="userdashboard.html">My Account</a></li>
-										<li><a href="cart.html">Cart</a></li>
+										<li><a href="#">My Account</a></li>
+										<li><a href="showCart.do">Cart</a></li>
 										<li><a href="retailer.html">Afiliates</a></li>
 									</ul>
 								</div>
@@ -257,6 +257,54 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 						</div>
 
 					</div>
+					
+		<!-- Modal for Contact Us Page-->
+
+<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Write to us</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fa fa-user prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="form34">Your name</label>
+          <input type="text" id="form34" class="form-control validate" value="${ user.name }">        
+        </div>
+
+        <div class="md-form mb-5">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="form29">Your email</label>
+          <input type="email" id="form29" class="form-control validate" value="${ user.email }">        
+        </div>
+
+        <div class="md-form mb-5">
+          <i class="fa fa-tag prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="form32">Subject</label>
+                 <input type="text" id="form32" class="form-control validate">
+       
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-pencil prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="form8">Your message</label>
+                  <textarea type="text" id="form8" class="md-textarea form-control" rows="4"></textarea>
+        
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="modal-title w-50 font-weight-bold" class="btn btn-unique">Send <i class="fa fa-paper-plane-o ml-1"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 		<!-- </div> -->
 		</div>
 		</footer>

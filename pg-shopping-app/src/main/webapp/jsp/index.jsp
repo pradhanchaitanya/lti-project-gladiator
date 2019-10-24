@@ -331,7 +331,7 @@
 									<ul class="footer_widget_menu">
 										<li><a href="showDashboard.do">My Account</a></li>
 										<li><a href="cart.html">Cart</a></li>
-										<li><a href="retailer.html">Afiliates</a></li>
+										<li><a href="showRetailerHomepage.do">Afiliates</a></li>
 									</ul>
 								</div>
 							</div>

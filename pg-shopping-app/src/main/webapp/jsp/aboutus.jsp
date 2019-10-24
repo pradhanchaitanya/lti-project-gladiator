@@ -105,7 +105,7 @@ The interests of our customers are always top priority for us, so we hope you wi
 							<div class="col-12 col-md-6 col-lg-3">
 								<div class="single_footer_area">
 									<div class="footer-logo">
-										<img src="images/logo.png" alt="" height="200px" width="200px">
+										<img src="<c:url value="/resources/images/logo.png" />" alt="" height="200px" width="200px">
 										<div class="copywrite_text d-flex align-items-center">
 											<p>
 												Copyright &copy;

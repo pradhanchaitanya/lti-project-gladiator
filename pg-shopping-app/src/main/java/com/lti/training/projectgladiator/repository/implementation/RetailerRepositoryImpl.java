@@ -3,6 +3,7 @@ package com.lti.training.projectgladiator.repository.implementation;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import com.lti.training.projectgladiator.repository.RetailerRepository;
 @Repository
 public class RetailerRepositoryImpl extends GenericRepositoryImpl implements RetailerRepository {
 
-	@Autowired
+	@PersistenceContext
 	private EntityManager entityManager;
 	
 	@Override

@@ -24,4 +24,13 @@ public class HomeController {
 		}
 		return "aboutus.jsp";
 	}
+	
+	@RequestMapping("/showRetailerHomepage.do")
+	public String showRetailerHomePage(ModelMap model) {
+		if (model.containsAttribute("retialer")) {
+			return "retailer.jsp?loggedin=true";
+		}
+		return "retailer.jsp";
+	}
+	
 }

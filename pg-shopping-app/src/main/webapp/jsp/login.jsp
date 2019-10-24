@@ -36,7 +36,7 @@
         </div>
 	  <br>
         <a href="forgotpassword.html" id="fpass">Forgot Password?</a><br>
-        <p><i><b>New to ShopWeb?</b></i> <a href="jsp/signup.jsp" style="float:right;">Click Here to Sign Up</a></p>
+        <p><i><b>New to ShopWeb?</b></i> <a href="registerUser.do" style="float:right;">Click Here to Sign Up</a></p>
 
        	</form>
        </div>
