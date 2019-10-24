@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<<<<<<< HEAD:pg-shopping-app/src/main/webapp/jsp/retailer.jsp
+=======
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form" %>
+>>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006:pg-shopping-app/src/main/webapp/jsp/retailer.html
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +17,11 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
+<<<<<<< HEAD:pg-shopping-app/src/main/webapp/jsp/retailer.jsp
 <script src="main.js"></script>
+=======
+<script src="<c:url value="/resources/js/main.js" />"> </script>
+>>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006:pg-shopping-app/src/main/webapp/jsp/retailer.html
 <title>Shop Homepage</title>
 
 <!-- Bootstrap core CSS -->
@@ -22,7 +31,11 @@
 <link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
 <!-- Favicon  -->
+<<<<<<< HEAD:pg-shopping-app/src/main/webapp/jsp/retailer.jsp
 <link rel="icon" href="<c:url value="/resources/img/core-img/favicon.ico" />">
+=======
+<link rel="icon" href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
+>>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006:pg-shopping-app/src/main/webapp/jsp/retailer.html
 
 <!-- Core Style CSS -->
 <link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">

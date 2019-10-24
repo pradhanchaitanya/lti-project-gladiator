@@ -61,8 +61,8 @@
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
 							<a class="dropdown-item" href="#">Shop</a> <a
 								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="cart.html">Cart</a> <a
-								class="dropdown-item" href="checkout.html">Checkout</a>
+								Details</a> <a class="dropdown-item" href="cart.jsp">Cart</a> <a
+								class="dropdown-item" href="checkout.jsp">Checkout</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
@@ -331,7 +331,11 @@
 									<ul class="footer_widget_menu">
 										<li><a href="showDashboard.do">My Account</a></li>
 										<li><a href="cart.html">Cart</a></li>
+<<<<<<< HEAD
 										<li><a href="showRetailerHomepage.do">Afiliates</a></li>
+=======
+										<li><a href="retailer.jsp">Afiliates</a></li>
+>>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006
 									</ul>
 								</div>
 							</div>
