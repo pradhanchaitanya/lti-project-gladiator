@@ -10,11 +10,16 @@
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="<c:url value="/resources/css/signup.css" />" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="<c:url value="/resources/login.js" />"></script>
     <base href="/pg-shopping-app/">
 </head>
 <body>
 <!-- <body background="background-image:bg1.jpg"> -->
+	<div class="outerlogin" style="width: 10%; text-color: fff; margin: 10px;">
+		<a href="showHomepage.do"><button>Back to Home</button></a>
+	</div>
 	<div id="outerlogin">
 	<img src="<c:url value="/resources/images/avatar.png" />" class="avatar"><br>
     <h1 >Login</h1>
@@ -31,7 +36,7 @@
         </div>
 
          <div>
-        <button type="submit" onclick="return validateLoginForm()" method="post"  font-family="verdana" style="color: white"><strong>Login In</strong></button>
+        <button type="submit" onclick="return validateLoginForm()" method="post"  font-family="verdana" style="color: white"><strong>Log In</strong></button>
       
         </div>
 	  <br>

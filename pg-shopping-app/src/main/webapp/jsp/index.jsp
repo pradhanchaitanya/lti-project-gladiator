@@ -331,11 +331,7 @@
 									<ul class="footer_widget_menu">
 										<li><a href="showDashboard.do">My Account</a></li>
 										<li><a href="cart.html">Cart</a></li>
-<<<<<<< HEAD
 										<li><a href="showRetailerHomepage.do">Afiliates</a></li>
-=======
-										<li><a href="retailer.jsp">Afiliates</a></li>
->>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006
 									</ul>
 								</div>
 							</div>

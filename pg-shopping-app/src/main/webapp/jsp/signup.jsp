@@ -12,7 +12,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Sign Up</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" media="screen" href="<c:url value="/resources/css/signup.css" />" />
 <script src="<c:url value="/resources/js/signup.js" />"></script>
 <base href="/pg-shopping-app/">
@@ -27,7 +28,9 @@
    	alert(${ error })
    </script>
 	</c:if>
-	
+	<div class="outerlogin" style="width: 10%; text-color: fff; margin: 10px;">
+		<a href="showHomepage.do"><button>Back to Home</button></a>
+	</div>
 	<div id="outer">
 		<img src="<c:url value="/resources/images/avatar.png" />" class="avatar"><br>
 		<h1 >Create Account</h1>
@@ -69,7 +72,7 @@
 					<strong>Register</strong>
 				</button>
 			</div>
-
+			<p><i><b>Already a User?</b></i> <a href="loginUser.do" style="float:right;">Click Here to Login</a></p>
 		</form>
 	</div>
 

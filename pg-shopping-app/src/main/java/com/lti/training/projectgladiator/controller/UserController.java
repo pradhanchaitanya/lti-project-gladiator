@@ -83,7 +83,11 @@ public class UserController {
 	
 	@RequestMapping(path = "/showCart.do", method = RequestMethod.GET)
 	public String showCart(ModelMap model) {
-		return "cart.jsp";
+		if (model.containsAttribute("user")) {
+			return "cart.jsp";
+		}
+		
+		return "redirect:/loginUser.do";
 	}
 
 	@RequestMapping(path = "/logoutUser.do")

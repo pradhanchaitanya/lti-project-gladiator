@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />">
 <script src="<c:url value="/resources/js/main.js" />" > </script>
 
-<title>Shop Homepage</title>
+<title>Cart</title>
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
@@ -57,7 +57,7 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Log</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="userdashboard.html">Dashboard</a>
+							<a class="dropdown-item" href="showDashboard.do">Dashboard</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
@@ -66,12 +66,12 @@
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
 							<a class="dropdown-item" href="#">Shop</a> <a
 								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="cart.html">Cart</a> <a
+								Details</a> <a class="dropdown-item" href="#">Cart</a> <a
 								class="dropdown-item" href="checkout.html">Checkout</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="/jsp/login.jsp">Login</a>
+					<li class="nav-item"><a class="nav-link" href="logoutUser.do">Logout</a>
 					</li>
 				</ul>
 			</div>
@@ -84,9 +84,9 @@
 
                     <div class="col-12">
                         <ol class="breadcrumb d-flex align-items-center">
-                            <li class="breadcrumb-item"><a href="index.html">Log</a></li>
-                            <li class="breadcrumb-item"><a href="userdashboard.html">DashBoard</a></li>
-                            <li class="breadcrumb-item active"><a href="cart.html">Cart</a></li>
+                            <li class="breadcrumb-item"><a href="showHomepage.do">Log</a></li>
+                            <li class="breadcrumb-item"><a href="showDashboard.do">Dashboard</a></li>
+                            <li class="breadcrumb-item active"><a href="#">Cart</a></li>
                         </ol>
                     </div>
             </div>

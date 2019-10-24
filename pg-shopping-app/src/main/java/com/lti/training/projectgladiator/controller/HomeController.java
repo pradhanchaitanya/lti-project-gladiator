@@ -27,7 +27,7 @@ public class HomeController {
 	
 	@RequestMapping("/showRetailerHomepage.do")
 	public String showRetailerHomePage(ModelMap model) {
-		if (model.containsAttribute("retialer")) {
+		if (model.containsAttribute("retailer")) {
 			return "retailer.jsp?loggedin=true";
 		}
 		return "retailer.jsp";
