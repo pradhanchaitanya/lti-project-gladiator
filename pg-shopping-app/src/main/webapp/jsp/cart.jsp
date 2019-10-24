@@ -1,32 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form" %>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" type="text/css" href="main.css">
-<script src="main.js"></script>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css" />">
+<script src="<c:url value="/resources/js/main.js" />" > </script>
+
 <title>Shop Homepage</title>
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/shop-homepage.css" rel="stylesheet">
+<link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
 <!-- Favicon  -->
-<link rel="icon" href="img/core-img/favicon.ico">
+<link rel="icon" href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
 
 <!-- Core Style CSS -->
-<link rel="stylesheet" href="css/core-style.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/css/style.css" />" >
 
 <!-- Responsive CSS -->
-<link href="css/responsive.css" rel="stylesheet">
-
+<link href="<c:url value="/resources/css/responsive.css" />" rel="stylesheet">
+<base href="/pg-shopping-app/">
 </head>
 
 <body>
@@ -37,7 +42,7 @@
 
 
 			<a class="navbar-brand" href="index.html"> <img
-				src="images/logo.png" width="50" height="50"
+				src="<c:url value="/resources/images/logo1.png" />" width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
 
@@ -67,7 +72,7 @@
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="login.html">Login/SignUp</a>
+					<li class="nav-item"><a class="nav-link" href="/jsp/login.jsp">Login</a>
 					</li>
 				</ul>
 			</div>
@@ -105,7 +110,7 @@
                                 <tbody>
                                     <tr>
                                         <td class="cart_product_img d-flex align-items-center">
-                                            <a href="#"><img src="images/tp1.png" alt="Product"></a>
+                                            <a href="#"><img src="<c:url value="/resources/images/tp1.png" />" alt="Product"></a>
                                             <h6>One Plus 7T</h6>
                                         </td>
                                         <td class="price"><span>Rs.37,999</span></td>
@@ -180,14 +185,14 @@
         </div>
         <!-- ****** Cart Area End ****** -->
         <!-- jQuery (Necessary for All JavaScript Plugins) -->
-	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+	<script src="<c:url value="/resources/js/jquery/jquery-2.2.4.min.js" />"></script>
 	<!-- Popper js -->
-	<script src="js/popper.min.js"></script>
+	<script src="<c:url value="/resources/js/popper.min.js" />"></script>
 	<!-- Bootstrap js -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 	<!-- Plugins js -->
-	<script src="js/plugins.js"></script>
+	<script src="<c:url value="/resources/js/plugins.js" />"></script>
 	<!-- Active js -->
-	<script src="js/active.js"></script>
+	<script src="<c:url value="/resources/js/active.js" />"></script>
  </body>
 </html>
