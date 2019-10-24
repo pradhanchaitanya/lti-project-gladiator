@@ -1,3 +1,10 @@
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Sign Up</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,22 +14,22 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" type="text/css" href="main.css">
-<script src="main.js"></script>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
+<script src="<c:url value="/resources/js/main.js" />"></script>
 <title>Shop Homepage</title>
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/shop-homepage.css" rel="stylesheet">
+<link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
 <!-- Favicon  -->
-<link rel="icon" href="img/core-img/favicon.ico">
+<link rel="icon" href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
 
 <!-- Core Style CSS -->
-<link rel="stylesheet" href="css/core-style.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/style.css" />">
 
 <!-- Responsive CSS -->
 <link href="css/responsive.css" rel="stylesheet">
@@ -37,7 +44,7 @@
 
 
 			<a class="navbar-brand" href="index.html"> <img
-				src="images/logo.png" width="50" height="50"
+				src="<c:url value="/resources/images/logo.png"  />"width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
 
@@ -104,7 +111,7 @@
 			</div> 
 			<div class="col-lg-9">
 				<img class="img-fluid rounded mb-4 "
-					src="images/discount.png" alt="">
+					src="<c:url value="/resources/images/discount.png" />" alt="">
 			</div>
 			
 			<section class="new_arrivals_area section_padding_100_0 clearfix">
@@ -127,7 +134,7 @@
 								data-wow-delay="0.2s">
 								<!-- Product Image -->
 								<div class="product-img">
-									<img src="images/tp1.png" alt="">
+									<img src="<c:url value="/resources/images/tp1.png" />" alt="">
 									<div class="product-quicview">
 										<a href="#" data-toggle="modal" data-target="#quickview"><i
 											class="ti-plus"></i></a>
@@ -149,7 +156,7 @@
 								data-wow-delay="0.2s">
 								<!-- Product Image -->
 								<div class="product-img">
-									<img src="images/tp2.png" alt="">
+									<img src="<c:url value="/resources/images/tp2.png" />" alt="">
 									<div class="product-quicview">
 										<a href="#" data-toggle="modal" data-target="#quickview"><i
 											class="ti-plus"></i></a>
@@ -171,7 +178,7 @@
 								data-wow-delay="0.2s">
 								<!-- Product Image -->
 								<div class="product-img">
-									<img src="images/tp3.png" alt="">
+									<img src="<c:url value="/resources/images/tp3.png" />" alt="">
 									<div class="product-quicview">
 										<a href="#" data-toggle="modal" data-target="#quickview"><i
 											class="ti-plus"></i></a>
@@ -193,7 +200,7 @@
 								data-wow-delay="0.2s">
 								<!-- Product Image -->
 								<div class="product-img">
-									<img src="images/tp4.png" alt="">
+									<img src="<c:url value="/resources/images/tp4.png" />" alt="">
 									<div class="product-quicview">
 										<a href="#" data-toggle="modal" data-target="#quickview"><i
 											class="ti-plus"></i></a>
@@ -215,7 +222,7 @@
 								data-wow-delay="0.2s">
 								<!-- Product Image -->
 								<div class="product-img">
-									<img src="images/tp5.png" alt="">
+									<img src="<c:url value="/resources/images/tp5.png" />" alt="">
 									<div class="product-quicview">
 										<a href="#" data-toggle="modal" data-target="#quickview"><i
 											class="ti-plus"></i></a>
@@ -236,7 +243,7 @@
 								data-wow-delay="0.2s">
 								<!-- Product Image -->
 								<div class="product-img">
-									<img src="images/tp6.png" alt="">
+									<img src="<c:url value="/resources/images/tp6.png" />" alt="">
 									<div class="product-quicview">
 										<a href="#" data-toggle="modal" data-target="#quickview"><i
 											class="ti-plus"></i></a>
@@ -248,7 +255,7 @@
 									<p>Buy kids wear and dresses for boy and girls age
 										(2+12).Wide range of options available.</p>
 									<!-- Add to Cart -->
-									<a href="#" class="add-to-cart-btn">ADD TO CART</a>
+									<a href="cart.jsp" class="add-to-cart-btn">ADD TO CART</a>
 								</div>
 							</div>
 

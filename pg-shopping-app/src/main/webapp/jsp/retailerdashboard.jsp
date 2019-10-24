@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form" %>
+
 <!DOCTYPE html>
 <html>
 <title>Retailer Dashboard</title>
@@ -14,20 +20,20 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/shop-homepage.css" rel="stylesheet">
+<link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
 <!-- Favicon  -->
-<link rel="icon" href="img/core-img/favicon.ico">
+<link rel="icon" href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
 
 <!-- Core Style CSS -->
-<link rel="stylesheet" href="css/core-style.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">
+<link rel="stylesheet" href="<c:url value="/resources/style.css" />">
 
 <!-- Responsive CSS -->
-<link href="css/responsive.css" rel="stylesheet">
+<link href="<c:url value="/resources/css/responsive.css" />" rel="stylesheet">
 
 
 
@@ -44,7 +50,7 @@ html, body, h1, h2, h3, h4, h5 {
 
 
 			<a class="navbar-brand" href="index.html"> <img
-				src="images/logo.png" width="50" height="50"
+				src="<c:url value="/resources/images/logo.png" />" width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
 
@@ -88,7 +94,7 @@ html, body, h1, h2, h3, h4, h5 {
 			<br>
 			<div class="w3-container w3-row">
 				<div class="w3-col s4">
-					<img src="images/avatar.png" class="w3-circle w3-margin-right"
+					<img src="<c:url value="/resources/images/avatar.png" />" class="w3-circle w3-margin-right"
 						style="width: 46px">
 				</div>
 				<div class="w3-col s8 w3-bar">
@@ -227,7 +233,7 @@ html, body, h1, h2, h3, h4, h5 {
 						<div class="col-12 col-md-6 col-lg-3">
 							<div class="single_footer_area">
 								<div class="footer-logo">
-									<img src="images/logo.png" alt="" height="200px" width="200px">
+									<img src="<c:url value="/resources/images/logo.png" />" alt="" height="200px" width="200px">
 									<div class="copywrite_text d-flex align-items-center">
 										<p>
 											Copyright &copy;

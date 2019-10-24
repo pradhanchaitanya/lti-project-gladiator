@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form" %>
 
 <html lang="en">
 <head>
@@ -7,7 +10,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -17,10 +20,10 @@
 
 
 <!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="product-homepage.css" rel="stylesheet">
+<link href="<c:url value="/resources/product-homepage.css" />" rel="stylesheet">
 </head>
 <body>
 	<div class="container-fluid">
@@ -138,9 +141,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
 
 </body>
 </html>
