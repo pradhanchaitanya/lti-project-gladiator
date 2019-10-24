@@ -66,8 +66,14 @@
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="loginUser.do">Login</a>
-					</li>
+					<c:choose>
+						<c:when test="${ param.loggedin == true }">
+							<li class="nav-item"><a class="nav-link" href="logoutUser.do">Logout</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item"><a class="nav-link" href="loginUser.do">Login</a></li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 			</div>
 		</div>
@@ -313,7 +319,7 @@
 							<div class="col-12 col-sm-6 col-md-3 col-lg-2">
 								<div class="single_footer_area">
 									<ul class="footer_widget_menu">
-										<li><a href="aboutus.html">About</a></li>
+										<li><a href="showAbout.do">About</a></li>
 										<li><a href="#">Our Policies</a></li>
 										<li><a href=""  data-toggle="modal" data-target="#modalContactForm">Contact Us</a></li>
 									</ul>
@@ -323,7 +329,7 @@
 							<div class="col-12 col-sm-6 col-md-3 col-lg-2">
 								<div class="single_footer_area">
 									<ul class="footer_widget_menu">
-										<li><a href="userdashboard.html">My Account</a></li>
+										<li><a href="showDashboard.do">My Account</a></li>
 										<li><a href="cart.html">Cart</a></li>
 										<li><a href="retailer.html">Afiliates</a></li>
 									</ul>
@@ -361,15 +367,13 @@
         <div class="md-form mb-5">
           <i class="fa fa-user prefix grey-text"></i>
           <label data-error="wrong" data-success="right" for="form34">Your name</label>
-                  <input type="text" id="form34" class="form-control validate">
-        
+          <input type="text" id="form34" class="form-control validate" value="${ user.name }">        
         </div>
 
         <div class="md-form mb-5">
           <i class="fa fa-envelope prefix grey-text"></i>
           <label data-error="wrong" data-success="right" for="form29">Your email</label>
-                  <input type="email" id="form29" class="form-control validate">
-        
+          <input type="email" id="form29" class="form-control validate" value="${ user.email }">        
         </div>
 
         <div class="md-form mb-5">
