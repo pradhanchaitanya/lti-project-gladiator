@@ -21,7 +21,7 @@
     <form name="myForm" action="loginUser.do" method="post">
          <div class="extra"> 
             <br> 
-            <input type="email" name="email" class="input" id="EMail" autofocus="on" placeholder="Enter Email">
+            <input type="email" name="username" class="input" id="EMail" autofocus="on" placeholder="Enter UserName">
             <p id="alert2"  text-align:left;" ></p>
         </div>
 
@@ -34,10 +34,7 @@
         <button type="submit" onclick="return validateLoginForm()" method="post"  font-family="verdana" style="color: white"><strong>Login</strong></button>
       
         </div>
-	  <br>
-        <a href="forgotpassword.html" id="fpass">Forgot Password?</a><br>
-        <p><i><b>New to ShopWeb?</b></i> <a href="registerUser.do" style="float:right;">Click Here to Sign Up</a></p>
-
+	  
        	</form>
        </div>
 </body>
