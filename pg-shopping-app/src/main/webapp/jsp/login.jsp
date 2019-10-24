@@ -36,12 +36,7 @@
         </div>
 
          <div>
-<<<<<<< HEAD
-        <button type="submit" onclick="return validateLoginForm()" method="post"  font-family="verdana" style="color: white"><strong>Log In</strong></button>
-=======
         <button type="submit" onclick="return validateLoginForm()" method="post"  font-family="verdana" style="color: white"><strong>Login</strong></button>
->>>>>>> 2810443fbf51232e41d661173c2182fe1455a6be
-      
         </div>
 	  <br>
         <a href="forgotpassword.html" id="fpass">Forgot Password?</a><br>
