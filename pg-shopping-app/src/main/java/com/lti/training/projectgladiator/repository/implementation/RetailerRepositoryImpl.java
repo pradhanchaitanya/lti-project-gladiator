@@ -6,13 +6,15 @@ import javax.persistence.NonUniqueResultException;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
 import com.lti.training.projectgladiator.model.Retailer;
 import com.lti.training.projectgladiator.repository.RetailerRepository;
 
-public class RetailerRepositoryImpl implements RetailerRepository {
+@Repository
+public class RetailerRepositoryImpl extends GenericRepositoryImpl implements RetailerRepository {
 
 	@Autowired
 	private EntityManager entityManager;

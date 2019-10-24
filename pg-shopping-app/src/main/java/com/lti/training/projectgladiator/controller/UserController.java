@@ -24,7 +24,7 @@ import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.service.UserService;
 
 @Controller
-@SessionAttributes({"user"})
+@SessionAttributes("user")
 public class UserController {
 
 	@Autowired
@@ -69,6 +69,7 @@ public class UserController {
 	public String loginUser(@RequestParam("email") String email,
 							@RequestParam("password") String password, ModelMap model) {
 		User validatedUser = userService.validateUser(email, password);
+		// handle invalid credentials
 		
 		model.addAttribute("user", validatedUser);
 		return "redirect:/showDashboard.do";

@@ -11,7 +11,7 @@ public class HomeController {
 
 	@RequestMapping("/showHomepage.do")
 	public String showHomePage(ModelMap model) {
-		if (model.get("user") != null) {
+		if (model.containsAttribute("user")) {
 			return "index.jsp?loggedin=true";
 		}
 		return "index.jsp";
@@ -19,7 +19,7 @@ public class HomeController {
 	
 	@RequestMapping("/showAbout.do")
 	public String showAboutPage(ModelMap model) {
-		if (model.get("user") != null) {
+		if (model.containsAttribute("user")) {
 			return "aboutus.jsp?loggedin=true";
 		}
 		return "aboutus.jsp";
