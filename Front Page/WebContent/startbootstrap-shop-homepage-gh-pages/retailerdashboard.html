@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Retailer Dashboard</title>
+<title>Shopp-E | Retailer Dashboard</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -36,33 +36,35 @@ html, body, h1, h2, h3, h4, h5 {
 	font-family: "Raleway", sans-serif
 }
 
-#blah{
-  max-width:180px;
-}
-input[type=file]{
-padding:10px;
-background:white;
+#blah {
+	max-width: 180px;
 }
 
-  :required  {  
-	 background: url(https://cdn0.iconfinder.com/data/icons/fugue/icon/asterisk-small.png) no-repeat;
-	 background-position:right top;
-	}
+input[type=file] {
+	padding: 10px;
+	background: white;
+}
+
+:required {
+	background:
+		url(https://cdn0.iconfinder.com/data/icons/fugue/icon/asterisk-small.png)
+		no-repeat;
+	background-position: right top;
+}
 </style>
 
 <script>
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
 
-        reader.onload = function (e) {
-            $('#blah')
-                .attr('src', e.target.result);
-        };
+			reader.onload = function(e) {
+				$('#blah').attr('src', e.target.result);
+			};
 
-        reader.readAsDataURL(input.files[0]);
-    }
-}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
 </script>
 <body class="w3-light-grey">
 
@@ -171,7 +173,7 @@ function readURL(input) {
 					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
-							<div class="modal-header text-center" >
+							<div class="modal-header text-center">
 								<h4 class="modal-title w-100 font-weight-bold">Add Product</h4>
 								<button type="button" class="close" data-dismiss="modal"
 									aria-label="Close">
@@ -180,54 +182,64 @@ function readURL(input) {
 							</div>
 							<div class="modal-body mx-3">
 
-								<div class="md-form mb-4"  class="input-group">
+								<div class="md-form mb-4" class="input-group">
 									<label class="modal-title w-50 font-weight-bold"
 										data-error="wrong" data-success="right" for="form">Enter
-										Name</label> <input  type="text" id="form"
+										Name</label> <input type="text" id="form"
 										class="form-control validate" required="required">
 								</div>
 
-								<div class="md-form mb-4"  class="input-group">
+								<div class="md-form mb-4" class="input-group">
 									<label class="modal-title w-50 font-weight-bold"
 										data-error="wrong" data-success="right" for="form1">Description</label>
-									<input type="text" id="form1" class="form-control validate" required="required">
+									<input type="text" id="form1" class="form-control validate"
+										required="required">
 								</div>
 
-								<div class="md-form mb-4"  class="input-group">
+								<div class="md-form mb-4" class="input-group">
 									<label class="modal-title w-50 font-weight-bold"
 										data-error="wrong" data-success="right" for="form2">Price</label>
-									<input type="text" id="form2" class="form-control validate" required="required">
+									<input type="text" id="form2" class="form-control validate"
+										required="required">
 								</div>
 
-								<div class="md-form mb-4"  class="input-group">
+								<div class="md-form mb-4" class="input-group">
 									<label class="modal-title w-50 font-weight-bold"
 										data-error="wrong" data-success="right" for="form4">Category</label>
-									<input type="text" id="form4" class="form-control validate" required="required">
+									<input type="text" id="form4" class="form-control validate"
+										required="required">
 								</div>
 
-								<div class="md-form mb-4"  class="input-group">
+								<div class="md-form mb-4" class="input-group">
 									<label class="modal-title w-50 font-weight-bold"
 										data-error="wrong" data-success="right" for="form5">Brand</label>
-									<input type="text" id="form5" class="form-control validate" required="required">
+									<input type="text" id="form5" class="form-control validate"
+										required="required">
 								</div>
 
-								<div class="md-form mb-4"  class="input-group">
+								<div class="md-form mb-4" class="input-group">
 									<label class="modal-title w-50 font-weight-bold"
 										data-error="wrong" data-success="right" for="form6">Quantity</label>
-									<input type="number" id="form6" class="form-control validate" required="required">
+									<input type="number" id="form6" class="form-control validate"
+										required="required">
 								</div>
 
-								<div class="md-form mb-4"  class="input-group">
+								<div class="md-form mb-4" class="input-group">
 									<label class="modal-title w-50 font-weight-bold"
 										data-error="wrong" data-success="right" for="form7">Discount</label>
-									<input type="text" id="form7" class="form-control validate" required="required">
+									<input type="text" id="form7" class="form-control validate"
+										required="required">
 								</div>
 
 								<div class="md-form mb-4" class="input-group">
 									<label class="modal-title w-50 font-weight-bold"
 										data-error="wrong" data-success="right" for="form3">Image</label><br>
-									<input type='file' onchange="readURL(this);" required="required"/> <br><img id="blah"
-										src="http://placehold.it/150" alt="your image"  />
+									<input type='file' onchange="readURL(this);"
+										required="required" /> <br>
+									<img id="blah" src="http://placehold.it/150" alt="your image" />&nbsp;&nbsp;
+									<button class="btn btn-secondary"
+										class="modal-title w-50 font-weight-bold"
+										class="btn btn-default">Upload</button>
 								</div>
 
 							</div>
@@ -235,7 +247,8 @@ function readURL(input) {
 							<div class="modal-footer d-flex justify-content-center">
 
 								<a href="index.html"><button class="btn btn-secondary"
-									class="modal-title w-50 font-weight-bold" class="form-control validate" class="btn btn-default" >Submit</button></a>
+										class="modal-title w-50 font-weight-bold"
+										class="form-control validate" class="btn btn-default">Submit</button></a>
 							</div>
 						</div>
 					</div>
@@ -260,7 +273,10 @@ function readURL(input) {
 									<div class="copywrite_text d-flex align-items-center">
 										<p>
 											Copyright &copy;
-											<script>document.write(new Date().getFullYear());</script>
+											<script>
+												document.write(new Date()
+														.getFullYear());
+											</script>
 											All rights reserved | Made By - CHAG
 									</div>
 								</div>
@@ -313,29 +329,29 @@ function readURL(input) {
 	<!-- /.wrapper end -->
 
 	<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
+		// Get the Sidebar
+		var mySidebar = document.getElementById("mySidebar");
 
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
+		// Get the DIV with overlay effect
+		var overlayBg = document.getElementById("myOverlay");
 
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-    overlayBg.style.display = "none";
-  } else {
-    mySidebar.style.display = 'block';
-    overlayBg.style.display = "block";
-  }
-}
+		// Toggle between showing and hiding the sidebar, and add overlay effect
+		function w3_open() {
+			if (mySidebar.style.display === 'block') {
+				mySidebar.style.display = 'none';
+				overlayBg.style.display = "none";
+			} else {
+				mySidebar.style.display = 'block';
+				overlayBg.style.display = "block";
+			}
+		}
 
-// Close the sidebar with the close button
-function w3_close() {
-  mySidebar.style.display = "none";
-  overlayBg.style.display = "none";
-}
-</script>
+		// Close the sidebar with the close button
+		function w3_close() {
+			mySidebar.style.display = "none";
+			overlayBg.style.display = "none";
+		}
+	</script>
 
 
 
