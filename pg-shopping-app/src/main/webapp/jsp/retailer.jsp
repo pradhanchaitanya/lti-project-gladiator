@@ -1,11 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<<<<<<< HEAD:pg-shopping-app/src/main/webapp/jsp/retailer.jsp
-=======
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form" %>
->>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006:pg-shopping-app/src/main/webapp/jsp/retailer.html
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,12 +14,10 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
-<<<<<<< HEAD:pg-shopping-app/src/main/webapp/jsp/retailer.jsp
 <script src="main.js"></script>
-=======
 <script src="<c:url value="/resources/js/main.js" />"> </script>
->>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006:pg-shopping-app/src/main/webapp/jsp/retailer.html
-<title>Shop Homepage</title>
+
+<title>Retailer Homepage</title>
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
@@ -31,11 +26,11 @@
 <link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
 <!-- Favicon  -->
-<<<<<<< HEAD:pg-shopping-app/src/main/webapp/jsp/retailer.jsp
+
 <link rel="icon" href="<c:url value="/resources/img/core-img/favicon.ico" />">
-=======
+
 <link rel="icon" href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
->>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006:pg-shopping-app/src/main/webapp/jsp/retailer.html
+
 
 <!-- Core Style CSS -->
 <link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">
@@ -53,8 +48,8 @@
 		<div class="container">
 
 
-			<a class="navbar-brand" href="index.html"> <img
-				src="<c:url value="/resources/images/logo.png" />" width="50" height="50"
+			<a class="navbar-brand" href="showHomepage.do"> 
+				<img src="<c:url value="/resources/images/logo.png" />" width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
 
@@ -77,14 +72,14 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Pages</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="#">Shop</a> <a
-								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="cart.html">Cart</a> <a
-								class="dropdown-item" href="checkout.html">Checkout</a>
+							<a class="dropdown-item" href="#">Shop</a> 
+							<a class="dropdown-item" href="product-details.html">Product Details</a> 
+							<a class="dropdown-item" href="cart.html">Cart</a> 
+							<a class="dropdown-item" href="checkout.html">Checkout</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="login.html">Login/SignUp</a>
+					<li class="nav-item"><a class="nav-link" href="loginRetailer.do">Login</a>
 					</li>
 				</ul>
 			</div>
@@ -111,7 +106,7 @@
 					</li>
 				</ul>
 				</p>
-				<a class="btn btn-primary" href="retailer-registration.html">Register Now!</a>
+				<a class="btn btn-primary" href="registerRetailer.do">Register Now!</a>
 			</div>
 			<!-- /.col-md-4 -->
 		</div>

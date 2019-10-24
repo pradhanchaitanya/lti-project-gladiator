@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<<<<<<< HEAD:pg-shopping-app/src/main/webapp/jsp/retailerRegistration.jsp
-
-=======
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form" %>
->>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006:pg-shopping-app/src/main/webapp/jsp/retailer-registration.jsp
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,11 +19,14 @@
         <img src="logo.jpeg" style="height: 10%; width:12%;left: 55%;  padding: 2% 0% 0% 45%;">
     </div>
    -->
-
+	
+	<div class="outerlogin" style="width: 10%; text-color: fff; margin: 10px;">
+		<a href="showHomepage.do"><button>Back to Home</button></a>
+	</div>
 	<div id="outer">
 		<img src="<c:url value="/resources/images/avatar.png" />" class="avatar"><br>
 		<h1 >Register</h1>
-		<form name="myForm" >
+		<form name="myForm" action="registerRetailer.do" method="post">
 			<div class="extra">
 				<input type="text" class="input" autofocus="on" id="name"
 					placeholder="Enter Name">
@@ -71,7 +71,7 @@
 					<strong>Sign In</strong>
 				</button>
 				<br>
-				<p><i><b>Already a Retailer?</b></i> <a href="retailer-login.html" style="float:right;">Click Here to Login in</a></p>
+				<p><i><b>Already a Retailer?</b></i> <a href="loginRetailer.do" style="float:right;">Click Here to Login in</a></p>
 			</div>
 
 		</form>
