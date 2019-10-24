@@ -52,8 +52,12 @@ public class UserController {
 	}
 	
 	@RequestMapping("/showDashboard.do")
-	public String showDashboard() {
-		return "userDashboard.jsp";
+	public String showDashboard(ModelMap model) {
+		if (model.containsAttribute("user")) {
+			return "userDashboard.jsp";
+		}
+		
+		return "redirect:/loginUser.do";
 	}
 	
 	@RequestMapping(path = "/loginUser.do", method = RequestMethod.GET)
@@ -71,8 +75,9 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "/logoutUser.do")
-	public String logout(ModelMap model) {
+	public String logout(ModelMap model, HttpSession session) {
 		model.clear();
+		session.invalidate();
 		return "redirect:/showHomepage.do";
 	}
 }
