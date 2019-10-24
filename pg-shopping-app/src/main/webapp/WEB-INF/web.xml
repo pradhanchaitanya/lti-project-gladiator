@@ -3,11 +3,7 @@
   <display-name>pg-shopping-app</display-name>
    
   <welcome-file-list>
-<<<<<<< HEAD
-    <welcome-file>showHomepage.do</welcome-file>
-=======
     <welcome-file>/showHomepage.do</welcome-file>
->>>>>>> 38c3d83b2f55f16a4e48508b002b5cf3fe713006
   </welcome-file-list>
   
   
