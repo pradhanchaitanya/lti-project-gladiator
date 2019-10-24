@@ -40,7 +40,6 @@
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
 
-<%@ include file = "login.jsp" %>
 			<a class="navbar-brand" href="index.html"> <img
 				src="<c:url value="/resources/images/logo1.png" />" width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
