@@ -3,6 +3,7 @@ package com.lti.training.projectgladiator.service.implementations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lambdaworks.crypto.SCryptUtil;
 import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
 import com.lti.training.projectgladiator.model.Admin;
