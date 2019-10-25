@@ -1,5 +1,6 @@
 package com.lti.training.projectgladiator.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -16,7 +17,7 @@ import com.lti.training.projectgladiator.model.jointables.WishlistProduct;
 
 @Entity
 @Table(name = "TBL_WISHLIST")
-public class Wishlist {
+public class Wishlist implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, 

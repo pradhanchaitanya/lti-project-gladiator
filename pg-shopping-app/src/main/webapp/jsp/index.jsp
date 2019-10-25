@@ -12,7 +12,11 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
+<<<<<<< HEAD
 <script src="<c:url value="/resources/js/main.js" />"></script>
+=======
+<script src="<c:url value="/resources/main.js" />"></script>
+>>>>>>> branch 'master' of https://github.com/pradhanchaitanya/lti-project-gladiator.git
 <title>Shop Homepage</title>
 
 <!-- Bootstrap core CSS -->
@@ -61,7 +65,7 @@
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
 							<a class="dropdown-item" href="showShopPage.do">Shop</a> <a
 								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="cart.jsp">Cart</a> <a
+								Details</a> <a class="dropdown-item" href="showCart.do">Cart</a> <a
 								class="dropdown-item" href="checkout.jsp">Checkout</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
@@ -337,7 +341,7 @@
 								<div class="single_footer_area">
 									<ul class="footer_widget_menu">
 										<li><a href="showDashboard.do">My Account</a></li>
-										<li><a href="cart.html">Cart</a></li>
+										<li><a href="showCart.do">Cart</a></li>
 										<li><a href="showRetailerHomepage.do">Afiliates</a></li>
 									</ul>
 								</div>

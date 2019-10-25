@@ -1,5 +1,6 @@
 package com.lti.training.projectgladiator.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -18,7 +19,7 @@ import com.lti.training.projectgladiator.model.jointables.CartProduct;
 
 @Entity
 @Table(name = "TBL_CART")
-public class Cart {
+public class Cart implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, 

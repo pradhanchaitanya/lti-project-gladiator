@@ -1,5 +1,6 @@
 package com.lti.training.projectgladiator.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name = "TBL_RETAILER")
-public class Retailer {
+public class Retailer implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, 

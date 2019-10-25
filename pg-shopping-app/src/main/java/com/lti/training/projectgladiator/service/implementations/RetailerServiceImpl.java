@@ -1,5 +1,7 @@
 package com.lti.training.projectgladiator.service.implementations;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -53,6 +55,11 @@ public class RetailerServiceImpl implements RetailerService {
 	}
 	
 	@Override
+	public List<Retailer> fetchAllRetailers() throws NoUserFoundException {
+		return retailerRepository.fetchAllRetailers();
+	}
+	
+	@Override
 	public Retailer validateRetailer(String email, String password) throws NoUserFoundException {
 		Retailer existingRetailer = fetchRetailerByEmail(email);
 		
@@ -63,6 +70,13 @@ public class RetailerServiceImpl implements RetailerService {
 			return existingRetailer;
 		
 		return null;
+	}
+	
+	@Override
+	public void verifyRetailer(long retailerId) throws NoUserFoundException {
+		Retailer retailer = fetchRetailerById(retailerId);
+		retailer.setApproved(true);
+		retailerRepository.upsert(retailer);
 	}
 
 }

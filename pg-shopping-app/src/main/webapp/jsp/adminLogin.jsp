@@ -18,10 +18,10 @@
 	<div id="outerlogin">
 	<img src="<c:url value="/resources/images/avatar.png" />" class="avatar"><br>
     <h1 >Login</h1>
-    <form name="myForm" action="loginUser.do" method="post">
+    <form name="myForm" action="loginAdmin.do" method="post">
          <div class="extra"> 
             <br> 
-            <input type="email" name="username" class="input" id="EMail" autofocus="on" placeholder="Enter UserName">
+            <input type="text" name="username" class="input" id="EMail" autofocus="on" placeholder="Enter UserName">
             <p id="alert2"  text-align:left;" ></p>
         </div>
 
