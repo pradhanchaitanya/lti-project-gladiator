@@ -93,4 +93,39 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		
 		return new HashSet<>(products);
 	}
+
+	@Override
+	public Set<Product> fetchProductsByBrand(Product product) throws NoProductFoundException {
+		String productBrand = product.getBrand();
+		
+		String jpql = "select p from Product p where p.category=:category and p.brand =:brand";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("category", product);
+		query.setParameter("brand", product);
+	
+		List<Product> products = query.getResultList();
+		if (products.size() == 0) {
+			throw new NoProductFoundException("No product in your cart");
+		}
+		
+		return new HashSet<>(products);
+	}
+	
+	@Override
+	public Set<Product> fetchSearchResult(Product product) throws NoProductFoundException {
+		String productsearch = product.getName();
+		String productsearchdes = product.getDescription();
+
+		
+		String jpql = "select p from Product p where p.name or p.description = :search";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("search", product);
+	
+		List<Product> products = query.getResultList();
+		if (products.size() == 0) {
+			throw new NoProductFoundException("No product in your cart");
+		}
+		
+		return new HashSet<>(products);
+	}
 }

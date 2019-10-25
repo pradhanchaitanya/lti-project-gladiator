@@ -105,17 +105,81 @@
 
 		<div class="row">
 
-			<div class="col-lg-3">
+			<div class="col-lg-4">
+				<!--  Side Nav  -->
+				<div class="nav-side-menu">
+					<div class="menu-list">
+						<h6>Categories</h6>
+						<ul id="menu-content" class="menu-content collapse out">
+							<!-- Single Item -->
+							<li data-toggle="collapse" data-target="#mobile"
+								class="collapsed active"><a href="#">Mobiles <span
+									class="arrow"></span></a>
+								<ul class="sub-menu collapse" id="mobile">
+									<li><a href="#"> Redmi </a></li>
+									<li><a href="#">Oppo</a></li>
+									<li><a href="#">Samsung</a></li>
+									<li><a href="#">Apple</a></li>
+								</ul></li>
 
-				<h1 class="my-4">Categories</h1>
-				<div class="list-group">
-					<a href="mobiles.html" class="list-group-item">Mobiles</a> 
-					<a href="laptops.html" class="list-group-item">Laptops</a> 
-					<a href="groceries.html" class="list-group-item">Groceries & Household Supplies</a> 
-					<a href="clothings.html" class="list-group-item">Clothing</a>
+							<li data-toggle="collapse" data-target="#laptop"
+								class="collapsed active"><a href="#">Laptops<span
+									class="arrow"></span></a>
+								<ul class="sub-menu collapse" id="laptop">
+									<li><a href="#">Mac</a></li>
+									<li><a href="#">Lenovo</a></li>
+									<li><a href="#">Asus</a></li>
+									<li><a href="#">HP</a></li>
+									<li><a href="#">MSI</a></li>
+								</ul></li>
+
+							<li data-toggle="collapse" data-target="#clothing"
+								class="collapsed active"><a href="#">Clothing<span
+									class="arrow"></span></a>
+								<ul class="sub-menu collapse" id="clothing">
+									<li><a href="#"> Men </a></li>
+									<li><a href="#">Women</a></li>
+									<li><a href="#">Kids</a></li>
+								</ul></li>
+
+							<li data-toggle="collapse" data-target="#groceries"
+								class="collapsed active"><a href="#">Groceries &
+									Household Supplies<span class="arrow"></span>
+							</a>
+								<ul class="sub-menu collapse" id="groceries">
+									<li><a href="#">Cooking Essentials</a></li>
+									<li><a href="#">Health & Personal Care</a></li>
+									<li><a href="#">Household Supplies</a></li>
+									<li><a href="#">Personal Care & Health Appliances</a></li>
+
+								</ul></li>
+
+						</ul>
+					</div>
 				</div>
 
-			</div> 
+				<br>
+
+				<div class="widget price mb-50">
+					<h6 class="widget-title mb-30">Filter by Price</h6>
+					<div class="widget-desc">
+						<div class="slider-range">
+							<div data-min="0" data-max="30000" data-unit="₹"
+								class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+								data-value-min="0" data-value-max="1350"
+								data-label-result="Price:">
+								<div class="ui-slider-range ui-widget-header ui-corner-all"></div>
+								<span class="ui-slider-handle ui-state-default ui-corner-all"
+									tabindex="0"></span> <span
+									class="ui-slider-handle ui-state-default ui-corner-all"
+									tabindex="0"></span>
+							</div>
+							<div class="range-price">Price: 0 - 1350</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
 			</div>
 			</div>
 			

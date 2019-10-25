@@ -49,5 +49,10 @@ public class ProductServiceImpl implements ProductService {
 	public Set<Product> fetchProductsFromCartOfUser(User user) throws NoProductFoundException {
 		return productRepository.fetchProductsFromCartOfUser(user);
 	}
+	
+	@Override
+	public Set<Product> fetchProductsByBrand(Product product) throws NoProductFoundException {
+		return productRepository.fetchProductsByBrand(product);
+	}
 
 }
