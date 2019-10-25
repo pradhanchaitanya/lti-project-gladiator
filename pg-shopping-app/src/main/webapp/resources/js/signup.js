@@ -26,7 +26,7 @@ function validateForm() {
 		document.getElementById("alert3").innerHTML = "!Please enter your password.";
 	}
 
-	var pass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+	var pass = /^(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;/*/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;*/
 	if (!password.match(pass)) {
 		document.getElementById("alert3").innerHTML = "!Please enter valid password.";
 	}

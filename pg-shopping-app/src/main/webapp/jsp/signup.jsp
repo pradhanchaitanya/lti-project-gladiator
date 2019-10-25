@@ -50,7 +50,8 @@
 			<div class="extra">
 				<input type="password" class="input" id="Password" name="password"
 					placeholder="Enter Password" path="password" />
-				<p>Passwords must be atleast 6 characters.</p>
+				<p>Passwords must be atleast 6 characters
+				<br>(1 uppercase, lowercase and digit).</p>
 				<p id="alert3" text-align="left" ></p>
 			</div>
 
