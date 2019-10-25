@@ -11,8 +11,8 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" type="text/css" href="main.css">
-<script src="main.js"></script>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
+<script src="<c:url value="/resources/main.js" />"></script>
 <title>Shop Homepage</title>
 
 <!-- Bootstrap core CSS -->
@@ -61,7 +61,7 @@
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
 							<a class="dropdown-item" href="#">Shop</a> <a
 								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="cart.jsp">Cart</a> <a
+								Details</a> <a class="dropdown-item" href="showCart.do">Cart</a> <a
 								class="dropdown-item" href="checkout.jsp">Checkout</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
@@ -330,7 +330,7 @@
 								<div class="single_footer_area">
 									<ul class="footer_widget_menu">
 										<li><a href="showDashboard.do">My Account</a></li>
-										<li><a href="cart.html">Cart</a></li>
+										<li><a href="showCart.do">Cart</a></li>
 										<li><a href="showRetailerHomepage.do">Afiliates</a></li>
 									</ul>
 								</div>

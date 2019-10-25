@@ -82,4 +82,10 @@ public class RetailerController {
 	public String showLoginForUser() {
 		return "retailerLogin.jsp";
 	}
+	
+	@RequestMapping(path = "/addProduct.do", method = RequestMethod.GET)
+	public String showAddProduct() {
+		
+		return "retailerDashboard.jsp";
+	}
 }

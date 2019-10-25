@@ -1,5 +1,7 @@
 package com.lti.training.projectgladiator.repository.implementation;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.NonUniqueResultException;
@@ -36,6 +38,19 @@ public class RetailerRepositoryImpl extends GenericRepositoryImpl implements Ret
 		}
 		
 		return retailer;
+	}
+	
+	@Override
+	public List<Retailer> fetchAllRetailers() throws NoUserFoundException {
+		String jpql = "select r from Retailer r";
+		Query query = entityManager.createQuery(jpql);
+		
+		List<Retailer> retailers = query.getResultList();
+		if (retailers.size() == 0) {
+			throw new NoUserFoundException("No retailers found");
+		}
+		
+		return retailers;
 	}
 
 }

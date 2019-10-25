@@ -58,13 +58,14 @@
 				<p id="alert4" text-align="left" ></p>
 				</input>
 			</div>
-			
+			<!-- 
 			<div class="extra">
 				<input type="text" class="input" placeholder=" Enter Account number"
 					id="Account">
 				<p id="alert5" text-align="left" ></p>
 				</input>
 			</div>
+			-->
 			<div>
 				<button type="button" onclick="return validateForm()" method="post"
 					font-family="verdana" style="color: white">

@@ -15,8 +15,8 @@ public class Admin {
 	@Column(name = "ID")
 	private long id;
 	
-	@Column(name = "NAME")
-	private String name;
+	@Column(name = "USERNAME")
+	private String username;
 	
 	@Column(name = "PASSWORD")
 	private String password;
@@ -28,10 +28,10 @@ public class Admin {
 		this.id = id;
 	}
 	public String getName() {
-		return name;
+		return username;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.username = name;
 	}
 	public String getPassword() {
 		return password;

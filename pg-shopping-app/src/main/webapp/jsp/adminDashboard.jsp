@@ -99,6 +99,9 @@
 										<div class="py-2 text-uppercase">Retailer's Name</div>
 									</th>
 									<th scope="col" class="border-0 bg-light">
+										<div class="py-2 text-uppercase">Retailer's Address</div>
+									</th>
+									<th scope="col" class="border-0 bg-light">
 										<div class="py-2 text-uppercase">Notification to Verify
 										</div>
 									</th>
@@ -109,6 +112,24 @@
 								</tr>
 							</thead>
 							<tbody>
+								<c:forEach items = "${ retailers }" var = "retailer" varStatus = "status">
+									<tr>
+									<th scope="row" class="border-0">
+										<div class="p-2">
+											<div class="ml-3 d-inline-block align-middle">
+												<h6>${ status.count }</h6>
+											</div>
+										</div>
+									</th>
+									<td class="border-0 align-middle">${ retailer.name }</td>
+									<td class="border-0 align-middle">${ retailer.address }</td>
+									<td class="border-0 align-middle"><a href="verifyRetailer.do">Verify
+											Retailer?</a></td>
+									<td class="border-0 align-middle"><a href=""
+										class="text-dark"><i class="fa fa-trash"></i></a></td>
+								</tr>
+								</c:forEach>
+								<!-- 
 								<tr>
 									<th scope="row" class="border-0">
 										<div class="p-2">
@@ -139,7 +160,7 @@
 										class="text-dark"><i class="fa fa-trash"></i></a></td>
 
 								</tr>
-
+								-->
 							</tbody>
 						</table>
 					</div>

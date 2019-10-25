@@ -22,7 +22,7 @@ public class AdminRepositoryImpl extends GenericRepositoryImpl implements AdminR
 	
 	@Override
 	public Admin fetchAdminByUsername(String name) throws NoUserFoundException, MultipleUsersFoundException {
-		String jpql = "select a from Admin a where a.name = :username";
+		String jpql = "select a from Admin a where a.username = :username";
 		Query query = entityManager.createQuery(jpql);
 		query.setParameter("username", name);
 		
