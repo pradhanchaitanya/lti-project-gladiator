@@ -2,6 +2,7 @@ package com.lti.training.projectgladiator.controller;
 
 import java.time.LocalDateTime;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpSession;
 
@@ -20,15 +21,20 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.lti.training.projectgladiator.dto.UserDTO;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
+import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.User;
+import com.lti.training.projectgladiator.service.ProductService;
 import com.lti.training.projectgladiator.service.UserService;
 
 @Controller
-@SessionAttributes({"user", "isError", "error"})
+@SessionAttributes({"user", "isError", "error", "products"})
 public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private ProductService productService;
 	
 	@RequestMapping(path = "/registerUser.do", method = RequestMethod.GET)
 	public String showRegisterForUser() {
@@ -84,6 +90,12 @@ public class UserController {
 	@RequestMapping(path = "/showCart.do", method = RequestMethod.GET)
 	public String showCart(ModelMap model) {
 		if (model.containsAttribute("user")) {
+			try {
+				Set<Product> products = productService.fetchProductsFromCartOfUser((User)model.get("user"));
+				model.addAttribute("products", products);
+			} catch (Exception e) {
+				model.addAttribute("error", e.getMessage());
+			}
 			return "cart.jsp";
 		}
 		

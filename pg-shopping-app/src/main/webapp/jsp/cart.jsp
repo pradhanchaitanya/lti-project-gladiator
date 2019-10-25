@@ -114,12 +114,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                <c:forEach items="${ products }" var="product">
+                                	<tr>
                                         <td class="cart_product_img d-flex align-items-center">
                                             <a href="#"><img src="<c:url value="/resources/images/tp1.png" />" alt="Product"></a>
-                                            <h6>One Plus 7T</h6>
+                                            <h6>${ product.name }</h6>
                                         </td>
-                                        <td class="price"><span>Rs.37,999</span></td>
+                                        <td class="price"><span>${ product.price }</span></td>
                                         <td class="qty">
                                             <div class="quantity">
                                                 <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
@@ -129,6 +130,7 @@
                                         </td>
                                         <td class="total_price"><span>Rs.37,999</span></td>
                                     </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>

@@ -3,6 +3,7 @@ package com.lti.training.projectgladiator.service.implementations;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
 import com.lti.training.projectgladiator.exceptions.NoProductFoundException;
@@ -13,6 +14,7 @@ import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.repository.ProductRepository;
 import com.lti.training.projectgladiator.service.ProductService;
 
+@Repository
 public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
