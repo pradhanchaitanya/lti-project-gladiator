@@ -2,6 +2,7 @@ package com.lti.training.projectgladiator.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +52,15 @@ public class AdminController {
 	}
 	
 	@RequestMapping(path = "/verifyRetailer.do/{id}", method = RequestMethod.GET)
-	public String verifyRetailer(@PathParam("id") long retailerId, ModelMap model) {
+	public String verifyRetailer(@PathVariable("id") long retailerId, ModelMap model) {
 		adminService.verifyRetailer(retailerId);
 		return "adminDashboard.jsp";
+	}
+	
+	@RequestMapping(path = "/logoutAdmin.do")
+	public String logout(ModelMap model, HttpSession session) {
+		model.clear();
+		session.invalidate();
+		return "redirect:/loginAdmin.do";
 	}
 }
