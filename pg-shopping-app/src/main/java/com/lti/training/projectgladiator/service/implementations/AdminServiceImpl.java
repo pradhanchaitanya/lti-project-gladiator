@@ -26,13 +26,26 @@ public class AdminServiceImpl implements AdminService {
 	
 	@Override
 	public Admin fetchAdminByUsername(String name) throws NoUserFoundException, MultipleUsersFoundException {
-	
+
 		Admin admin = adminRepository.fetchAdminByUsername(name);
 		if (admin == null) {
 			throw new NoUserFoundException();
 		}
 		return admin;
-		
+
+	}
+
+	@Override
+	public Admin validateAdmin(String username, String password) throws NoUserFoundException {
+		Admin existingUser = fetchAdminByUsername(username);
+
+		// validate password
+		boolean matched = SCryptUtil.check(password, existingUser.getPassword());
+
+		if (matched)
+			return existingUser;
+
+		return null;
 	}
 	
 	@Override
