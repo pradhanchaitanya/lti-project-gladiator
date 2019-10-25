@@ -49,6 +49,7 @@ public class AdminController {
 	
 	@RequestMapping(path = "/verifyRetailer.do/{id}", method = RequestMethod.GET)
 	public String verifyRetailer(ModelMap model) {
+		
 		return null;
 	}
 }
