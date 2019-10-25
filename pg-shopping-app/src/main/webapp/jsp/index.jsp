@@ -11,8 +11,8 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" type="text/css" href="main.css">
-<script src="main.js"></script>
+<link rel="stylesheet" type="text/css" href="<c:url value="/resources/main.css" />">
+<script src="<c:url value="/resources/js/main.js" />"></script>
 <title>Shop Homepage</title>
 
 <!-- Bootstrap core CSS -->
@@ -59,7 +59,7 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Pages</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="#">Shop</a> <a
+							<a class="dropdown-item" href="showShopPage.do">Shop</a> <a
 								class="dropdown-item" href="product-details.html">Product
 								Details</a> <a class="dropdown-item" href="cart.jsp">Cart</a> <a
 								class="dropdown-item" href="checkout.jsp">Checkout</a>

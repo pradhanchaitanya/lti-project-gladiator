@@ -33,4 +33,12 @@ public class HomeController {
 		return "retailer.jsp";
 	}
 	
+	@RequestMapping("/showShopPage.do")
+	public String showShopPage(ModelMap model) {
+		/*if (model.containsAttribute("shop")) {
+			return "shop.jsp?loggedin=true";
+		}*/
+		return "shop.jsp";
+	}
+	
 }
