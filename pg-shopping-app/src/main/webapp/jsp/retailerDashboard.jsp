@@ -82,6 +82,13 @@ html, body, h1, h2, h3, h4, h5 {
 					</li>
 					<li class="nav-item"><a class="nav-link" href="login.html">Login/SignUp</a>
 					</li>
+					<form class="form-inline my-2 my-lg-0 ml-auto">
+						<input class="form-control" type="search" placeholder="Search"
+							aria-label="Search">&nbsp;&nbsp;&nbsp;
+						<button class="text-white bg-dark"
+							class="btn btn-outline-black btn-md my-2 my-sm-0 ml-3"
+							type="submit">Search</button>
+					</form>
 				</ul>
 			</div>
 		</div>
