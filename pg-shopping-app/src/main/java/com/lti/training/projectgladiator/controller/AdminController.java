@@ -2,6 +2,8 @@ package com.lti.training.projectgladiator.controller;
 
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -49,7 +51,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(path = "/verifyRetailer.do/{id}", method = RequestMethod.GET)
-	public String verifyRetailer(@PathVariable("id") long retailerId, ModelMap model) {
+	public String verifyRetailer(@PathParam("id") long retailerId, ModelMap model) {
 		adminService.verifyRetailer(retailerId);
 		return "adminDashboard.jsp";
 	}
