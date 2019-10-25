@@ -46,4 +46,9 @@ public class AdminController {
 		
 		return "redirect:/loginAdmin.do";
 	}
+	
+	@RequestMapping(path = "/verifyRetailer.do/{id}", method = RequestMethod.GET)
+	public String verifyRetailer(ModelMap model) {
+		return null;
+	}
 }

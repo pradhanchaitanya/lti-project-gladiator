@@ -12,8 +12,8 @@ import com.lti.training.projectgladiator.model.Admin;
 import com.lti.training.projectgladiator.model.Retailer;
 import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.repository.AdminRepository;
-import com.lti.training.projectgladiator.repository.RetailerRepository;
 import com.lti.training.projectgladiator.service.AdminService;
+import com.lti.training.projectgladiator.service.RetailerService;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -22,7 +22,7 @@ public class AdminServiceImpl implements AdminService {
 	private AdminRepository adminRepository;
 	
 	@Autowired
-	private RetailerRepository retailerRepository;
+	private RetailerService retailerService;
 	
 	@Override
 	public Admin fetchAdminByUsername(String name) throws NoUserFoundException, MultipleUsersFoundException {
@@ -63,7 +63,12 @@ public class AdminServiceImpl implements AdminService {
 	
 	@Override
 	public List<Retailer> getRetailers() throws NoUserFoundException {
-		return retailerRepository.fetchAllRetailers();
+		return retailerService.fetchAllRetailers();
+	}
+	
+	@Override
+	public void verifyRetailer(long retailerId) throws NoUserFoundException {
+		retailerService.verifyRetailer(retailerId);
 	}
 
 }

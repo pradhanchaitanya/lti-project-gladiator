@@ -6,7 +6,6 @@ import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
 import com.lti.training.projectgladiator.model.Admin;
 import com.lti.training.projectgladiator.model.Retailer;
-import com.lti.training.projectgladiator.model.User;
 
 public interface AdminService {
 
@@ -14,4 +13,5 @@ public interface AdminService {
 	Admin validateUser(String username, String password) throws NoUserFoundException;
 	List<Retailer> getRetailers() throws NoUserFoundException;
 	Admin validateAdmin(String username, String password) throws NoUserFoundException;
+	void verifyRetailer(long retailerId) throws NoUserFoundException;
 }
