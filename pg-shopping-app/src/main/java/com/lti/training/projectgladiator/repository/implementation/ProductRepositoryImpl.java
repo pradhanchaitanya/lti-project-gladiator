@@ -82,13 +82,13 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 	public Set<Product> fetchProductsFromCartOfUser(User user) throws NoProductFoundException {
 		long userId = user.getId();
 
-		String jpql = "select p from Product p where p.cartProducts.cart.user.id = :userId";
+		String jpql = "select p from Cart c join c.cartProducts cp join cp.product p where c.user.id = :userId";
 		Query query = entityManager.createQuery(jpql);
 		query.setParameter("userId", userId);
 	
 		List<Product> products = query.getResultList();
 		if (products.size() == 0) {
-			throw new NoProductFoundException();
+			throw new NoProductFoundException("No product in your cart");
 		}
 		
 		return new HashSet<>(products);
