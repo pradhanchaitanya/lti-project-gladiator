@@ -123,7 +123,7 @@
 									</th>
 									<td class="border-0 align-middle">${ retailer.name }</td>
 									<td class="border-0 align-middle">${ retailer.address }</td>
-									<td class="border-0 align-middle"><a href="verifyRetailer.do">Verify
+									<td class="border-0 align-middle"><a href="verifyRetailer.do/${ retailer.id }">Verify
 											Retailer?</a></td>
 									<td class="border-0 align-middle"><a href=""
 										class="text-dark"><i class="fa fa-trash"></i></a></td>

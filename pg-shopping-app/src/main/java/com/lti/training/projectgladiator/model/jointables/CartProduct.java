@@ -1,5 +1,7 @@
 package com.lti.training.projectgladiator.model.jointables;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ import com.lti.training.projectgladiator.model.Product;
 
 @Entity
 @Table(name = "TBL_CART_PRODUCT")
-public class CartProduct {
+public class CartProduct implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,
