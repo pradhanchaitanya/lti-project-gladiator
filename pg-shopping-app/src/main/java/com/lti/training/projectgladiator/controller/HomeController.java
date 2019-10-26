@@ -50,9 +50,9 @@ public class HomeController {
 	
 	@RequestMapping("/showShopPage.do")
 	public String showShopPage(ModelMap model) {
-		/*if (model.containsAttribute("shop")) {
+		if (model.containsAttribute("user")) {
 			return "shop.jsp?loggedin=true";
-		}*/
+		}
 		return "shop.jsp";
 	}
 	

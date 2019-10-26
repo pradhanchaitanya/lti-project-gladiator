@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html" charset="ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -97,7 +97,7 @@
 					<ol class="breadcrumb d-flex align-items-center">
 						<li class="breadcrumb-item"><a href="showHomepage.do">Home</a></li>
 						<li class="breadcrumb-item active"><a
-							href="product-details.html">Categories</a></li>
+							href="#">Categories</a></li>
 
 					</ol>
 

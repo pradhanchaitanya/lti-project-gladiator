@@ -98,6 +98,7 @@ public class UserController {
 				Set<Product> products = productService.fetchProductsFromCartOfUser((User)model.get("user"));
 				model.addAttribute("products", products);
 			} catch (Exception e) {
+				e.printStackTrace();
 				model.addAttribute("error", e.getMessage());
 			}
 			return "cart.jsp";
@@ -118,7 +119,26 @@ public class UserController {
 		User currentUser = (User) model.get("user");
 		Product selectedProduct = productService.fetchProductById(productId);
 		Cart userCart = cartService.fetchCartForUser(currentUser);
-		productService.addProductToCart(selectedProduct, userCart, 1);
+		try {
+			productService.addProductToCart(selectedProduct, userCart, 1);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+		}
 		return "redirect:showHomepage.do";
+	}
+	
+	@RequestMapping("/removeFromCart.do")
+	public String removeFromCart(@RequestParam("id") long productId, ModelMap model) {
+		User currentUser = (User) model.get("user");
+		Product selectedProduct = productService.fetchProductById(productId);
+		Cart userCart = cartService.fetchCartForUser(currentUser);
+		try {
+			productService.removeProductFromCart(selectedProduct, userCart, 1);
+		} catch (Exception e) {
+			e.printStackTrace();
+			model.addAttribute("error", e.getMessage());
+		}
+		return "redirect:showCart.do";
 	}
 }

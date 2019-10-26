@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html" charset="ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -13,7 +13,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/resources/css/main.css" />">
-<script src="<c:url value="/resources/js/main.js" />"> </script>
+<script src="<c:url value="/resources/js/main.js" />">
+	
+</script>
 
 <title>Cart</title>
 
@@ -112,56 +114,74 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="cart-table clearfix">
-						<table class="table table-responsive">
-							<thead>
-								<tr>
-									<th>Product</th>
-									<th>Price</th>
-									<th>Action</th>
-									<th>Total</th>
-								</tr>
-							</thead>
-							<tbody>
-								<c:forEach items="${ products }" var="product"
-									varStatus="status">
-									<script>var $qty = 'qty' + ${ status.count }</script>
-									<tr>
-										<td class="cart_product_img d-flex align-items-center"><a
-											href="#"><img
-												src="<c:url value="/resources/images/tp1.png" />"
-												alt="Product"></a>
-											<h6>${ product.name }</h6></td>
-										<td class="price"><span>${ product.price }</span></td>
-										<td class="qty">
-											<div class="quantity">
-												<!--
+						<c:choose>
+							<c:when test="${ sessionScope.error != null }">
+								<div>
+									<p>No products in your cart right now!</p>
+								</div>
+							</c:when>
+							<c:otherwise>
+								<table class="table table-responsive">
+									<thead>
+										<tr>
+											<th>Product</th>
+											<th>Price</th>
+											<th>Action</th>
+											<th>Total</th>
+										</tr>
+									</thead>
+									<tbody>
+
+
+										<c:forEach items="${ products }" var="product"
+											varStatus="status">
+											<script>
+												var $qty = 'qty' + $
+												{
+													status.count
+												}
+											</script>
+											<tr>
+												<td class="cart_product_img d-flex align-items-center"><a
+													href="#"><img
+														src="<c:url value="/resources/images/tp1.png" />"
+														alt="Product"></a>
+													<h6>${ product.name }</h6></td>
+												<td class="price"><span>${ product.price }</span></td>
+												<td class="qty">
+													<div class="quantity">
+														<!--
                                                 <span class="qty-minus" onclick="var effect = document.getElementById($qty); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
                                                 <input type="number" class="qty-text" id=qty step="1" min="1" max="99" name="quantity" value="1">
                                                 <span class="qty-plus" onclick="var effect = document.getElementById($qty); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
 												-->
-												<a href=""><button type="button"
-														class="btn btn-danger btn-sm">
-														<span class="glyphicon glyphicon-trash"></span>Remove
-													</button>
-													</span></a>
-											</div>
-										</td>
-										<td class="total_price"><span id="totalPrice">${ product.price }</span></td>
-									</tr>
-								</c:forEach>
-							</tbody>
-						</table>
-					</div>
+														<a href="removeFromCart.do?id=${ product.id }"><button
+																type="button" class="btn btn-danger btn-sm">
+																<span class="glyphicon glyphicon-trash"></span>Remove
+															</button> </span></a>
+													</div>
+												</td>
+												<td class="total_price"><span id="totalPrice">${ product.price }</span></td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</c:otherwise>
+						</c:choose>
 
+					</div>
+					
 					<div class="cart-footer d-flex mt-30">
 						<div class="back-to-shop w-50">
 							<a href="showHomepage.do">Continue shopping</a>
 						</div>
+						<!-- 
 						<div class="update-checkout w-50 text-right">
 							<a href="#">Clear cart</a> <a href="#">Update cart</a>
 						</div>
+						-->
 					</div>
-
+					
 				</div>
 			</div>
 

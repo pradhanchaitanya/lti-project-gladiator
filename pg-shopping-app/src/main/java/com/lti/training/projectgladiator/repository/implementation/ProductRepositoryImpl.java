@@ -62,7 +62,8 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		Query query = entityManager.createQuery(jpql);
 		query.setParameter("cartId", cart.getId());
 		
-		CartProduct cartProduct = (CartProduct) query.getSingleResult();
+		CartProduct cartProduct = (CartProduct) query.setMaxResults(1).getSingleResult();
+		entityManager.remove(cartProduct);
 		
 		double totalPrice = cart.getTotalPrice();
 		cart.setTotalPrice(totalPrice - (quantity * product.getPrice()));
@@ -72,8 +73,8 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		
 		cartRepository.updateCartForUser(cart);
 		
-		cartProduct.setCart(cart);
-		upsert(cartProduct);
+//		cartProduct.setCart(cart);
+//		upsert(cartProduct);
 	}
 	
 	public Set<Product> fetchProductsByRetailer(Retailer retailer) throws NoProductFoundException {
@@ -99,7 +100,7 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		query.setParameter("userId", userId);
 	
 		List<Product> products = query.getResultList();
-		if (products.size() == 0) {
+		if (products == null) {
 			throw new NoProductFoundException("No product in your cart");
 		}
 		
