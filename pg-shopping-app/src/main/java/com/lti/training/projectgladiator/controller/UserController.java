@@ -1,26 +1,19 @@
 package com.lti.training.projectgladiator.controller;
 
 import java.time.LocalDateTime;
-import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.lti.training.projectgladiator.dto.UserDTO;
-import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
 import com.lti.training.projectgladiator.model.Cart;
 import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.User;
@@ -29,7 +22,7 @@ import com.lti.training.projectgladiator.service.ProductService;
 import com.lti.training.projectgladiator.service.UserService;
 
 @Controller
-@SessionAttributes({"user", "isError", "error", "products"})
+@SessionAttributes({"user", "isError", "error", "products", "noOfProducts"})
 public class UserController {
 
 	@Autowired
@@ -71,6 +64,12 @@ public class UserController {
 	@RequestMapping("/showDashboard.do")
 	public String showDashboard(ModelMap model) {
 		if (model.containsAttribute("user")) {
+			try {
+				Set<Product> products = productService.fetchProductsFromCartOfUser((User)model.get("user"));
+				model.addAttribute("noOfProducts", products.size());
+			} catch (Exception e) {
+				model.addAttribute("error", e.getMessage());
+			}
 			return "userDashboard.jsp";
 		}
 		

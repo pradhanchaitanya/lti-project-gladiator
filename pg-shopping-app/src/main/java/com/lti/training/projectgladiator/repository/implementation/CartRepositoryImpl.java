@@ -44,7 +44,7 @@ public class CartRepositoryImpl extends GenericRepositoryImpl implements CartRep
 		return cart;
 	}
 	
-	@Transactional
+//	@Transactional
 	public void updateCartForUser(Cart cart) {
 		addCartForUser(cart);
 	}

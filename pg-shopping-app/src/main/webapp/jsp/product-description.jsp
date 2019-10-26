@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/resources/main.css" />">
 <script src="<c:url value="/resources/js/main.js" />"></script>
-<title>Shop Homepage</title>
+<title>${ product.name }</title>
 
 
 
@@ -54,7 +54,7 @@
 		<div class="container">
 
 
-			<a class="navbar-brand" href="index.html"> <img
+			<a class="navbar-brand" href="showHomepage.do"> <img
 				src="<c:url value="/resources/images/logo.png" />" width="50"
 				height="50" class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
@@ -71,7 +71,7 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Log</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="userdashboard.html">Dashboard</a>
+							<a class="dropdown-item" href="showDashboard.do">Dashboard</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"

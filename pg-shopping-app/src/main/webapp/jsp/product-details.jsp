@@ -43,7 +43,7 @@
 		<div class="container">
 
 
-			<a class="navbar-brand" href="index.html"> <img
+			<a class="navbar-brand" href="showHomepage.do"> <img
 				src="<c:url value="/resources/images/logo.png"  />"width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>

@@ -46,7 +46,7 @@ public class Cart implements Serializable {
 	 * Cart-Cart_Product PK-FK
 	 */
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
-	@Transient
+	//@Transient
 	private Set<CartProduct> cartProducts;
 
 	public long getId() {

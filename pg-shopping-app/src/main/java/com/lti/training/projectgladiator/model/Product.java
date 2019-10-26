@@ -59,7 +59,7 @@ public class Product implements Serializable {
 	 * Product-Cart_Product PK-FK
 	 */
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-	@Transient
+	//@Transient
 	private Set<CartProduct> cartProducts;
 	
 	/*
