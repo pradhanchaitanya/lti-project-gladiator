@@ -21,8 +21,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.lti.training.projectgladiator.dto.UserDTO;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
+import com.lti.training.projectgladiator.model.Cart;
 import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.User;
+import com.lti.training.projectgladiator.service.CartService;
 import com.lti.training.projectgladiator.service.ProductService;
 import com.lti.training.projectgladiator.service.UserService;
 
@@ -35,6 +37,9 @@ public class UserController {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private CartService cartService;
 	
 	@RequestMapping(path = "/registerUser.do", method = RequestMethod.GET)
 	public String showRegisterForUser() {
@@ -107,5 +112,14 @@ public class UserController {
 		model.clear();
 		session.invalidate();
 		return "redirect:/showHomepage.do";
+	}
+	
+	@RequestMapping("/addToCart.do")
+	public String addToCart(@RequestParam("id") long productId, ModelMap model) {
+		User currentUser = (User) model.get("user");
+		Product selectedProduct = productService.fetchProductById(productId);
+		Cart userCart = cartService.fetchCartForUser(currentUser);
+		productService.addProductToCart(selectedProduct, userCart, 1);
+		return "redirect:showHomepage.do";
 	}
 }

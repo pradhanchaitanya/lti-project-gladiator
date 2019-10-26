@@ -69,7 +69,8 @@
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
 							<a class="dropdown-item" href="showShopPage.do">Shop</a> <a
 								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="showCart.do">Cart</a> <a
+								Details</a> 
+							<a class="dropdown-item" href="showCart.do">Cart</a> <a
 								class="dropdown-item" href="checkout.jsp">Checkout</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
@@ -201,7 +202,7 @@
 									<p>${ product.description }</p>
 									<c:if test = "${ param.loggedin == true }">
 									<!-- Add to Cart -->
-									<a href="#" class="add-to-cart-btn">ADD TO CART</a>
+									<a href="addToCart.do?id=${ product.id }" class="add-to-cart-btn">ADD TO CART</a>
 									</c:if>
 								</div>
 							</div>

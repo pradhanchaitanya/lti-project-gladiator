@@ -114,7 +114,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${ products }" var="product">
+                                <c:forEach items="${ products }" var="product" varStatus="status">
+                                	<script>var $qty = 'qty' + ${ status.count }</script>
                                 	<tr>
                                         <td class="cart_product_img d-flex align-items-center">
                                             <a href="#"><img src="<c:url value="/resources/images/tp1.png" />" alt="Product"></a>
@@ -123,12 +124,12 @@
                                         <td class="price"><span>${ product.price }</span></td>
                                         <td class="qty">
                                             <div class="quantity">
-                                                <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="1">
-                                                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                <span class="qty-minus" onclick="var effect = document.getElementById($qty); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                <input type="number" class="qty-text" id=qty step="1" min="1" max="99" name="quantity" value="1">
+                                                <span class="qty-plus" onclick="var effect = document.getElementById($qty); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                             </div>
                                         </td>
-                                        <td class="total_price"><span>Rs.37,999</span></td>
+                                        <td class="total_price"><span id="totalPrice"></span></td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>

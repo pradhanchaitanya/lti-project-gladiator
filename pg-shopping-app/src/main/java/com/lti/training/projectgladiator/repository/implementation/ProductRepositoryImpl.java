@@ -29,12 +29,23 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 	
 	@Transactional
 	public void addProductToCart(Product product, Cart cart, int quantity) throws FailedUpsertException {
-		CartProduct cartProduct = new CartProduct();
+		String jpql = "select cp from CartProduct cp where cp.cart.id = :cartId";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("cartId", cart.getId());
+		
+		CartProduct cartProduct = null;
+		
+		try {
+			cartProduct = (CartProduct) query.getSingleResult();
+		} catch (Exception e) {
+			cartProduct = new CartProduct();
+		}
+		
 		cartProduct.setProduct(product);
 		cartProduct.setCart(cart);
 		cartProduct.setQuantity(quantity);
 		
-		upsert(cartProduct);
+		//upsert(cartProduct);
 		
 		double totalPrice = cart.getTotalPrice();
 		cart.setTotalPrice(totalPrice + (quantity * product.getPrice()));

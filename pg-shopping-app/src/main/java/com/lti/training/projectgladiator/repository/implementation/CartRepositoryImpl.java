@@ -15,9 +15,10 @@ import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.repository.CartRepository;
 
 @Repository
+@Transactional
 public class CartRepositoryImpl extends GenericRepositoryImpl implements CartRepository {
 	
-	@Transactional
+
 	public void addCartForUser(Cart cart) throws FailedUpsertException {
 		upsert(cart);
 	}
@@ -33,7 +34,9 @@ public class CartRepositoryImpl extends GenericRepositoryImpl implements CartRep
 		try {
 			cart = (Cart) query.getSingleResult();
 		} catch (NoResultException e) {
-			throw new NoCartFoundException(e);
+			cart = new Cart();
+			cart.setUser(user);
+			cart = entityManager.merge(cart);
 		} catch (NonUniqueResultException e) {
 			throw new MultipleCartsFoundException(e);
 		}

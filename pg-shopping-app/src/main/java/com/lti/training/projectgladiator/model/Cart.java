@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import com.lti.training.projectgladiator.model.jointables.CartProduct;
 
@@ -45,6 +46,7 @@ public class Cart implements Serializable {
 	 * Cart-Cart_Product PK-FK
 	 */
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+	@Transient
 	private Set<CartProduct> cartProducts;
 
 	public long getId() {
