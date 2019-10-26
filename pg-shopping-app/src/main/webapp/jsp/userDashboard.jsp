@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html" charset="ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>User Dashboard</title>
+<title>${ user.name }'s Dashboard</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -59,7 +59,7 @@ html, body, h1, h2, h3, h4, h5 {
 			<a class="navbar-brand" href="showHomepage.do"> <img
 				src="<c:url value="/resources/images/logo.png" />" width="50"
 				height="50" class="d-inline-block align-top" alt="" /> Shopp-E
-			</a>Shop</a>
+			</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
@@ -69,23 +69,27 @@ html, body, h1, h2, h3, h4, h5 {
 
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
+					<!-- 
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Log</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
 							<a class="dropdown-item" href="#">Dashboard</a>
-						</div></li>
+						</div>
+					</li>
+					-->
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Pages</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="#">Shop</a> <a
-								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="showCart.do">Cart</a> <a
-								class="dropdown-item" href="checkout.html">Checkout</a>
-						</div></li>
+							<a class="dropdown-item" href="#">Shop</a> 
+							<a class="dropdown-item" href="showDashboard.do">Dashboard</a> 
+							<a class="dropdown-item" href="showCart.do">Cart</a> 
+							<a class="dropdown-item" href="checkout.html">Checkout</a>
+						</div>
+					</li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="logoutUser.do">Logout</a>
@@ -134,11 +138,12 @@ html, body, h1, h2, h3, h4, h5 {
 					class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-diamond fa-fw"></i>Orders</a> <a href="showCart.do"
 					class="w3-bar-item w3-button w3-padding"><i
-					class="fa fa-bank fa-fw"></i>Cart Items</a> <a href="#"
+					class="fa fa-bank fa-fw"></i>Cart Items</a> <!-- <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-history fa-fw"></i>WishList</a> <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
-					class="fa fa-cog fa-fw"></i>Settings</a><br>
+					class="fa fa-cog fa-fw"></i>Settings</a> -->
+					<br>
 				<br>
 			</div>
 		</nav>

@@ -15,6 +15,9 @@
 </head>
 <body>
 <!-- <body background="background-image:bg1.jpg"> -->
+<div class="outerlogin" style="width: 10%; text-color: fff; margin: 10px;">
+		<a href="showHomepage.do"><button style="color: white;">Back to Home</button></a>
+	</div>
 	<div id="outerlogin">
 	<img src="<c:url value="/resources/images/avatar.png" />" class="avatar"><br>
     <h1 >Login</h1>

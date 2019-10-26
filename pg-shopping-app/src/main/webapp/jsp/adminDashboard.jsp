@@ -127,7 +127,14 @@
 									<td class="border-0 align-middle">${ retailer.name }</td>
 									<td class="border-0 align-middle">${ retailer.address }</td>
 									<td class="border-0 align-middle">
-										<a href="verifyRetailer.do/${ retailer.id }">Verify Retailer?</a>
+										<c:choose>
+											<c:when test="${ retailer.isApproved == false }">
+												<a href="verifyRetailer.do?id=${ retailer.id }">Verify Retailer?</a>
+											</c:when>
+											<c:otherwise>
+												<p>Verified Retailer!</p>
+											</c:otherwise>
+										</c:choose>
 									</td>
 									<td class="border-0 align-middle"><a href=""
 										class="text-dark"><i class="fa fa-trash"></i></a></td>

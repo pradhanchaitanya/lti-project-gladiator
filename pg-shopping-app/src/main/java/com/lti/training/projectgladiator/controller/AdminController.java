@@ -50,8 +50,8 @@ public class AdminController {
 		return "redirect:/loginAdmin.do";
 	}
 	
-	@RequestMapping(path = "/verifyRetailer.do/{id}", method = RequestMethod.GET)
-	public String verifyRetailer(@PathVariable("id") long retailerId, ModelMap model) {
+	@RequestMapping(path = "/verifyRetailer.do", method = RequestMethod.GET)
+	public String verifyRetailer(@RequestParam("id") long retailerId, ModelMap model) {
 		adminService.verifyRetailer(retailerId);
 		return "adminDashboard.jsp";
 	}

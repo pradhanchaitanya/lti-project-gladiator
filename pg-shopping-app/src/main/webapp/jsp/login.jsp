@@ -23,6 +23,11 @@
 	<div id="outerlogin">
 	<img src="<c:url value="/resources/images/avatar.png" />" class="avatar"><br>
     <h1 >Login</h1>
+    <c:if test="${ sessionScope.error != null }">
+    	<div class="errors">
+    		<h4 style="text-color: red">${ error }</h4>
+    	</div>
+    </c:if>
     <form name="myForm" action="loginUser.do" method="post">
          <div class="extra"> 
             <br> 
@@ -40,7 +45,7 @@
         </div>
 	  <br>
         <a href="forgotpassword.html" id="fpass">Forgot Password?</a><br>
-        <p><i><b>New to ShopWeb?</b></i> <a href="registerUser.do" style="float:right;">Click Here to Sign Up</a></p>
+        <p><i><b>New to Shopp-E?</b></i> <a href="registerUser.do" style="float:right;">Click Here to Sign Up</a></p>
 
        	</form>
        </div>

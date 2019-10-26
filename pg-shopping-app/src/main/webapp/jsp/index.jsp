@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html" charset="ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -67,9 +67,8 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Pages</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="showShopPage.do">Shop</a> <a
-								class="dropdown-item" href="product-details.html">Product
-								Details</a> 
+							<a class="dropdown-item" href="showShopPage.do">Shop</a> 
+							<a class="dropdown-item" href="showDashboard.do">Dashboard</a>
 							<a class="dropdown-item" href="showCart.do">Cart</a> <a
 								class="dropdown-item" href="checkout.jsp">Checkout</a>
 						</div></li>
@@ -233,6 +232,9 @@
 													.getFullYear());
 										</script>
 										All rights reserved | Made By - CHAG
+										<br>
+										<a href="loginAdmin.do">Admin Section</a>
+									</p>
 								</div>
 							</div>
 						</div>

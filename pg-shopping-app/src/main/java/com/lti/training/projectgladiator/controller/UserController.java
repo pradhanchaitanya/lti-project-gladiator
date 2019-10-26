@@ -84,11 +84,16 @@ public class UserController {
 	@RequestMapping(path = "/loginUser.do", method = RequestMethod.POST)
 	public String loginUser(@RequestParam("email") String email,
 							@RequestParam("password") String password, ModelMap model) {
-		User validatedUser = userService.validateUser(email, password);
-		// handle invalid credentials
-		
-		model.addAttribute("user", validatedUser);
-		return "redirect:/showDashboard.do";
+		model.remove("error");
+		try {
+			User validatedUser = userService.validateUser(email, password);			
+			model.addAttribute("user", validatedUser);
+			return "redirect:/showDashboard.do";
+		} catch (Exception e) {
+			// handle invalid credentials
+			model.addAttribute("error", "Invalid Credentials");
+			return "redirect:loginUser.do";
+		}
 	}
 	
 	@RequestMapping(path = "/showCart.do", method = RequestMethod.GET)

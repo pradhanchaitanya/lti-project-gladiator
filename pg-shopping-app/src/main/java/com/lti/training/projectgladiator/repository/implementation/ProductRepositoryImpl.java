@@ -148,6 +148,6 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		Query query = entityManager.createQuery(jpql);
 		
 		List<Product> products = query.getResultList();
-		return new HashSet<>(products.stream().limit(10).collect(Collectors.toList()));
+		return new HashSet<>(products.stream().limit(30).collect(Collectors.toList()));
 	}
 }

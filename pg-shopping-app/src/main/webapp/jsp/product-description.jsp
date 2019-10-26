@@ -78,10 +78,10 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Pages</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="#">Shop</a> <a
-								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="showCart.do">Cart</a> <a
-								class="dropdown-item" href="checkout.html">Checkout</a>
+							<a class="dropdown-item" href="#">Shop</a> 
+							<a class="dropdown-item" href="showDashboard.do">Dashboard</a> 
+							<a class="dropdown-item" href="showCart.do">Cart</a> 
+							<a class="dropdown-item" href="checkout.html">Checkout</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
@@ -116,12 +116,13 @@
 						<li class="breadcrumb-item"><a href="showHomepage.do">Home</a></li>
 						<li class="breadcrumb-item"><a href="product-details.html">Categories</a></li>
 						<li class="breadcrumb-item "><a href="showCategory.do?category=${ product.category }">${ product.category }</a></li>
-						<li class="breadcrumb-item active"><a
-							href="#">${ product.brand }</a></li>
+						<li class="breadcrumb-item active"><a href="#">${ product.brand }</a></li>
 					</ol>
 					<!-- btn -->
+					<!-- 
 					<a href="product-details.html" class="backToHome d-block"><i
 						class="fa fa-angle-double-left"></i> Back to Category</a>
+					-->
 				</div>
 			</div>
 		</div>
