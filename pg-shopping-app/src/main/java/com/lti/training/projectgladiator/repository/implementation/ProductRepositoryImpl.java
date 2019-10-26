@@ -3,6 +3,7 @@ package com.lti.training.projectgladiator.repository.implementation;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.persistence.Query;
 
@@ -127,5 +128,14 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		}
 		
 		return new HashSet<>(products);
+	}
+	
+	@Override
+	public Set<Product> fetchTopProducts() throws NoProductFoundException {
+		String jpql = "select p from Product p";
+		Query query = entityManager.createQuery(jpql);
+		
+		List<Product> products = query.getResultList();
+		return new HashSet<>(products.stream().limit(10).collect(Collectors.toList()));
 	}
 }

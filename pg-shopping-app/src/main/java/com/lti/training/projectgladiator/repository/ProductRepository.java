@@ -16,5 +16,6 @@ public interface ProductRepository extends GenericRepository {
 	public Set<Product> fetchProductsByRetailer(Retailer retailer) throws NoProductFoundException;
 	public Set<Product> fetchProductsFromCartOfUser(User user) throws NoProductFoundException;
 	public Set<Product> fetchProductsByBrand(Product product) throws NoProductFoundException;
+	public Set<Product> fetchTopProducts() throws NoProductFoundException;
 
 }

@@ -41,7 +41,7 @@
 		<div class="container">
 
 
-			<a class="navbar-brand" href="index.html"> <img
+			<a class="navbar-brand" href="showHomepage.do"> <img
 				src="<c:url value="/resources/images/logo.png"/>" width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
@@ -66,7 +66,15 @@
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="login.html">Login/SignUp</a>
+					<c:choose>
+						<c:when test="${ param.loggedin == true }">
+							<li class="nav-item"><a class="nav-link"
+								href="logoutUser.do">Logout</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item"><a class="nav-link" href="loginUser.do">Login</a></li>
+						</c:otherwise>
+					</c:choose>
 					</li>
 
 					<form class="form-inline my-2 my-lg-0 ml-auto">
@@ -87,7 +95,7 @@
 			<div class="row">
 				<div class="col-12">
 					<ol class="breadcrumb d-flex align-items-center">
-						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						<li class="breadcrumb-item"><a href="showHomepage.do">Home</a></li>
 						<li class="breadcrumb-item active"><a
 							href="product-details.html">Categories</a></li>
 

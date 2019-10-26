@@ -18,4 +18,5 @@ public interface ProductService {
 	Set<Product> fetchProductsByRetailer(Retailer retailer) throws NoProductFoundException;
 	Set<Product> fetchProductsFromCartOfUser(User user) throws NoProductFoundException;
 	Set<Product> fetchProductsByBrand(Product product) throws NoProductFoundException;
+	Set<Product> fetchTopProducts() throws NoProductFoundException;
 }
