@@ -190,8 +190,8 @@
 								<div class="product-img">
 									<img src="<c:url value="/resources/images/tp1.png" />" alt="">
 									<div class="product-quicview">
-										<!-- <a href="#" data-toggle="modal" data-target="#quickview"><i
-											class="ti-plus"></i></a> -->
+										<a href="showProductDetails.do?id=${ product.id }" data-target="#quickview"><i
+											class="ti-plus"></i></a>
 									</div>
 								</div>
 								<h4>${ product.name }</h4>
