@@ -14,4 +14,5 @@ public interface AdminService {
 	List<Retailer> getRetailers() throws NoUserFoundException;
 	Admin validateAdmin(String username, String password) throws NoUserFoundException;
 	void verifyRetailer(long retailerId) throws NoUserFoundException;
+	void removeRetailer(long retailerId) throws NoUserFoundException;
 }

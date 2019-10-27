@@ -10,4 +10,5 @@ public interface RetailerRepository extends GenericRepository {
 
 	public Retailer fetchRetailerByEmail(String email) throws NoUserFoundException, MultipleUsersFoundException;
 	List<Retailer> fetchAllRetailers() throws NoUserFoundException;
+	void removeRetailer(Retailer retailer) throws NoUserFoundException;
 }

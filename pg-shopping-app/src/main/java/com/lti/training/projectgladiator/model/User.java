@@ -2,6 +2,7 @@ package com.lti.training.projectgladiator.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -51,6 +53,9 @@ public class User implements Serializable {
 	
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Wishlist wishlist;
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private Set<Review> reviews;
 	
 	@Transient
 	private Role role = Role.USER;
@@ -139,4 +144,11 @@ public class User implements Serializable {
 		return role;
 	}
 
+	public Set<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(Set<Review> reviews) {
+		this.reviews = reviews;
+	}
 }

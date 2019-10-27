@@ -14,4 +14,5 @@ public interface RetailerService {
 	List<Retailer> fetchAllRetailers() throws NoUserFoundException;
 	Retailer fetchRetailerByEmail(String email) throws NoUserFoundException, MultipleUsersFoundException;
 	void verifyRetailer(long retailerId) throws NoUserFoundException;
+	void removeRetailer(long retailerId) throws NoUserFoundException;
 }
