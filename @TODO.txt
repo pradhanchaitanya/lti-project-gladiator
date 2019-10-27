@@ -1,0 +1,6 @@
+@TODO
+1) User reviews - add reviews, fetch reviews by user and product
+2) Add product and images by retailer
+3) Mail - welcome mail for user, order confirmation mail, retailer approval mail
+4) Placing order
+5) Number of orders on user dashboard
