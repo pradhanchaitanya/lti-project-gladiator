@@ -15,7 +15,7 @@ import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.service.ProductService;
 
 @Controller
-@SessionAttributes({"user", "products", "product"})
+@SessionAttributes({"user", "retailer" ,"products", "product"})
 public class HomeController {
 
 	@Autowired

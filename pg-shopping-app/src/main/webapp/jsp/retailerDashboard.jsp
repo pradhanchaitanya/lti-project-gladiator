@@ -6,8 +6,8 @@
 
 <!DOCTYPE html>
 <html>
-<title>Retailer Dashboard</title>
-<meta charset="UTF-8">
+<title>${ retailer.name }'s Dashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
@@ -80,7 +80,7 @@ html, body, h1, h2, h3, h4, h5 {
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="login.html">Login/SignUp</a>
+					<li class="nav-item"><a class="nav-link" href="logoutRetailer.do">Logout</a>
 					</li>
 					<form class="form-inline my-2 my-lg-0 ml-auto">
 						<input class="form-control" type="search" placeholder="Search"
@@ -105,7 +105,8 @@ html, body, h1, h2, h3, h4, h5 {
 						style="width: 46px">
 				</div>
 				<div class="w3-col s8 w3-bar">
-					<span>Welcome, <strong>Retailer</strong></span><br> <a
+					<span>Welcome, <br />
+					<strong>${ retailer.name }</strong></span><br> <a
 						href="#" class="w3-bar-item w3-button"><i
 						class="fa fa-envelope"></i></a> <a href="#"
 						class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> <a
@@ -229,7 +230,7 @@ html, body, h1, h2, h3, h4, h5 {
 					<a href="" class="btn btn-rounded mb-4" data-toggle="modal"
 						data-target="#modalAddProductForm">Add Products</a>
 				</div>
-<div>display details of retailer (Amit Shukla)</div>
+<div></div>
 			</div>
 
 			<!-- ****** Footer Area Start ****** -->

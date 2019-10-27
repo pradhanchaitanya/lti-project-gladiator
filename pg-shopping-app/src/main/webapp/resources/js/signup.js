@@ -36,7 +36,7 @@ function validateForm() {
 		document.getElementById("alert4").innerHTML = "!Address must be filled out";
 	}
 	
-	var account = document.getElementById("Account").value;
+	/*var account = document.getElementById("Account").value;
 	if (account == "") {
 		document.getElementById("alert5").innerHTML = "!Account number must be filled out";
 	}
@@ -44,6 +44,6 @@ function validateForm() {
 	var acc = /^\d{10}$/;
 	if (!account.match(acc)) {
 		document.getElementById("alert5").innerHTML = "!Please enter valid account number.";
-	}
+	}*/
 	
 }

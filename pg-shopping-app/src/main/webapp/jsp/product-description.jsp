@@ -227,7 +227,7 @@
 			data-toggle="modal" data-target="#modalReviewForm">Write Reviews</a>
 	</div>
 
-	<div>Display review on Screen (Amit Shukla)</div>
+	<div></div>
 	</main>
 
 

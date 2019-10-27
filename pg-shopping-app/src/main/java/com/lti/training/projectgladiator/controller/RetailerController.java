@@ -19,7 +19,7 @@ import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.service.RetailerService;
 
 @Controller
-@SessionAttributes("retailer")
+@SessionAttributes({"retailer", "isError", "error"})
 public class RetailerController {
 
 	@Autowired
@@ -53,6 +53,20 @@ public class RetailerController {
 		return "redirect:/showRetailerDashboard.do";
 	}
 	
+	@RequestMapping("/showRetailerDashboard.do")
+	public String showDashboard(ModelMap model) {
+		if (model.containsAttribute("retailer")) {
+			return "retailerDashboard.jsp";
+		}
+		
+		return "redirect:/loginRetailer.do";
+	}
+
+	@RequestMapping(path = "/loginRetailer.do", method = RequestMethod.GET)
+	public String showLoginForUser() {
+		return "retailerLogin.jsp";
+	}
+	
 	@RequestMapping(path = "/loginRetailer.do", method = RequestMethod.POST) 
 	public String loginRetailer(@RequestParam("email") String email,
 								@RequestParam("password") String password, ModelMap model) {
@@ -66,22 +80,9 @@ public class RetailerController {
 	public String logout(ModelMap model, HttpSession session) {
 		model.clear();
 		session.invalidate();
-		return "redirect:/showRetailerLogin.do";
+		return "redirect:/showRetailerHomepage.do";
 	}
 	
-	@RequestMapping("/showRetailerDashboard.do")
-	public String showDashboard(ModelMap model) {
-		if (model.containsAttribute("user")) {
-			return "retailerDashboard.jsp";
-		}
-		
-		return "redirect:/loginRetailer.do";
-	}
-	
-	@RequestMapping(path = "/loginRetailer.do", method = RequestMethod.GET)
-	public String showLoginForUser() {
-		return "retailerLogin.jsp";
-	}
 	
 	@RequestMapping(path = "/addProduct.do", method = RequestMethod.GET)
 	public String showAddProduct() {
