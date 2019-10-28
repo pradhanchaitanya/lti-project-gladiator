@@ -51,9 +51,6 @@ public class User implements Serializable {
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Cart cart;
 	
-	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-	private Wishlist wishlist;
-	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private Set<Review> reviews;
 	
@@ -130,14 +127,6 @@ public class User implements Serializable {
 
 	public void setCart(Cart cart) {
 		this.cart = cart;
-	}
-
-	public Wishlist getWishlist() {
-		return wishlist;
-	}
-
-	public void setWishlist(Wishlist wishlist) {
-		this.wishlist = wishlist;
 	}
 
 	public Role getRole() {

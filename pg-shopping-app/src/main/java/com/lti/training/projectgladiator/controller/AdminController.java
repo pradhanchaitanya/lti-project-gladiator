@@ -25,18 +25,26 @@ public class AdminController {
 	private AdminService adminService;
 
 	@RequestMapping(path = "/loginAdmin.do", method = RequestMethod.GET)
-	public String showAdminLogin() {
+	public String showAdminLogin(ModelMap model) {
+		if(model.containsAttribute("admin")) {
+			return "redirect:/showAdminDashboard.do";
+		}
 		return "adminLogin.jsp";
 	}
 	
 	@RequestMapping(path = "/loginAdmin.do", method = RequestMethod.POST)
 	public String loginAdmin(@RequestParam("username") String username,
 							@RequestParam("password") String password, ModelMap model) {
-		Admin validatedAdmin = adminService.validateUser(username, password);
-		// handle invalid credentials
-		
-		model.addAttribute("admin", validatedAdmin);
-		return "redirect:/showAdminDashboard.do";
+		Admin validatedAdmin = null;
+		try {
+			// handle invalid credentials
+			validatedAdmin = adminService.validateUser(username, password);
+			model.addAttribute("admin", validatedAdmin);
+			return "redirect:/showAdminDashboard.do";
+		} catch (Exception e) {
+			model.addAttribute("error", "Invalid Credentials");
+			return "redirect:/loginAdmin.do";
+		}
 	}
 	
 	@RequestMapping(path = "/showAdminDashboard.do", method = RequestMethod.GET)

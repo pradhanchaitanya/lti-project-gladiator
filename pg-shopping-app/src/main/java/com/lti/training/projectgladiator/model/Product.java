@@ -17,7 +17,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.lti.training.projectgladiator.model.jointables.CartProduct;
-import com.lti.training.projectgladiator.model.jointables.WishlistProduct;
 
 @Entity
 @Table(name = "TBL_PRODUCT")
@@ -65,11 +64,6 @@ public class Product implements Serializable {
 	//@Transient
 	private Set<CartProduct> cartProducts;
 	
-	/*
-	 * Product-Wishlist_Product PK-FK
-	 */
-	@OneToMany(mappedBy = "product")
-	private Set<WishlistProduct> wishlistProducts;
 
 	public long getId() {
 		return id;
@@ -141,14 +135,6 @@ public class Product implements Serializable {
 
 	public void setCartProducts(Set<CartProduct> cartProducts) {
 		this.cartProducts = cartProducts;
-	}
-
-	public Set<WishlistProduct> getWishlistProducts() {
-		return wishlistProducts;
-	}
-
-	public void setWishlistProducts(Set<WishlistProduct> wishlistProducts) {
-		this.wishlistProducts = wishlistProducts;
 	}
 
 	public Set<Review> getReviews() {

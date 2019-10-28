@@ -102,6 +102,9 @@
 										<div class="py-2 text-uppercase">Retailer's Name</div>
 									</th>
 									<th scope="col" class="border-0 bg-light">
+										<div class="py-2 text-uppercase">Shop Name</div>
+									</th>
+									<th scope="col" class="border-0 bg-light">
 										<div class="py-2 text-uppercase">Retailer's Address</div>
 									</th>
 									<th scope="col" class="border-0 bg-light">
@@ -125,9 +128,11 @@
 										</div>
 									</th>
 									<td class="border-0 align-middle">${ retailer.name }</td>
+									<td class="border-0 align-middle">${ retailer.shopName }</td>
 									<td class="border-0 align-middle">${ retailer.address }</td>
 									<td class="border-0 align-middle">
-										${ retailer.isApproved }
+										<!-- isApproved -->
+										<!-- ${ retailer.isApproved } -->
 									</td>
 									<td class="border-0 align-middle">
 									<a href="removeRetailer.do?id=${ retailer.id }" class="text-dark">
