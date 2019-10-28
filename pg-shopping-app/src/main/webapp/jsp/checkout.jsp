@@ -66,12 +66,10 @@
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
 							<a class="dropdown-item" href="shop.html">Shop</a> <a
 								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="cart.html">Cart</a> <a
-								class="dropdown-item" href="checkout.html">Checkout</a>
+								Details</a> <a class="dropdown-item" href="showCart.do">Cart</a> <a
+								class="dropdown-item" href="#">Checkout</a>
 						</div></li>
-					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="login.html">Login/SignUp</a>
+					<li class="nav-item"><a class="nav-link" href="logoutRetailer.do">Logout</a>
 					</li>
 
 					<form class="form-inline my-2 my-lg-0 ml-auto">
@@ -79,7 +77,7 @@
 							aria-label="Search">&nbsp;&nbsp;&nbsp;
 						<button class="text-white bg-dark"
 							class="btn btn-outline-black btn-md my-2 my-sm-0 ml-3"
-							type="submit">Search</button>
+							type="submit" style="width :100px;" >Search</button>
 					</form>
 				</ul>
 			</div>
@@ -92,10 +90,10 @@
 
 			<div class="col-12">
 				<ol class="breadcrumb d-flex align-items-center">
-					<li class="breadcrumb-item"><a href="index.html">Log</a></li>
-					<li class="breadcrumb-item"><a href="userdashboard.html">DashBoard</a></li>
-					<li class="breadcrumb-item "><a href="cart.html">Cart</a></li>
-					<li class="breadcrumb-item active"><a href="checkout.html">Checkout</a></li>
+					<li class="breadcrumb-item"><a href="showHomepage.do">Log</a></li>
+					<li class="breadcrumb-item"><a href="showDashboard.do">DashBoard</a></li>
+					<li class="breadcrumb-item "><a href="showCart.do">Cart</a></li>
+					<li class="breadcrumb-item active"><a href="#">Checkout</a></li>
 
 				</ol>
 			</div>
@@ -174,15 +172,17 @@
 
 	</div>
 
-	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+	<!-- jQuery (Necessary for All JavaScript Plugins) -->
+	<script
+		src="<c:url value="/resources/js/jquery/jquery-2.2.4.min.js" />"></script>
 	<!-- Popper js -->
-	<script src="js/popper.min.js"></script>
+	<script src="<c:url value="/resources/js/popper.min.js" />"></script>
 	<!-- Bootstrap js -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 	<!-- Plugins js -->
-	<script src="js/plugins.js"></script>
+	<script src="<c:url value="/resources/js/plugins.js" />"></script>
 	<!-- Active js -->
-	<script src="js/active.js"></script>
+	<script src="<c:url value="/resources/js/active.js" />"></script>
 
 
 </body>

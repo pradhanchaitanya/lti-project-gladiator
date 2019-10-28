@@ -75,10 +75,8 @@
 							<a class="dropdown-item" href="#">Shop</a> <a
 								class="dropdown-item" href="product-details.html">Product
 								Details</a> <a class="dropdown-item" href="#">Cart</a> <a
-								class="dropdown-item" href="checkout.html">Checkout</a>
+								class="dropdown-item" href="showCheckout.do">Checkout</a>
 						</div></li>
-					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
-					</li>
 					<li class="navitem"><a class="nav-link" href="logoutUser.do">Logout</a>
 					</li>
 					<form class="form-inline my-2 my-lg-0 ml-auto">
@@ -230,7 +228,7 @@
 							<li><span>Shipping</span> <span>Free</span></li>
 							<li><span><strong>Total</strong></span> <span><strong>Rs.36,250</strong></span></li>
 						</ul>
-						<a href="checkout.html" class="btn karl-checkout-btn">Proceed
+						<a href="showCheckout.do" class="btn karl-checkout-btn">Proceed
 							to checkout</a>
 					</div>
 				</div>
