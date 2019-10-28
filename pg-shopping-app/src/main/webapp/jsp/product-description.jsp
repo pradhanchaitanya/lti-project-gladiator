@@ -42,7 +42,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/style.css" />">
 
 <!-- Responsive CSS -->
-<link href="<c:url value="/resources/css/responsive.css" />"
+<link href="<c:url value="/resources/css/responsive.css" />" rel="stylesheet">
 	rel="stylesheet">
 <script src="<c:url value="/resources/js/main.js" />"></script>
 </head>
@@ -83,7 +83,7 @@
 							<a class="dropdown-item" href="showCart.do">Cart</a> 
 							<a class="dropdown-item" href="checkout.html">Checkout</a>
 						</div></li>
-					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
+					
 					</li>
 					<c:choose>
 						<c:when test="${ param.loggedin == true }">
@@ -133,7 +133,7 @@
 	<main class="container"> <!-- Left Column / Headphones Image -->
 	<div class="left-column">
 		<img data-image="black" class="active"
-			src="<c:url value="/resources/images/mi_k20.jpg" />" alt="">
+			src="<c:url value="/resources/images/uploads/${ product.imagePath }" />" alt="">
 	</div>
 
 
@@ -149,33 +149,17 @@
 		<!-- Product Configuration -->
 		<div class="product-configuration">
 
-
-
-			<!-- Cable Configuration -->
-			<!--
-      <div class="cable-config">
-        <span>Features</span>
- 
-        <div>
-          <ul>
-          	<li>Operating System-Android v9.0 (Pie)</li>
-          	<li>Battery-4000 mAh battery with Quick Charging v3.0</li>
-          	<li>Display-6.39 inches (16.23 cm) bezel-less display & Gorilla Glass 5 Protection</li>
-          	<li>Performance-Qualcomm Snapdragon 730 Octa core Processor . 6 GB RAM</li>
-          	<li>Camera-48 + 13 + 8 MP Triple Rear Cameras . 20 MP Front Camera</li>
-          </ul>
-        </div>
- 
-      </div>
-      -->
 		</div>
 
 		<!-- Product Pricing -->
 		<div class="product-price">
-			<span>Rs. ${ product.price }</span>
+			<strike>Rs. ${ product.price }</strike>
+			<br>
+			<p>Discount: ${ product.discount }%</p>
+			<p>You get it for: ${ product.price - product.price * product.discount / 100 }</p>
 			<c:if test="${ param.loggedin == true }">
 				<!-- Add to Cart -->
-				<a href="#" class="add-to-cart-btn">ADD TO CART</a>
+				<a href="addToCart.do?id=${ product.id }" class="add-to-cart-btn">ADD TO CART</a>
 			</c:if>
 		</div>
 	</div>
@@ -195,12 +179,9 @@
 				</div>
 				<div class="modal-body mx-3">
 					<div class="md-form mb-5">
-
-
-
 						<i class="fa fa-envelope prefix grey-text"></i> <label
 							data-error="wrong" data-success="right" for="form3">Your
-							Email</label> <input type="email" id="form3"
+							Email</label> <input type="email" id="form3" value="${ user.email }"
 							class="form-control validate">
 					</div>
 
@@ -230,18 +211,16 @@
 	<div></div>
 	</main>
 
-
-
-
-	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+	<!-- jQuery (Necessary for All JavaScript Plugins) -->
+	<script src="<c:url value="/resources/js/jquery/jquery-2.2.4.min.js" />"></script>
 	<!-- Popper js -->
-	<script src="js/popper.min.js"></script>
+	<script src="<c:url value="/resources/js/popper.min.js" />"></script>
 	<!-- Bootstrap js -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 	<!-- Plugins js -->
-	<script src="js/plugins.js"></script>
+	<script src="<c:url value="/resources/js/plugins.js" />"></script>
 	<!-- Active js -->
-	<script src="js/active.js"></script>
+	<script src="<c:url value="/resources/js/active.js" />"></script>
 
 
 </body>

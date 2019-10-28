@@ -186,8 +186,7 @@
 								data-wow-delay="0.2s">
 								<!-- Product Image -->
 								<div class="product-img">
-									<p>${ product.imagePath }</p>
-									<img src="${ product.imagePath }" alt="">
+									<img src="<c:url value="/resources/images/uploads/${ product.imagePath }" />" alt="" width="700" height="400">
 									<div class="product-quicview">
 										<a href="showProductDetails.do?id=${ product.id }" data-target="#quickview"><i
 											class="ti-plus"></i></a>
@@ -342,8 +341,7 @@
 	<!-- /.wrapper end -->
 
 	<!-- jQuery (Necessary for All JavaScript Plugins) -->
-	<script
-		src="<c:url value="/resources/js/jquery/jquery-2.2.4.min.js" />"></script>
+	<script src="<c:url value="/resources/js/jquery/jquery-2.2.4.min.js" />"></script>
 	<!-- Popper js -->
 	<script src="<c:url value="/resources/js/popper.min.js" />"></script>
 	<!-- Bootstrap js -->

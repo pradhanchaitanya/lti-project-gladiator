@@ -106,6 +106,7 @@ public class RetailerController {
 		
 		MultipartFile file = data.getImage();
 		String imagePath = null;
+		String imageName = null;
 		if(!file.isEmpty()) {
 			try {
 				byte[] bytes = file.getBytes();
@@ -123,9 +124,9 @@ public class RetailerController {
 				*/
 //				Resource resource = resourceLoader.getResource("webapp\\resources\\images");
 				
-				imagePath = FILE_PATH + "\\" + 
-										Instant.now().getEpochSecond() + "-" +
-										file.getOriginalFilename().trim();
+				imageName = Instant.now().getEpochSecond() + "-" + file.getOriginalFilename().trim();
+				imagePath = FILE_PATH + "\\" + imageName;
+										
 				file.transferTo(new File(imagePath));
 			} catch (Exception e) {
 				model.addAttribute("error", e.getMessage());
@@ -143,7 +144,7 @@ public class RetailerController {
 		product.setBrand(data.getBrand());
 		product.setQuantity(data.getQuantity());
 		product.setDiscount(data.getDiscount());
-		product.setImagePath(imagePath);
+		product.setImagePath(imageName);
 		product.setRetailer(currentRetailer);
 		
 		retailerService.addNewProduct(product);
