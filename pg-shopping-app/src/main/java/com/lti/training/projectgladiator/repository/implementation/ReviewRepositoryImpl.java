@@ -9,8 +9,6 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
-import com.lti.training.projectgladiator.exceptions.NoProductFoundException;
 import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.Review;
 import com.lti.training.projectgladiator.model.User;

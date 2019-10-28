@@ -71,7 +71,7 @@
 		<property name="host" value="smtp.office365.com" />
 		<property name="port" value="587" />
 		<property name="username" value="chaitanya.pradhan@lntinfotech.com" />
-		<property name="password" value="chaitu1211%" />
+		<property name="password" value="" />
 
 		<property name="javaMailProperties">
 			<props>
@@ -87,9 +87,10 @@
 	</bean>
 
 	<!-- Pre-configured Message -->
-	<!-- <bean id="preConfiguredSimpleMailMessage" class="org.springframework.mail.SimpleMailMessage"> 
+	<bean id="preConfiguredSimpleMailMessage" class="org.springframework.mail.SimpleMailMessage"> 
 		<property name="from" value="chaitanya.pradhan@lntinfotech.com"></property> 
-		</bean> <bean id="preConfiguredJavaxMailMessage" class="javax.mail.internet.MimeMessage"> 
+		</bean> 
+	<!--<bean id="preConfiguredJavaxMailMessage" class="javax.mail.internet.MimeMessage"> 
 		<property name="from" value="chaitanya.pradhan@lntinfotech.com"></property> 
 		</bean> -->
 

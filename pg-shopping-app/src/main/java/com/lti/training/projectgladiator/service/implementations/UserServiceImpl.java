@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
 	private OrderRepository orderRepository;
 	
 	@Autowired
-	private MailService mailService;
+	private MailServiceImpl mailService;
 	
 	@Override
 	public void addNewUser(User user) throws FailedUpsertException {
