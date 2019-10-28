@@ -87,10 +87,8 @@ html, body, h1, h2, h3, h4, h5 {
 							<a class="dropdown-item" href="#">Shop</a> 
 							<a class="dropdown-item" href="showDashboard.do">Dashboard</a> 
 							<a class="dropdown-item" href="showCart.do">Cart</a> 
-							<a class="dropdown-item" href="checkout.html">Checkout</a>
+							<a class="dropdown-item" href="showCheckout.do">Checkout</a>
 						</div>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="logoutUser.do">Logout</a>
 					</li>

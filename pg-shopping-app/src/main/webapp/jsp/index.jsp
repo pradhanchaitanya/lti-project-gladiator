@@ -72,8 +72,6 @@
 							<a class="dropdown-item" href="showCart.do">Cart</a> <a
 								class="dropdown-item" href="checkout.jsp">Checkout</a>
 						</div></li>
-					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
-					</li>
 					<c:choose>
 						<c:when test="${ param.loggedin == true }">
 							<li class="nav-item"><a class="nav-link"

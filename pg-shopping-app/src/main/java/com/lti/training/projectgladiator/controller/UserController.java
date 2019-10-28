@@ -146,4 +146,9 @@ public class UserController {
 		}
 		return "redirect:showCart.do";
 	}
+	
+	@RequestMapping(path = "/showCheckout.do", method = RequestMethod.GET)
+	public String showCheckoutForUser() {
+		return "checkout.jsp";
+	}
 }
