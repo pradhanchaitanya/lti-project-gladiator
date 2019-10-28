@@ -38,6 +38,7 @@ public class RetailerController {
 		retailer.setEmail(retailerData.getEmail());
 		retailer.setMobileNumber(retailerData.getMobileNumber());
 		retailer.setPassword(retailerData.getPassword());
+		retailer.setShopName(retailerData.getShopName());
 		retailer.setAddress(retailerData.getAddress());
 		retailer.setCreatedAt(LocalDateTime.now());
 		

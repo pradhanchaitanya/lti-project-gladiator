@@ -49,8 +49,8 @@ html, body, h1, h2, h3, h4, h5 {
 		<div class="container">
 
 
-			<a class="navbar-brand" href="index.html"> <img
-				src="<c:url value="/resources/images/logo.png" />" width="50" height="50"
+			<a class="navbar-brand" href="showHomepage.do"> 
+				<img src="<c:url value="/resources/images/logo.png" />" width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
 
@@ -61,12 +61,13 @@ html, body, h1, h2, h3, h4, h5 {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
+					<!--
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Log</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="userdashboard.html">Dashboard</a>
+							<a class="dropdown-item" href="#">Dashboard</a>
 						</div></li>
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
@@ -80,8 +81,11 @@ html, body, h1, h2, h3, h4, h5 {
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="logoutRetailer.do">Logout</a>
+					-->
+					<li class="nav-item">
+						<a class="nav-link" href="logoutRetailer.do">Logout</a>
 					</li>
+					<!-- 
 					<form class="form-inline my-2 my-lg-0 ml-auto">
 						<input class="form-control" type="search" placeholder="Search"
 							aria-label="Search">&nbsp;&nbsp;&nbsp;
@@ -89,6 +93,7 @@ html, body, h1, h2, h3, h4, h5 {
 							class="btn btn-outline-black btn-md my-2 my-sm-0 ml-3"
 							type="submit">Search</button>
 					</form>
+					-->
 				</ul>
 			</div>
 		</div>
@@ -150,6 +155,10 @@ html, body, h1, h2, h3, h4, h5 {
 			</header>
 			<div class="w3-container">
 				<h5>Sell Products</h5>
+				<div class="text-left">
+					<button class="btn btn-primary btn-rounded mb-4" data-toggle="modal"
+						data-target="#modalAddProductForm">Add Product</button>
+				</div>
 
 				<!-- for Adding Products -->
 
@@ -168,57 +177,71 @@ html, body, h1, h2, h3, h4, h5 {
 
 								<div class="md-form mb-4">
 									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form">Enter
-										Name</label> <input type="text" id="form"
-										class="form-control validate">
+										data-error="wrong" data-success="right" for="form">
+										Enter Name
+									</label> 
+									<input type="text" id="form" class="form-control validate">
 								</div>
 
 								<div class="md-form mb-4">
 									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form1">Description</label>
+										data-error="wrong" data-success="right" for="form1">
+										Description
+									</label>
 									<input type="text" id="form1" class="form-control validate">
 								</div>
 
 								<div class="md-form mb-4">
 									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form2">Price</label>
+										data-error="wrong" data-success="right" for="form2">
+										Price
+									</label>
 									<input type="text" id="form2" class="form-control validate">
 								</div>
 
 								<div class="md-form mb-4">
 									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form4">Category</label>
+										data-error="wrong" data-success="right" for="form4">
+										Category
+									</label>
 									<input type="text" id="form4" class="form-control validate">
 								</div>
 
 								<div class="md-form mb-4">
 									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form5">Brand</label>
+										data-error="wrong" data-success="right" for="form5">
+										Brand
+									</label>
 									<input type="text" id="form5" class="form-control validate">
 								</div>
 
 								<div class="md-form mb-4">
 									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form6">Quantity</label>
+										data-error="wrong" data-success="right" for="form6">
+										Quantity
+									</label>
 									<input type="number" id="form6" class="form-control validate">
 								</div>
 
 								<div class="md-form mb-4">
 									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form7">Discount</label>
+										data-error="wrong" data-success="right" for="form7">
+										Discount
+									</label>
 									<input type="text" id="form7" class="form-control validate">
 								</div>
 
 								<div class="md-form mb-4">
 									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form3">Image</label>
+										data-error="wrong" data-success="right" for="form3">
+										Image
+									</label>
 									<input type="text" id="form3" class="form-control validate">
 								</div>
 
 							</div>
 
 							<div class="modal-footer d-flex justify-content-center">
-
 								<button class="modal-title w-50 font-weight-bold"
 									class="btn btn-red" onclick="#">Submit</button>
 							</div>
@@ -226,10 +249,7 @@ html, body, h1, h2, h3, h4, h5 {
 					</div>
 				</div>
 
-				<div class="text-left">
-					<a href="" class="btn btn-rounded mb-4" data-toggle="modal"
-						data-target="#modalAddProductForm">Add Products</a>
-				</div>
+				
 <div></div>
 			</div>
 
