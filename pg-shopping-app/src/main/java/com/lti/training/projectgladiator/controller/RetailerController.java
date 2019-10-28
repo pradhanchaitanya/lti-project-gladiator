@@ -123,6 +123,7 @@ public class RetailerController {
 				stream.close();
 				*/
 				Resource resource = resourceLoader.getResource("webapp\\resources\\images");
+//				String filePath = "D:\\eclipse-workspace\\lti-project-gladiator\\pg-shopping-app\\src\\main\\webapp\\resources\\images\\uploads";
 				imagePath = resource.getFile() + "\\" + 
 												Instant.now().getEpochSecond() + "-" +
 												file.getOriginalFilename().trim();

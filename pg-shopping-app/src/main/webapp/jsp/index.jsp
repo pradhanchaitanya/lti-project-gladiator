@@ -186,7 +186,8 @@
 								data-wow-delay="0.2s">
 								<!-- Product Image -->
 								<div class="product-img">
-									<img src="<c:url value="/resources/images/tp1.png" />" alt="">
+									<p>${ product.imagePath }</p>
+									<img src="${ product.imagePath }" alt="">
 									<div class="product-quicview">
 										<a href="showProductDetails.do?id=${ product.id }" data-target="#quickview"><i
 											class="ti-plus"></i></a>
@@ -196,7 +197,7 @@
 								<!-- Product Description -->
 								<div class="product-description">
 									<h4 class="product-price">${ product.price }</h4>
-									<p>${ product.description }</p>
+									<!-- <p>${ product.description }</p> -->
 									<c:if test = "${ param.loggedin == true }">
 									<!-- Add to Cart -->
 									<a href="addToCart.do?id=${ product.id }" class="add-to-cart-btn">ADD TO CART</a>
