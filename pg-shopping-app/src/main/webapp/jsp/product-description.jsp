@@ -43,7 +43,7 @@
 
 <!-- Responsive CSS -->
 <link href="<c:url value="/resources/css/responsive.css" />" rel="stylesheet">
-	rel="stylesheet">
+	
 <script src="<c:url value="/resources/js/main.js" />"></script>
 </head>
 
