@@ -28,10 +28,6 @@
 <link href="<c:url value="/resources/css/shop-homepage.css" />"
 	rel="stylesheet">
 
-<!-- Favicon  -->
-<link rel="icon"
-	href="<c:url value="/resources/img/core-img/favicon.ico" />">
-
 <!-- Core Style CSS -->
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/core-style.css" />">
@@ -322,18 +318,7 @@ html, body, h1, h2, h3, h4, h5 {
 							</div>
 							<!-- Single Footer Area Start -->
 							<div class="col-12 col-lg-5">
-								<div class="single_footer_area">
-									<div class="footer_heading mb-30">
-										<h6>Subscribe to our newsletter</h6>
-									</div>
-									<div class="subscribtion_form">
-										<form action="#" method="post">
-											<input type="email" name="mail" class="mail"
-												placeholder="Your email here">
-											<button type="submit" class="submit">Subscribe</button>
-										</form>
-									</div>
-								</div>
+								
 							</div>
 						</div>
 

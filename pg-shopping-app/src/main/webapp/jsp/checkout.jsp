@@ -26,9 +26,6 @@
 <!-- Custom styles for this template -->
 <link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
-<!-- Favicon  -->
-<link rel="icon" href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
-
 <!-- Core Style CSS -->
 <link rel="stylesheet" href="<c:url value="/resources/css/core1-style.css" />">
 <link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">
@@ -103,19 +100,7 @@
 	<div class="container">
 
 		<div class="col-lg-9">
-			Enter Shipping Address <br><br>
-			Line 1<input type="text"
-				class="form-control validate"> <br>Line 2<input
-				type="text" class="form-control validate"> <br>Line 3<input
-				type="text" class="form-control validate"> <br>State<select
-				class="form-control">
-				<option>Maharashtra</option>
-				<option>Goa</option>
-				<option>Kerala</option>
-				<option>Gujrat</option>
-				<option>Rajasthan</option>
-
-			</select> <br>
+			
 			<hr>
 			<ul class="cart-total-chart">
 				<li><span>Subtotal</span> <span>Rs. ${ cart.totalPrice }</span></li>

@@ -37,7 +37,7 @@ public class OrderRepositoryImpl extends GenericRepositoryImpl implements OrderR
 		User user = cart.getUser();
 		
 		Set<Product> products = productRepository.fetchProductsFromCartOfUser(user);
-		products.forEach(product -> productRepository.removeProductFromCart(product, cart, 1));
+		products.forEach(product -> productRepository.removeProductFromCart(product, cart, 1, true));
 		entityManager.remove(entityManager.contains(cart) ? cart : entityManager.merge(cart));
 	}
 

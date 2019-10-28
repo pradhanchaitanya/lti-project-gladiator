@@ -25,13 +25,6 @@
 <!-- Custom styles for this template -->
 <link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
 
-<!-- Favicon  -->
-
-<link rel="icon" href="<c:url value="/resources/img/core-img/favicon.ico" />">
-
-<link rel="icon" href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
-
-
 <!-- Core Style CSS -->
 <link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">
 <link rel="stylesheet" href="<c:url value="/resources/style.css" />">

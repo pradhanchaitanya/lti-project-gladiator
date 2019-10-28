@@ -63,10 +63,13 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		cart.setTotalQuantity(totalQuantity + quantity);
 		
 		cartRepository.updateCartForUser(cart);
+		
+		product.setQuantity(product.getQuantity() - quantity);
+		upsert(product);
 	}
 	
 	@Transactional
-	public void removeProductFromCart(Product product, Cart cart, int quantity) throws NoProductFoundException {
+	public void removeProductFromCart(Product product, Cart cart, int quantity, boolean shouldRemove) throws NoProductFoundException {
 		String jpql = "select cp from CartProduct cp where cp.cart.id = :cartId and cp.product.id = :productId";
 		Query query = entityManager.createQuery(jpql);
 		query.setParameter("cartId", cart.getId());
@@ -83,6 +86,11 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		cart.setTotalQuantity(totalQuantity - quantity);
 		
 		cartRepository.updateCartForUser(cart);
+		
+		if(shouldRemove) {
+			product.setQuantity(product.getQuantity() + quantity);
+			upsert(product);
+		}
 		
 //		cartProduct.setCart(cart);
 //		upsert(cartProduct);

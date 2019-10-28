@@ -30,10 +30,6 @@
 <link href="<c:url value="/resources/css/shop-homepage.css" />"
 	rel="stylesheet">
 
-<!-- Favicon  -->
-<link rel="icon"
-	href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
-
 <!-- Core Style CSS -->
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/core1-style.css" />">

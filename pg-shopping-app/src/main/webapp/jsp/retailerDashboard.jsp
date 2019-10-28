@@ -28,10 +28,6 @@
 <link href="<c:url value="/resources/css/shop-homepage.css" />"
 	rel="stylesheet">
 
-<!-- Favicon  -->
-<link rel="icon"
-	href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
-
 <!-- Core Style CSS -->
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/core-style.css" />">
@@ -130,13 +126,13 @@ html, body, h1, h2, h3, h4, h5 {
 				<a href="#"
 					class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
 					onclick="w3_close()" title="close menu"><i
-					class="fa fa-remove fa-fw"></i>  Close Menu</a> <a href="#"
+					class="fa fa-remove fa-fw"></i>  Close Menu</a> <!-- <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-diamond fa-fw"></i>&nbsp;Sales</a> <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-cog fa-fw"></i>&nbsp;Change Password</a><a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
-					class="fa fa-cog fa-fw"></i>&nbsp;Delete Account</a><br> <br>
+					class="fa fa-cog fa-fw"></i>&nbsp;Delete Account</a>--><br> <br>
 			</div>
 		</nav>
 

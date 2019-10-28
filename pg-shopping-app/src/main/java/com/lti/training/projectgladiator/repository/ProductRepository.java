@@ -13,7 +13,7 @@ public interface ProductRepository extends GenericRepository {
 
 	public void addNewProduct(Product product) throws FailedUpsertException;
 	public void addProductToCart(Product product, Cart cart, int quantity) throws FailedUpsertException;
-	public void removeProductFromCart(Product product, Cart cart, int quantity) throws NoProductFoundException;
+	public void removeProductFromCart(Product product, Cart cart, int quantity, boolean shouldRemove) throws NoProductFoundException;
 	public Set<Product> fetchProductsByRetailer(Retailer retailer) throws NoProductFoundException;
 	public Set<Product> fetchProductsFromCartOfUser(User user) throws NoProductFoundException;
 	public Set<Product> fetchProductsByBrand(Product product) throws NoProductFoundException;

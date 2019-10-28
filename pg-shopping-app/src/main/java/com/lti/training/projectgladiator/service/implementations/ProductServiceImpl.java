@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public void removeProductFromCart(Product product, Cart cart, int quantity) throws NoProductFoundException {
-		productRepository.removeProductFromCart(product, cart, quantity);
+		productRepository.removeProductFromCart(product, cart, quantity, false);
 	}
 
 	@Override
