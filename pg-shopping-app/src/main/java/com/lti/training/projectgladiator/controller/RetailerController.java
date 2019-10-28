@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.lti.training.projectgladiator.dto.ProductDTO;
 import com.lti.training.projectgladiator.dto.RetailerDTO;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
+import com.lti.training.projectgladiator.model.Discount;
+import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.Retailer;
 import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.service.RetailerService;
@@ -86,8 +89,23 @@ public class RetailerController {
 	
 	
 	@RequestMapping(path = "/addProduct.do", method = RequestMethod.GET)
-	public String showAddProduct() {
+	public String addProduct(ProductDTO data, ModelMap model) {
+		Retailer currentRetailer = (Retailer) model.get("retailer");
+		Product product = new Product();
+		product.setName(data.getName());
+		product.setDescription(data.getDescription());
+		product.setPrice(data.getPrice());
+		product.setCategory(data.getCategory());
+		product.setBrand(data.getBrand());
+		product.setQuantity(data.getQuantity());
 		
-		return "retailerDashboard.jsp";
+		Discount discount = new Discount();
+		discount.setDiscountPercent(data.getDiscount());
+		discount.setProduct(product);
+		product.setDiscount(discount);
+		
+		product.setRetailer(currentRetailer);
+		retailerService.addNewProduct(product);
+		return "redirect:/showRetailerDashboard.do";
 	}
 }

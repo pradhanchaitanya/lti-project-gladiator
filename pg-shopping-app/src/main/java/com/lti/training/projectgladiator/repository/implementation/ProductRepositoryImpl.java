@@ -27,6 +27,12 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 	@Autowired
 	private CartRepository cartRepository;
 	
+	@Override
+	@Transactional
+	public void addNewProduct(Product product) throws FailedUpsertException {
+		upsert(product);		
+	}
+
 	@Transactional
 	public void addProductToCart(Product product, Cart cart, int quantity) throws FailedUpsertException {
 //		String jpql = "select cp from CartProduct cp where cp.cart.id = :cartId";

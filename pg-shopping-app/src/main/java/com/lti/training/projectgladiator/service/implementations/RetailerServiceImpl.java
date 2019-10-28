@@ -9,9 +9,11 @@ import com.lambdaworks.crypto.SCryptUtil;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
 import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
+import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.Retailer;
 import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.repository.RetailerRepository;
+import com.lti.training.projectgladiator.service.ProductService;
 import com.lti.training.projectgladiator.service.RetailerService;
 
 @Service
@@ -19,6 +21,9 @@ public class RetailerServiceImpl implements RetailerService {
 
 	@Autowired
 	private RetailerRepository retailerRepository;
+	
+	@Autowired
+	private ProductService productService;
 
 	@Override
 	public void addNewRetailer(Retailer retailer) {
@@ -85,4 +90,8 @@ public class RetailerServiceImpl implements RetailerService {
 		retailerRepository.removeRetailer(retailer);
 	}
 
+	@Override
+	public void addNewProduct(Product product) {
+		productService.addNewProduct(product);
+	}
 }

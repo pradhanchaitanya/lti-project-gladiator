@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
+import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.Retailer;
 
 public interface RetailerService {
@@ -15,4 +16,5 @@ public interface RetailerService {
 	Retailer fetchRetailerByEmail(String email) throws NoUserFoundException, MultipleUsersFoundException;
 	void verifyRetailer(long retailerId) throws NoUserFoundException;
 	void removeRetailer(long retailerId) throws NoUserFoundException;
+	void addNewProduct(Product product);
 }

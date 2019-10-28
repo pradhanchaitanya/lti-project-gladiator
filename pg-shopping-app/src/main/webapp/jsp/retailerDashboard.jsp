@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@ taglib uri = "http://www.springframework.org/tags/form" prefix = "form" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <!DOCTYPE html>
 <html>
-<title>${ retailer.name }'s Dashboard</title>
+<title>${ retailer.name }'sDashboard</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -20,20 +20,26 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <!-- Bootstrap core CSS -->
-<link href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
+<link
+	href="<c:url value="/resources/vendor/bootstrap/css/bootstrap.min.css" />"
+	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="<c:url value="/resources/css/shop-homepage.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/shop-homepage.css" />"
+	rel="stylesheet">
 
 <!-- Favicon  -->
-<link rel="icon" href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
+<link rel="icon"
+	href="<c:url value="/resources/images/img/core-img/favicon.ico" />">
 
 <!-- Core Style CSS -->
-<link rel="stylesheet" href="<c:url value="/resources/css/core-style.css" />">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/core-style.css" />">
 <link rel="stylesheet" href="<c:url value="/resources/style.css" />">
 
 <!-- Responsive CSS -->
-<link href="<c:url value="/resources/css/responsive.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/responsive.css" />"
+	rel="stylesheet">
 
 
 
@@ -49,9 +55,9 @@ html, body, h1, h2, h3, h4, h5 {
 		<div class="container">
 
 
-			<a class="navbar-brand" href="showRetailerHomepage.do"> 
-				<img src="<c:url value="/resources/images/logo.png" />" width="50" height="50"
-				class="d-inline-block align-top" alt="" /> Shopp-E
+			<a class="navbar-brand" href="showRetailerHomepage.do"> <img
+				src="<c:url value="/resources/images/logo.png" />" width="50"
+				height="50" class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
 
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -82,9 +88,8 @@ html, body, h1, h2, h3, h4, h5 {
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
 					-->
-					<li class="nav-item">
-						<a class="nav-link" href="logoutRetailer.do">Logout</a>
-					</li>
+					<li class="nav-item"><a class="nav-link"
+						href="logoutRetailer.do">Logout</a></li>
 					<!-- 
 					<form class="form-inline my-2 my-lg-0 ml-auto">
 						<input class="form-control" type="search" placeholder="Search"
@@ -106,13 +111,12 @@ html, body, h1, h2, h3, h4, h5 {
 			<br>
 			<div class="w3-container w3-row">
 				<div class="w3-col s4">
-					<img src="<c:url value="/resources/images/avatar.png" />" class="w3-circle w3-margin-right"
-						style="width: 46px">
+					<img src="<c:url value="/resources/images/avatar.png" />"
+						class="w3-circle w3-margin-right" style="width: 46px">
 				</div>
 				<div class="w3-col s8 w3-bar">
-					<span>Welcome, <br />
-					<strong>${ retailer.name }</strong></span><br> <a
-						href="#" class="w3-bar-item w3-button"><i
+					<span>Welcome, <br /> <strong>${ retailer.name }</strong></span><br>
+					<a href="#" class="w3-bar-item w3-button"><i
 						class="fa fa-envelope"></i></a> <a href="#"
 						class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> <a
 						href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
@@ -128,13 +132,11 @@ html, body, h1, h2, h3, h4, h5 {
 					onclick="w3_close()" title="close menu"><i
 					class="fa fa-remove fa-fw"></i>  Close Menu</a> <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
-					class="fa fa-diamond fa-fw"></i>Product Summary</a> <a href="cart.html"
+					class="fa fa-diamond fa-fw"></i>&nbsp;Sales</a> <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
-					class="fa fa-bank fa-fw"></i>Add Products</a> <a href="#"
-					class="w3-bar-item w3-button w3-padding"><i
-					class="fa fa-cog fa-fw"></i>Change Password</a><br> <br> <a
+					class="fa fa-cog fa-fw"></i>&nbsp;Change Password</a><a
 					href="#" class="w3-bar-item w3-button w3-padding"><i
-					class="fa fa-cog fa-fw"></i>Delete Account</a><br> <br>
+					class="fa fa-cog fa-fw"></i>&nbsp;Delete Account</a><br> <br>
 			</div>
 		</nav>
 
@@ -156,8 +158,9 @@ html, body, h1, h2, h3, h4, h5 {
 			<div class="w3-container">
 				<h5>Sell Products</h5>
 				<div class="text-right">
-					<button class="btn btn-primary btn-rounded mb-4" data-toggle="modal"
-						data-target="#modalAddProductForm">Add Product</button>
+					<button class="btn btn-primary btn-rounded mb-4"
+						data-toggle="modal" data-target="#modalAddProductForm">Add
+						Product</button>
 				</div>
 
 				<!-- for Adding Products -->
@@ -174,83 +177,72 @@ html, body, h1, h2, h3, h4, h5 {
 								</button>
 							</div>
 							<div class="modal-body mx-3">
+								<form action="addProduct.do" method="post" enctype="multipart/form-data">
+									<div class="md-form mb-4">
+										<label class="modal-title w-50 font-weight-bold"
+											data-error="wrong" data-success="right" for="form">
+											Name </label> <input type="text" id="form" name="name"
+											class="form-control validate">
+									</div>
 
-								<div class="md-form mb-4">
-									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form">
-										Enter Name
-									</label> 
-									<input type="text" id="form" class="form-control validate">
-								</div>
+									<div class="md-form mb-4">
+										<label class="modal-title w-50 font-weight-bold"
+											data-error="wrong" data-success="right" for="form1">
+											Description </label> <input type="text" id="form1" name="description"
+											class="form-control validate">
+									</div>
 
-								<div class="md-form mb-4">
-									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form1">
-										Description
-									</label>
-									<input type="text" id="form1" class="form-control validate">
-								</div>
+									<div class="md-form mb-4">
+										<label class="modal-title w-50 font-weight-bold"
+											data-error="wrong" data-success="right" for="form2">
+											Price </label> <input type="text" id="form2" name="price"
+											class="form-control validate">
+									</div>
 
-								<div class="md-form mb-4">
-									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form2">
-										Price
-									</label>
-									<input type="text" id="form2" class="form-control validate">
-								</div>
+									<div class="md-form mb-4">
+										<label class="modal-title w-50 font-weight-bold"
+											data-error="wrong" data-success="right" for="form4">
+											Category </label> <input type="text" id="form4" name="category"
+											class="form-control validate">
+									</div>
 
-								<div class="md-form mb-4">
-									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form4">
-										Category
-									</label>
-									<input type="text" id="form4" class="form-control validate">
-								</div>
+									<div class="md-form mb-4">
+										<label class="modal-title w-50 font-weight-bold"
+											data-error="wrong" data-success="right" for="form5">
+											Brand </label> <input type="text" id="form5" name="brand"
+											class="form-control validate">
+									</div>
 
-								<div class="md-form mb-4">
-									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form5">
-										Brand
-									</label>
-									<input type="text" id="form5" class="form-control validate">
-								</div>
+									<div class="md-form mb-4">
+										<label class="modal-title w-50 font-weight-bold"
+											data-error="wrong" data-success="right" for="form6">
+											Quantity </label> <input type="number" id="form6" name="quantity"
+											class="form-control validate">
+									</div>
 
-								<div class="md-form mb-4">
-									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form6">
-										Quantity
-									</label>
-									<input type="number" id="form6" class="form-control validate">
-								</div>
+									<div class="md-form mb-4">
+										<label class="modal-title w-50 font-weight-bold"
+											data-error="wrong" data-success="right" for="form7">
+											Discount </label> <input type="text" id="form7" name="discount"
+											class="form-control validate">
+									</div>
 
-								<div class="md-form mb-4">
-									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form7">
-										Discount
-									</label>
-									<input type="text" id="form7" class="form-control validate">
-								</div>
-
-								<div class="md-form mb-4">
-									<label class="modal-title w-50 font-weight-bold"
-										data-error="wrong" data-success="right" for="form3">
-										Image
-									</label>
-									<input type="text" id="form3" class="form-control validate">
-								</div>
-
+									<div class="md-form mb-4">
+										<label class="modal-title w-50 font-weight-bold"
+											data-error="wrong" data-success="right" for="form3">
+											Image </label> <input type="file" id="form3" name="image"
+											class="form-control validate">
+									</div>
 							</div>
 
 							<div class="modal-footer d-flex justify-content-center">
 								<button class="modal-title w-50 font-weight-bold"
-									class="btn btn-red" onclick="#">Submit</button>
+									class="btn btn-primary" onclick="#">Submit</button>
 							</div>
+							</form>
 						</div>
 					</div>
 				</div>
-
-				
-<div></div>
 			</div>
 
 			<!-- ****** Footer Area Start ****** -->
@@ -261,7 +253,8 @@ html, body, h1, h2, h3, h4, h5 {
 						<div class="col-12 col-md-6 col-lg-3">
 							<div class="single_footer_area">
 								<div class="footer-logo">
-									<img src="<c:url value="/resources/images/logo.png" />" alt="" height="200px" width="200px">
+									<img src="<c:url value="/resources/images/logo.png" />" alt=""
+										height="200px" width="200px">
 									<div class="copywrite_text d-flex align-items-center">
 										<p>
 											Copyright &copy;
