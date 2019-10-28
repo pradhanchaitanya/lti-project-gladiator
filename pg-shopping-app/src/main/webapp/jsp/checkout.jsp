@@ -154,7 +154,7 @@
 
 								<button class="btn btn-secondary"
 									class="modal-title w-50 font-weight-bold">
-									<a href="index.html"> Continue shopping</a>
+									<a href="showHomepage.do"> Continue shopping</a>
 								</button>
 							</div>
 
