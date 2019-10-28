@@ -55,6 +55,9 @@ public class Product implements Serializable {
 	@JoinColumn(name = "RETAILER_ID")
 	private Retailer retailer;
 	
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+	private Set<Review> reviews;
+	
 	/*
 	 * Product-Cart_Product PK-FK
 	 */
@@ -146,6 +149,14 @@ public class Product implements Serializable {
 
 	public void setWishlistProducts(Set<WishlistProduct> wishlistProducts) {
 		this.wishlistProducts = wishlistProducts;
+	}
+
+	public Set<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(Set<Review> reviews) {
+		this.reviews = reviews;
 	}
 	
 }

@@ -10,6 +10,7 @@ import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
@@ -51,6 +52,12 @@ public class RetailerRepositoryImpl extends GenericRepositoryImpl implements Ret
 		}
 		
 		return retailers;
+	}
+	
+	@Override
+	@Transactional
+	public void removeRetailer(Retailer retailer) throws NoUserFoundException {
+		entityManager.remove(entityManager.contains(retailer) ? retailer : entityManager.merge(retailer));
 	}
 
 }

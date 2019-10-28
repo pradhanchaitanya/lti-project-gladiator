@@ -70,5 +70,10 @@ public class AdminServiceImpl implements AdminService {
 	public void verifyRetailer(long retailerId) throws NoUserFoundException {
 		retailerService.verifyRetailer(retailerId);
 	}
+	
+	@Override
+	public void removeRetailer(long retailerId) throws NoUserFoundException {
+		retailerService.removeRetailer(retailerId);
+	}
 
 }

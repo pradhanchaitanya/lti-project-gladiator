@@ -53,7 +53,7 @@ public class AdminController {
 	@RequestMapping(path = "/verifyRetailer.do", method = RequestMethod.GET)
 	public String verifyRetailer(@RequestParam("id") long retailerId, ModelMap model) {
 		adminService.verifyRetailer(retailerId);
-		return "adminDashboard.jsp";
+		return "redirect:/showAdminDashboard.do";
 	}
 	
 	@RequestMapping(path = "/logoutAdmin.do")
@@ -61,5 +61,11 @@ public class AdminController {
 		model.clear();
 		session.invalidate();
 		return "redirect:/loginAdmin.do";
+	}
+	
+	@RequestMapping(path = "/removeRetailer.do", method = RequestMethod.GET)
+	public String removeRetailer(@RequestParam("id") long retailerId, ModelMap model) {
+		adminService.removeRetailer(retailerId);
+		return "redirect:/showAdminDashboard.do";
 	}
 }

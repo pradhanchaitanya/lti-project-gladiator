@@ -78,5 +78,11 @@ public class RetailerServiceImpl implements RetailerService {
 		retailer.setApproved(true);
 		retailerRepository.upsert(retailer);
 	}
+	
+	@Override
+	public void removeRetailer(long retailerId) throws NoUserFoundException {
+		Retailer retailer = fetchRetailerById(retailerId);
+		retailerRepository.removeRetailer(retailer);
+	}
 
 }
