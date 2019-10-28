@@ -35,11 +35,10 @@ import com.lti.training.projectgladiator.service.RetailerService;
 @SessionAttributes({"retailer", "isError", "error"})
 public class RetailerController {
 
-	@Autowired
-	RetailerService retailerService;
+	private static final String FILE_PATH = "D:\\eclipse-workspace\\lti-project-gladiator\\pg-shopping-app\\src\\main\\webapp\\resources\\images\\uploads";
 	
 	@Autowired
-	ResourceLoader resourceLoader;
+	RetailerService retailerService;
 	
 	@RequestMapping(path = "/registerRetailer.do", method = RequestMethod.GET)
 	public String showRegisterForRetailer() {
@@ -122,11 +121,11 @@ public class RetailerController {
 				stream.write(bytes);
 				stream.close();
 				*/
-				Resource resource = resourceLoader.getResource("webapp\\resources\\images");
-//				String filePath = "D:\\eclipse-workspace\\lti-project-gladiator\\pg-shopping-app\\src\\main\\webapp\\resources\\images\\uploads";
-				imagePath = resource.getFile() + "\\" + 
-												Instant.now().getEpochSecond() + "-" +
-												file.getOriginalFilename().trim();
+//				Resource resource = resourceLoader.getResource("webapp\\resources\\images");
+				
+				imagePath = FILE_PATH + "\\" + 
+										Instant.now().getEpochSecond() + "-" +
+										file.getOriginalFilename().trim();
 				file.transferTo(new File(imagePath));
 			} catch (Exception e) {
 				model.addAttribute("error", e.getMessage());
