@@ -1,21 +1,31 @@
 package com.lti.training.projectgladiator.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.lti.training.projectgladiator.dto.ProductDTO;
 import com.lti.training.projectgladiator.dto.RetailerDTO;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
 import com.lti.training.projectgladiator.model.Discount;
+import com.lti.training.projectgladiator.model.Image;
 import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.Retailer;
 import com.lti.training.projectgladiator.model.User;
@@ -27,6 +37,9 @@ public class RetailerController {
 
 	@Autowired
 	RetailerService retailerService;
+	
+	@Autowired
+	ResourceLoader resourceLoader;
 	
 	@RequestMapping(path = "/registerRetailer.do", method = RequestMethod.GET)
 	public String showRegisterForRetailer() {
@@ -88,9 +101,40 @@ public class RetailerController {
 	}
 	
 	
-	@RequestMapping(path = "/addProduct.do", method = RequestMethod.GET)
+	@RequestMapping(path = "/addProduct.do", method = RequestMethod.POST)
 	public String addProduct(ProductDTO data, ModelMap model) {
 		Retailer currentRetailer = (Retailer) model.get("retailer");
+		
+		MultipartFile file = data.getImage();
+		String imagePath = null;
+		if(!file.isEmpty()) {
+			try {
+				byte[] bytes = file.getBytes();
+				/*
+				// root path
+				String rootPath = System.getProperty("catalina.home");
+				File dir = new File(rootPath + File.separator + "tmpFiles");
+				if(!dir.exists())
+					dir.mkdirs();
+				
+				serverFile = new File(dir.getAbsolutePath() + File.separator + file.getOriginalFilename());
+				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+				stream.write(bytes);
+				stream.close();
+				*/
+				Resource resource = resourceLoader.getResource("webapp\\resources\\images");
+				imagePath = resource.getFile() + "\\" + 
+												Instant.now().getEpochSecond() + "-" +
+												file.getOriginalFilename().trim();
+				file.transferTo(new File(imagePath));
+			} catch (Exception e) {
+				model.addAttribute("error", e.getMessage());
+			}
+		} else {
+			model.addAttribute("error", "No file selected");
+			return "redirect:/showRetailerDashboard.do";
+		}
+		
 		Product product = new Product();
 		product.setName(data.getName());
 		product.setDescription(data.getDescription());
@@ -98,13 +142,10 @@ public class RetailerController {
 		product.setCategory(data.getCategory());
 		product.setBrand(data.getBrand());
 		product.setQuantity(data.getQuantity());
-		
-		Discount discount = new Discount();
-		discount.setDiscountPercent(data.getDiscount());
-		discount.setProduct(product);
-		product.setDiscount(discount);
-		
+		product.setDiscount(data.getDiscount());
+		product.setImagePath(imagePath);
 		product.setRetailer(currentRetailer);
+		
 		retailerService.addNewProduct(product);
 		return "redirect:/showRetailerDashboard.do";
 	}

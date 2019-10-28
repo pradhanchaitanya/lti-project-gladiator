@@ -10,7 +10,7 @@ public class ProductDTO {
 	private String category;
 	private String brand;
 	private int quantity;
-	private double discount;
+	private int discount;
 	private MultipartFile image;
 	public String getName() {
 		return name;
@@ -48,10 +48,10 @@ public class ProductDTO {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public double getDiscount() {
+	public int getDiscount() {
 		return discount;
 	}
-	public void setDiscount(double discount) {
+	public void setDiscount(int discount) {
 		this.discount = discount;
 	}
 	public MultipartFile getImage() {

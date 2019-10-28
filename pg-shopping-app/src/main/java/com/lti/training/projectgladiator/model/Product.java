@@ -48,6 +48,12 @@ public class Product implements Serializable {
 	@Column(name = "QUANTITY")
 	private int quantity;
 	
+	@Column(name = "DISCOUNT")
+	private int discount;
+	
+	@Column(name = "IMAGE_PATH")
+	private String imagePath;
+	
 	/*
 	 * Product-Retailer PK-FK
 	 */
@@ -65,10 +71,6 @@ public class Product implements Serializable {
 	//@Transient
 	private Set<CartProduct> cartProducts;
 	
-	@OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
-	private Discount discount;
-	
-
 	public long getId() {
 		return id;
 	}
@@ -124,6 +126,22 @@ public class Product implements Serializable {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	
+	public int getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
 
 	public Retailer getRetailer() {
 		return retailer;
@@ -147,13 +165,5 @@ public class Product implements Serializable {
 
 	public void setReviews(Set<Review> reviews) {
 		this.reviews = reviews;
-	}
-
-	public Discount getDiscount() {
-		return discount;
-	}
-
-	public void setDiscount(Discount discount) {
-		this.discount = discount;
 	}
 }
