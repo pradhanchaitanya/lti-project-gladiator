@@ -7,7 +7,7 @@ public class RetailerDTO {
 	private long mobileNumber;
 	private String password;
 	private String address;
-	
+	private String shopName;
 	
 	public String getName() {
 		return name;
@@ -39,4 +39,11 @@ public class RetailerDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public String getShopName() {
+		return shopName;
+	}
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
+	
 }

@@ -67,6 +67,14 @@
 				<p id="alert4" text-align="left" ></p>
 				</input>
 			</div>
+			
+			<div class="extra">
+				<input type="text" class="input" placeholder=" Enter Shop Name" name="shopName"
+					id="shopName" path="shopName" />
+				<p id="alert" text-align="left" ></p>
+				</input>
+			</div>
+			
 			<div>
 				<button type="submit" onclick="return validateForm()" method="post"
 					font-family="verdana" style="color: white">

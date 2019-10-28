@@ -47,6 +47,9 @@ public class Retailer implements Serializable {
 	@Column(name = "APPROVED")
 	private boolean isApproved;
 	
+	@Column(name = "SHOP_NAME")
+	private String shopName;
+
 	@OneToMany(mappedBy = "retailer", cascade = CascadeType.ALL)
 	Set<Product> products;
 	
@@ -115,6 +118,14 @@ public class Retailer implements Serializable {
 
 	public void setApproved(boolean isApproved) {
 		this.isApproved = isApproved;
+	}
+	
+	public String getShopName() {
+		return shopName;
+	}
+
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
 	}
 	
 	public Set<Product> getProducts() {
