@@ -60,6 +60,7 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
+					<!-- 
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" href="#" id="karlDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -79,8 +80,18 @@
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="#">Comparator</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="loginRetailer.do">Login</a>
+					-->
+					<c:choose>
+						<c:when test="${ param.loggedin == true }">
+							<li class="nav-item"><a class="nav-link"
+								href="logoutRetailer.do">Logout</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item"><a class="nav-link" href="loginRetailer.do">Login</a></li>
+						</c:otherwise>
+					</c:choose>
 					</li>
+					<!-- 
 					<form class="form-inline my-2 my-lg-0 ml-auto">
 						<input class="form-control" type="search" placeholder="Search"
 							aria-label="Search">&nbsp;&nbsp;&nbsp;
@@ -88,6 +99,7 @@
 							class="btn btn-outline-black btn-md my-2 my-sm-0 ml-3"
 							type="submit">Search</button>
 					</form>
+					-->
 				</ul>
 			</div>
 		</div>

@@ -49,7 +49,7 @@ html, body, h1, h2, h3, h4, h5 {
 		<div class="container">
 
 
-			<a class="navbar-brand" href="showHomepage.do"> 
+			<a class="navbar-brand" href="showRetailerHomepage.do"> 
 				<img src="<c:url value="/resources/images/logo.png" />" width="50" height="50"
 				class="d-inline-block align-top" alt="" /> Shopp-E
 			</a>
@@ -155,7 +155,7 @@ html, body, h1, h2, h3, h4, h5 {
 			</header>
 			<div class="w3-container">
 				<h5>Sell Products</h5>
-				<div class="text-left">
+				<div class="text-right">
 					<button class="btn btn-primary btn-rounded mb-4" data-toggle="modal"
 						data-target="#modalAddProductForm">Add Product</button>
 				</div>
@@ -285,13 +285,13 @@ html, body, h1, h2, h3, h4, h5 {
 						<div class="col-12 col-sm-6 col-md-3 col-lg-2">
 							<div class="single_footer_area">
 								<ul class="footer_widget_menu">
-									<li><a href="userdashboard.html">My Account</a></li>
-									<li><a href="cart.html">Cart</a></li>
-									<li><a href="retailer.html">Afiliates</a></li>
+									<li><a href="#">My Account</a></li>
+									<li><a href="showRetailerHomepage.do">Afiliates</a></li>
 								</ul>
 							</div>
 						</div>
 						<!-- Single Footer Area Start -->
+						<!-- 
 						<div class="col-12 col-lg-5">
 							<div class="single_footer_area">
 								<div class="footer_heading mb-30">
@@ -306,6 +306,7 @@ html, body, h1, h2, h3, h4, h5 {
 								</div>
 							</div>
 						</div>
+						-->
 					</div>
 
 				</div>

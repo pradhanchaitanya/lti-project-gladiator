@@ -50,7 +50,12 @@ public class AdminController {
 	@RequestMapping(path = "/showAdminDashboard.do", method = RequestMethod.GET)
 	public String showAdminDasboard(ModelMap model) {
 		if (model.containsAttribute("admin")) {
-			List<Retailer> retailers = adminService.getRetailers();
+			List<Retailer> retailers = null;
+			try {
+				retailers = adminService.getRetailers();
+			} catch (Exception e) {
+				model.addAttribute("error", e.getMessage());
+			}
 			model.addAttribute("retailers", retailers);
 			return "adminDashboard.jsp";
 		}

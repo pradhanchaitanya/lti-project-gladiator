@@ -257,7 +257,7 @@
 								<li><a href="showDashboard.do">My Account</a></li>
 								<li><a href="showCart.do">Cart</a></li>
 								<!--  <li><a href="showRetailerHomepage.do">Afiliates</a></li>-->
-								<li><a href="registerRetailer.do">Afiliates</a></li>
+								<li><a href="showRetailerHomepage.do">Afiliates</a></li>
 							</ul>
 						</div>
 					</div>

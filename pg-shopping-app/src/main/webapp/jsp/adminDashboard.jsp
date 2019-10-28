@@ -131,8 +131,7 @@
 									<td class="border-0 align-middle">${ retailer.shopName }</td>
 									<td class="border-0 align-middle">${ retailer.address }</td>
 									<td class="border-0 align-middle">
-										<!-- isApproved -->
-										<!-- ${ retailer.isApproved } -->
+										<a href="verifyRetailer.do?id=${ retailer.id }"><button class="btn btn-success">Verify</button></a>
 									</td>
 									<td class="border-0 align-middle">
 									<a href="removeRetailer.do?id=${ retailer.id }" class="text-dark">
