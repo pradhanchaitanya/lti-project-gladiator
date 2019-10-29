@@ -1,5 +1,7 @@
 package com.lti.training.projectgladiator.service.implementations;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +9,9 @@ import com.lambdaworks.crypto.SCryptUtil;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
 import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
+import com.lti.training.projectgladiator.model.Order;
 import com.lti.training.projectgladiator.model.User;
+import com.lti.training.projectgladiator.repository.OrderRepository;
 import com.lti.training.projectgladiator.repository.UserRepository;
 import com.lti.training.projectgladiator.service.UserService;
 
@@ -16,6 +20,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private OrderRepository orderRepository;
 	
 	@Autowired
 	private MailService mailService;
@@ -81,6 +88,14 @@ public class UserServiceImpl implements UserService {
 		
 		return null;
 	}
+
+	@Override
+	public void placeOrder(Order order) throws NoUserFoundException {
+		orderRepository.addOrder(order);
+	}
 	
-	
+	@Override
+	public Set<Order> fetchOrdersForUser(User user) throws NoUserFoundException {
+		return orderRepository.fetchOrdersForUser(user);
+	}
 }

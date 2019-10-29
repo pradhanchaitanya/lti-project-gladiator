@@ -64,10 +64,10 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Pages</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="shop.html">Shop</a> <a
-								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="showCart.do">Cart</a> <a
-								class="dropdown-item" href="#">Checkout</a>
+							<a class="dropdown-item" href="showHomepage.do">Shop</a> 
+							<a class="dropdown-item" href="showDashboard.do">Dashboard</a>
+							<a class="dropdown-item" href="showCart.do">Cart</a> 
+							<a class="dropdown-item" href="#">Checkout</a>
 						</div></li>
 					<li class="nav-item"><a class="nav-link" href="logoutRetailer.do">Logout</a>
 					</li>
@@ -103,7 +103,8 @@
 	<div class="container">
 
 		<div class="col-lg-9">
-			Enter Shipping Address <br>Line 1<input type="text"
+			Enter Shipping Address <br><br>
+			Line 1<input type="text"
 				class="form-control validate"> <br>Line 2<input
 				type="text" class="form-control validate"> <br>Line 3<input
 				type="text" class="form-control validate"> <br>State<select
@@ -117,9 +118,9 @@
 			</select> <br>
 			<hr>
 			<ul class="cart-total-chart">
-				<li><span>Subtotal</span> <span>Rs.36,250</span></li>
+				<li><span>Subtotal</span> <span>Rs. ${ cart.totalPrice }</span></li>
 				<li><span>Shipping</span> <span>Free</span></li>
-				<li><span><strong>Total</strong></span> <span><strong>Rs.36,250</strong></span></li>
+				<li><span><strong>Total</strong></span> <span><strong>Rs. ${ cart.totalPrice }</strong></span></li>
 			</ul>
 			<div>
 				<a data-toggle="modal" class="btn karl-checkout-btn"
@@ -144,9 +145,7 @@
 					</div>
 					<br>
 					<div class="modal-body mx-5">
-						<h4 class="modal-title w-30 font-weight-bold">Your order is
-							Confirmed</h4>
-
+						<h4 class="modal-title w-30 font-weight-bold">Do you want to place the order?</h4>
 						<br>
 						<div class="md-form mb-4">
 
@@ -154,7 +153,7 @@
 
 								<button class="btn btn-secondary"
 									class="modal-title w-50 font-weight-bold">
-									<a href="showHomepage.do"> Continue shopping</a>
+									<a href="confirmOrder.do">Place Order</a>
 								</button>
 							</div>
 

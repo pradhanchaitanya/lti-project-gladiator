@@ -17,6 +17,7 @@ import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.repository.ReviewRepository;
 
 @Repository
+@Transactional
 public class ReviewRepositoryImpl extends GenericRepositoryImpl implements ReviewRepository {
 	
 	@PersistenceContext

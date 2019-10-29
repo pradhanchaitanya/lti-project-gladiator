@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
 import com.lti.training.projectgladiator.exceptions.NoProductFoundException;
 import com.lti.training.projectgladiator.model.Cart;
+import com.lti.training.projectgladiator.model.Order;
 import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.Retailer;
 import com.lti.training.projectgladiator.model.User;
@@ -22,6 +23,7 @@ import com.lti.training.projectgladiator.repository.CartRepository;
 import com.lti.training.projectgladiator.repository.ProductRepository;
 
 @Repository
+@Transactional
 public class ProductRepositoryImpl extends GenericRepositoryImpl implements ProductRepository {
 	
 	@Autowired
@@ -54,28 +56,31 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		upsert(cartProduct);
 		
 		double totalPrice = cart.getTotalPrice();
-		cart.setTotalPrice(totalPrice + (quantity * product.getPrice()));
+		double discountedProductPrice = product.getPrice() - (product.getPrice() * product.getDiscount() / 100);
+		cart.setTotalPrice(totalPrice + (quantity * discountedProductPrice));
 		
 		int totalQuantity = cart.getTotalQuantity();
-		cart.setTotalQuantity(quantity + totalQuantity);
+		cart.setTotalQuantity(totalQuantity + quantity);
 		
 		cartRepository.updateCartForUser(cart);
 	}
 	
 	@Transactional
 	public void removeProductFromCart(Product product, Cart cart, int quantity) throws NoProductFoundException {
-		String jpql = "select cp from CartProduct cp where cp.cart.id = :cartId";
+		String jpql = "select cp from CartProduct cp where cp.cart.id = :cartId and cp.product.id = :productId";
 		Query query = entityManager.createQuery(jpql);
 		query.setParameter("cartId", cart.getId());
+		query.setParameter("productId", product.getId());
 		
-		CartProduct cartProduct = (CartProduct) query.setMaxResults(1).getSingleResult();
+		CartProduct cartProduct = (CartProduct) query.getSingleResult();
 		entityManager.remove(cartProduct);
 		
 		double totalPrice = cart.getTotalPrice();
-		cart.setTotalPrice(totalPrice - (quantity * product.getPrice()));
+		double discountedProductPrice = product.getPrice() - (product.getPrice() * product.getDiscount() / 100);
+		cart.setTotalPrice(totalPrice - (quantity * discountedProductPrice));
 		
 		int totalQuantity = cart.getTotalQuantity();
-		cart.setTotalQuantity(quantity - totalQuantity);
+		cart.setTotalQuantity(totalQuantity - quantity);
 		
 		cartRepository.updateCartForUser(cart);
 		
@@ -155,5 +160,16 @@ public class ProductRepositoryImpl extends GenericRepositoryImpl implements Prod
 		
 		List<Product> products = query.getResultList();
 		return new HashSet<>(products.stream().limit(30).collect(Collectors.toList()));
+	}
+	
+	@Override
+	public Set<Product> fetchProductsForRetailer(Retailer retailer) {
+		long retailerId = retailer.getId();
+		
+		String jpql = "select p from Product p where p.retailer.id = :retailerId";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("retailerId", retailerId);
+		
+		return new HashSet<>(query.getResultList());
 	}
 }

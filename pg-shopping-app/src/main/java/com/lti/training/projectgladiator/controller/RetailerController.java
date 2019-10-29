@@ -1,18 +1,14 @@
 package com.lti.training.projectgladiator.controller;
 
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,16 +19,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.lti.training.projectgladiator.dto.ProductDTO;
 import com.lti.training.projectgladiator.dto.RetailerDTO;
-import com.lti.training.projectgladiator.exceptions.FailedUpsertException;
-import com.lti.training.projectgladiator.model.Discount;
-import com.lti.training.projectgladiator.model.Image;
 import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.Retailer;
-import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.service.RetailerService;
 
 @Controller
-@SessionAttributes({"retailer", "isError", "error"})
+@SessionAttributes({"retailer", "isError", "error", "products", "noOfProducts"})
 public class RetailerController {
 
 	private static final String FILE_PATH = "D:\\eclipse-workspace\\lti-project-gladiator\\pg-shopping-app\\src\\main\\webapp\\resources\\images\\uploads";
@@ -72,6 +64,10 @@ public class RetailerController {
 	@RequestMapping("/showRetailerDashboard.do")
 	public String showDashboard(ModelMap model) {
 		if (model.containsAttribute("retailer")) {
+			Retailer currentRetailer = (Retailer) model.get("retailer");
+			List<Product> products = new ArrayList<Product>(retailerService.fetchProductsForRetailer(currentRetailer));
+			model.addAttribute("products", products);
+			model.addAttribute("noOfProducts", products.size());
 			return "retailerDashboard.jsp";
 		}
 		
@@ -79,7 +75,7 @@ public class RetailerController {
 	}
 
 	@RequestMapping(path = "/loginRetailer.do", method = RequestMethod.GET)
-	public String showLoginForUser() {
+	public String showLoginForRetailer() {
 		return "retailerLogin.jsp";
 	}
 	
@@ -150,4 +146,5 @@ public class RetailerController {
 		retailerService.addNewProduct(product);
 		return "redirect:/showRetailerDashboard.do";
 	}
+	
 }

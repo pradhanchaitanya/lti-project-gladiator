@@ -84,6 +84,8 @@
 					<c:choose>
 						<c:when test="${ param.loggedin == true }">
 							<li class="nav-item"><a class="nav-link"
+								href="showRetailerDashboard.do">Dashboard</a></li>
+							<li class="nav-item"><a class="nav-link"
 								href="logoutRetailer.do">Logout</a></li>
 						</c:when>
 						<c:otherwise>

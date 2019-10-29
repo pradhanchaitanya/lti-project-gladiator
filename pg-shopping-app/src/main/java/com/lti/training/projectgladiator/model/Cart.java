@@ -48,6 +48,9 @@ public class Cart implements Serializable {
 	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
 	//@Transient
 	private Set<CartProduct> cartProducts;
+	
+	@OneToOne(mappedBy = "cart", cascade = CascadeType.ALL)
+	private Order order;
 
 	public long getId() {
 		return id;
@@ -88,5 +91,12 @@ public class Cart implements Serializable {
 	public void setCartProducts(Set<CartProduct> cartProducts) {
 		this.cartProducts = cartProducts;
 	}
-	
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
 }

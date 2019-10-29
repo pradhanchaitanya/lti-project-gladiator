@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>${ user.name }'s Dashboard</title>
+<title>${ user.name }'sOrders</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -84,12 +84,11 @@ html, body, h1, h2, h3, h4, h5 {
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Pages</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="showHomepage.do">Shop</a> 
-							<a class="dropdown-item" href="showDashboard.do">Dashboard</a> 
-							<a class="dropdown-item" href="showCart.do">Cart</a> 
-							<a class="dropdown-item" href="showCheckout.do">Checkout</a>
-						</div>
-					</li>
+							<a class="dropdown-item" href="showHomepage.do">Shop</a> <a
+								class="dropdown-item" href="showDashboard.do">Dashboard</a> <a
+								class="dropdown-item" href="showCart.do">Cart</a> <a
+								class="dropdown-item" href="showCheckout.do">Checkout</a>
+						</div></li>
 					<li class="nav-item"><a class="nav-link" href="logoutUser.do">Logout</a>
 					</li>
 
@@ -117,11 +116,11 @@ html, body, h1, h2, h3, h4, h5 {
 						class="w3-circle w3-margin-right" style="width: 46px">
 				</div>
 				<div class="w3-col s8 w3-bar">
-					<span>Welcome, <br />
-					<strong>${ user.name }</strong></span><br> <a href="#"
-						class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a> <a
-						href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-					<a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+					<span>Welcome, <br /> <strong>${ user.name }</strong></span><br>
+					<a href="#" class="w3-bar-item w3-button"><i
+						class="fa fa-envelope"></i></a> <a href="#"
+						class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> <a
+						href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
 				</div>
 			</div>
 			<hr>
@@ -132,17 +131,17 @@ html, body, h1, h2, h3, h4, h5 {
 				<a href="#"
 					class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
 					onclick="w3_close()" title="close menu"><i
-					class="fa fa-remove fa-fw"></i>  Close Menu</a> <a href="showOrders.do"
+					class="fa fa-remove fa-fw"></i>  Close Menu</a> <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-diamond fa-fw"></i>Orders</a> <a href="showCart.do"
 					class="w3-bar-item w3-button w3-padding"><i
-					class="fa fa-bank fa-fw"></i>Cart Items</a> <!-- <a href="#"
+					class="fa fa-bank fa-fw"></i>Cart Items</a>
+				<!-- <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-history fa-fw"></i>WishList</a> <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-cog fa-fw"></i>Settings</a> -->
-					<br>
-				<br>
+				<br> <br>
 			</div>
 		</nav>
 
@@ -175,6 +174,7 @@ html, body, h1, h2, h3, h4, h5 {
 						<h4>Purchases Done</h4>
 					</div>
 				</div>
+				<!--
 				<div class="w3-quarter">
 					<div class="w3-container w3-blue w3-padding-16">
 						<div class="w3-left">
@@ -187,6 +187,7 @@ html, body, h1, h2, h3, h4, h5 {
 						<h4>Reviews</h4>
 					</div>
 				</div>
+				-->
 				<!-- 
 				<div class="w3-quarter">
 					<div class="w3-container w3-teal w3-padding-16">
@@ -201,6 +202,7 @@ html, body, h1, h2, h3, h4, h5 {
 					</div>
 				</div>
 				-->
+				<!--
 				<div class="w3-quarter">
 					<div class="w3-container w3-orange w3-text-white w3-padding-16">
 						<div class="w3-left">
@@ -213,6 +215,7 @@ html, body, h1, h2, h3, h4, h5 {
 						<h4>Items in Cart</h4>
 					</div>
 				</div>
+				-->
 			</div>
 
 
@@ -229,176 +232,174 @@ html, body, h1, h2, h3, h4, h5 {
 				<hr>
 				-->
 				<div class="w3-container">
-					<h5>Recent Reviews</h5>
-					<br>
-					<div class="w3-row">
-						<div class="w3-col m2 text-center">
-							<img class="w3-circle"
-								src="<c:url value="/resources/images/mobile.png" />"
-								style="width: 96px; height: 96px">
-						</div>
-						<div class="w3-col m10 w3-container">
-							<h4>
-								One Plus 7T <span class="w3-opacity w3-medium">Oct 27,
-									2019, 9:12 PM</span>
-							</h4>
-							<p>I've had many cellphones in my life, of course no matter
-								how much they cost, they all have some kind of cool feature. But
-								this phone, unbelievable. So much high-end hardware, packed into
-								a great looking phone at a price that can't be beat! 6.67"
-								screen with no hole, no teardrop, all screen. How? The pop-up
-								selfie cam, and yes, that's awesome too. I have to admit, I
-								never thought any other brand could pull me away from Samsung,
-								but man, OnePlus, you did it. Oh yeah, almost forgot, warp
-								charge in about an hour, snapdragon 855, 8GB/256GB, GET THIS
-								PHONE!</p>
-							<br>
-						</div>
-					</div>
-
-					<div class="w3-row">
-						<div class="w3-col m2 text-center">
-							<img class="w3-circle"
-								src="<c:url value="/resources/images/tp4.png" />"
-								style="width: 96px; height: 96px">
-						</div>
-						<div class="w3-col m10 w3-container">
-							<h4>
-								Lacoste Formal Shirts <span class="w3-opacity w3-medium">Sept
-									3, 2019, 11:15 PM</span>
-							</h4>
-							<p>Been wearing lacoste for 8 years and never had any
-								problems with the brand, good quality products, lasts for ages,
-								overall acceptable product!!</p>
-							<br>
-						</div>
-					</div>
-				</div>
-				<br>
-
-
-				<!-- ****** Footer Area Start ****** -->
-				<footer class="footer_area">
 					<div class="container">
 						<div class="row">
-							<!-- Single Footer Area Start -->
-							<div class="col-12 col-md-6 col-lg-3">
-								<div class="single_footer_area">
-									<div class="footer-logo">
-										<img src="<c:url value="/resources/images/logo.png" />" alt=""
-											height="200px" width="200px">
-										<div class="copywrite_text d-flex align-items-center">
-											<p>
-												Copyright &copy;
-												<script>
-													document.write(new Date()
-															.getFullYear());
-												</script>
-												All rights reserved | Made By - CHAG
+							<div class="col-12">
+								<div class="cart-table clearfix" style="font-size: 20px; width: 100%;">
+									<c:choose>
+										<c:when test="${ sessionScope.error != null }">
+											<div>
+												<p>No orders placed yet!</p>
+											</div>
+										</c:when>
+										<c:otherwise>
+											<table class="table table-responsive">
+												<thead>
+													<tr>
+														<th>Sr. No.</th>
+														<th>Total Price</th>
+														<th>Ordered On</th>
+													</tr>
+												</thead>
+												<tbody>
+
+
+													<c:forEach items="${ orders }" var="order"
+														varStatus="status">
+														<tr>
+															<td>${ status.count }</td>
+															<td class="price"><span>${ order.totalPrice }</span></td>
+															<td class="qty">
+																<h6>${ order.orderedOn }</h6>
+															</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>
+										</c:otherwise>
+									</c:choose>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+
+
+					<!-- ****** Footer Area Start ****** -->
+					<footer class="footer_area">
+						<div class="container">
+							<div class="row">
+								<!-- Single Footer Area Start -->
+								<div class="col-12 col-md-6 col-lg-3">
+									<div class="single_footer_area">
+										<div class="footer-logo">
+											<img src="<c:url value="/resources/images/logo.png" />"
+												alt="" height="200px" width="200px">
+											<div class="copywrite_text d-flex align-items-center">
+												<p>
+													Copyright &copy;
+													<script>
+														document
+																.write(new Date()
+																		.getFullYear());
+													</script>
+													All rights reserved | Made By - CHAG
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Single Footer Area Start -->
+								<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+									<div class="single_footer_area">
+										<ul class="footer_widget_menu">
+											<li><a href="showAbout.do">About</a></li>
+											<li><a href="#">Our Policies</a></li>
+											<li><a href="#" data-toggle="modal"
+												data-target="#modalContactForm">Contact Us</a></li>
+										</ul>
+									</div>
+								</div>
+								<!-- Single Footer Area Start -->
+								<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+									<div class="single_footer_area">
+										<ul class="footer_widget_menu">
+											<li><a href="#">My Account</a></li>
+											<li><a href="showCart.do">Cart</a></li>
+											<li><a href="showRetailerHomepage.do">Afiliates</a></li>
+										</ul>
+									</div>
+								</div>
+								<!-- Single Footer Area Start -->
+								<div class="col-12 col-lg-5">
+									<div class="single_footer_area">
+										<div class="footer_heading mb-30">
+											<h6>Subscribe to our newsletter</h6>
+										</div>
+										<div class="subscribtion_form">
+											<form action="#" method="post">
+												<input type="email" name="mail" class="mail"
+													placeholder="Your email here">
+												<button type="submit" class="submit">Subscribe</button>
+											</form>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- Single Footer Area Start -->
-							<div class="col-12 col-sm-6 col-md-3 col-lg-2">
-								<div class="single_footer_area">
-									<ul class="footer_widget_menu">
-										<li><a href="showAbout.do">About</a></li>
-										<li><a href="#">Our Policies</a></li>
-										<li><a href="#" data-toggle="modal"
-											data-target="#modalContactForm">Contact Us</a></li>
-									</ul>
-								</div>
-							</div>
-							<!-- Single Footer Area Start -->
-							<div class="col-12 col-sm-6 col-md-3 col-lg-2">
-								<div class="single_footer_area">
-									<ul class="footer_widget_menu">
-										<li><a href="#">My Account</a></li>
-										<li><a href="showCart.do">Cart</a></li>
-										<li><a href="showRetailerHomepage.do">Afiliates</a></li>
-									</ul>
-								</div>
-							</div>
-							<!-- Single Footer Area Start -->
-							<div class="col-12 col-lg-5">
-								<div class="single_footer_area">
-									<div class="footer_heading mb-30">
-										<h6>Subscribe to our newsletter</h6>
+
+						</div>
+
+						<!-- Modal for Contact Us Page-->
+
+						<div class="modal fade" id="modalContactForm" tabindex="-1"
+							role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header text-center">
+										<h4 class="modal-title w-100 font-weight-bold">Write to
+											us</h4>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
 									</div>
-									<div class="subscribtion_form">
-										<form action="#" method="post">
-											<input type="email" name="mail" class="mail"
-												placeholder="Your email here">
-											<button type="submit" class="submit">Subscribe</button>
-										</form>
+									<div class="modal-body mx-3">
+										<div class="md-form mb-5">
+											<i class="fa fa-user prefix grey-text"></i> <label
+												data-error="wrong" data-success="right" for="form34">Your
+												name</label> <input type="text" id="form34"
+												class="form-control validate" value="${ user.name }">
+										</div>
+
+										<div class="md-form mb-5">
+											<i class="fa fa-envelope prefix grey-text"></i> <label
+												data-error="wrong" data-success="right" for="form29">Your
+												email</label> <input type="email" id="form29"
+												class="form-control validate" value="${ user.email }">
+										</div>
+
+										<div class="md-form mb-5">
+											<i class="fa fa-tag prefix grey-text"></i> <label
+												data-error="wrong" data-success="right" for="form32">Subject</label>
+											<input type="text" id="form32" class="form-control validate">
+
+										</div>
+
+										<div class="md-form">
+											<i class="fa fa-pencil prefix grey-text"></i> <label
+												data-error="wrong" data-success="right" for="form8">Your
+												message</label>
+											<textarea type="text" id="form8"
+												class="md-textarea form-control" rows="4"></textarea>
+
+										</div>
+
+									</div>
+									<div class="modal-footer d-flex justify-content-center">
+										<button class="modal-title w-50 font-weight-bold"
+											class="btn btn-unique">
+											Send <i class="fa fa-paper-plane-o ml-1"></i>
+										</button>
 									</div>
 								</div>
 							</div>
 						</div>
-
-					</div>
-
-					<!-- Modal for Contact Us Page-->
-
-					<div class="modal fade" id="modalContactForm" tabindex="-1"
-						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header text-center">
-									<h4 class="modal-title w-100 font-weight-bold">Write to us</h4>
-									<button type="button" class="close" data-dismiss="modal"
-										aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body mx-3">
-									<div class="md-form mb-5">
-										<i class="fa fa-user prefix grey-text"></i> <label
-											data-error="wrong" data-success="right" for="form34">Your
-											name</label> <input type="text" id="form34"
-											class="form-control validate" value="${ user.name }">
-									</div>
-
-									<div class="md-form mb-5">
-										<i class="fa fa-envelope prefix grey-text"></i> <label
-											data-error="wrong" data-success="right" for="form29">Your
-											email</label> <input type="email" id="form29"
-											class="form-control validate" value="${ user.email }">
-									</div>
-
-									<div class="md-form mb-5">
-										<i class="fa fa-tag prefix grey-text"></i> <label
-											data-error="wrong" data-success="right" for="form32">Subject</label>
-										<input type="text" id="form32" class="form-control validate">
-
-									</div>
-
-									<div class="md-form">
-										<i class="fa fa-pencil prefix grey-text"></i> <label
-											data-error="wrong" data-success="right" for="form8">Your
-											message</label>
-										<textarea type="text" id="form8"
-											class="md-textarea form-control" rows="4"></textarea>
-
-									</div>
-
-								</div>
-								<div class="modal-footer d-flex justify-content-center">
-									<button class="modal-title w-50 font-weight-bold"
-										class="btn btn-unique">
-										Send <i class="fa fa-paper-plane-o ml-1"></i>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
+				</div>
+				<!-- </div> -->
 			</div>
-			<!-- </div> -->
+			</footer>
+			<!-- ****** Footer Area End ****** -->
 		</div>
-		</footer>
-		<!-- ****** Footer Area End ****** -->
-	</div>
 	</div>
 	<!-- /.wrapper end -->
 

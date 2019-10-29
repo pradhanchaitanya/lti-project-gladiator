@@ -6,7 +6,7 @@
 
 <!DOCTYPE html>
 <html>
-<title>${ retailer.name }'s Dashboard</title>
+<title>${ retailer.name }'sDashboard</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -134,8 +134,8 @@ html, body, h1, h2, h3, h4, h5 {
 					class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-diamond fa-fw"></i>&nbsp;Sales</a> <a href="#"
 					class="w3-bar-item w3-button w3-padding"><i
-					class="fa fa-cog fa-fw"></i>&nbsp;Change Password</a><a
-					href="#" class="w3-bar-item w3-button w3-padding"><i
+					class="fa fa-cog fa-fw"></i>&nbsp;Change Password</a><a href="#"
+					class="w3-bar-item w3-button w3-padding"><i
 					class="fa fa-cog fa-fw"></i>&nbsp;Delete Account</a><br> <br>
 			</div>
 		</nav>
@@ -155,8 +155,9 @@ html, body, h1, h2, h3, h4, h5 {
 					<b><i class="fa fa-dashboard"></i> My Dashboard</b>
 				</h5>
 			</header>
+			<hr>
 			<div class="w3-container">
-				<h5>Sell Products</h5>
+
 				<div class="text-right">
 					<button class="btn btn-primary btn-rounded mb-4"
 						data-toggle="modal" data-target="#modalAddProductForm">Add
@@ -177,7 +178,8 @@ html, body, h1, h2, h3, h4, h5 {
 								</button>
 							</div>
 							<div class="modal-body mx-3">
-								<form action="addProduct.do" method="post" enctype="multipart/form-data">
+								<form action="addProduct.do" method="post"
+									enctype="multipart/form-data">
 									<div class="md-form mb-4">
 										<label class="modal-title w-50 font-weight-bold"
 											data-error="wrong" data-success="right" for="form">
@@ -243,48 +245,105 @@ html, body, h1, h2, h3, h4, h5 {
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<!-- ****** Footer Area Start ****** -->
-			<footer class="footer_area">
 				<div class="container">
 					<div class="row">
-						<!-- Single Footer Area Start -->
-						<div class="col-12 col-md-6 col-lg-3">
-							<div class="single_footer_area">
-								<div class="footer-logo">
-									<img src="<c:url value="/resources/images/logo.png" />" alt=""
-										height="200px" width="200px">
-									<div class="copywrite_text d-flex align-items-center">
-										<p>
-											Copyright &copy;
-											<script>document.write(new Date().getFullYear());</script>
-											All rights reserved | Made By - CHAG
+						<div class="text-left">
+							<h4>Products on Sale : &nbsp;</h4>
+						</div>
+						<div class="text-right">
+							<h4>${ noOfProducts }</h4>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="cart-table clearfix" style="font-size: 20px;">
+								<c:choose>
+									<c:when test="${ sessionScope.error != null }">
+										<div>
+											<p>No products on sale!</p>
+										</div>
+									</c:when>
+									<c:otherwise>
+										<table class="table table-responsive">
+											<thead>
+												<tr>
+													<th>Sr. No.</th>
+													<th>Product Details</th>
+													<th>Price</th>
+													<th>Quantity</th>
+												</tr>
+											</thead>
+											<tbody>
+
+
+												<c:forEach items="${ products }" var="product"
+													varStatus="status">
+													<tr>
+														<td>${ status.count }</td>
+														<td class="cart_product_img d-flex align-items-center"><a
+															href="#"><img
+																src="<c:url value="/resources/images/uploads/${ product.imagePath }" />"
+																alt="Product"></a>
+															<h6>${ product.name }</h6></td>
+														<td class="price"><span>${ product.price }</span></td>
+														<td class="qty">
+															<h6>${ product.quantity }</h6>
+														</td>
+													</tr>
+												</c:forEach>
+											</tbody>
+										</table>
+									</c:otherwise>
+								</c:choose>
+
+							</div>
+						</div>
+					</div>
+
+					<!-- ****** Footer Area Start ****** -->
+					<footer class="footer_area">
+						<div class="container">
+							<div class="row">
+								<!-- Single Footer Area Start -->
+								<div class="col-12 col-md-6 col-lg-3">
+									<div class="single_footer_area">
+										<div class="footer-logo">
+											<img src="<c:url value="/resources/images/logo.png" />"
+												alt="" height="200px" width="200px">
+											<div class="copywrite_text d-flex align-items-center">
+												<p>
+													Copyright &copy;
+													<script>document.write(new Date().getFullYear());</script>
+													All rights reserved | Made By - CHAG
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-						<!-- Single Footer Area Start -->
-						<div class="col-12 col-sm-6 col-md-3 col-lg-2">
-							<div class="single_footer_area">
-								<ul class="footer_widget_menu">
-									<li><a href="#">About</a></li>
-									<li><a href="#">Our Policies</a></li>
-									<li><a href="#">Contact Us</a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- Single Footer Area Start -->
-						<div class="col-12 col-sm-6 col-md-3 col-lg-2">
-							<div class="single_footer_area">
-								<ul class="footer_widget_menu">
-									<li><a href="#">My Account</a></li>
-									<li><a href="showRetailerHomepage.do">Afiliates</a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- Single Footer Area Start -->
-						<!-- 
+								<!-- Single Footer Area Start -->
+								<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+									<div class="single_footer_area">
+										<ul class="footer_widget_menu">
+											<li><a href="#">About</a></li>
+											<li><a href="#">Our Policies</a></li>
+											<li><a href="#">Contact Us</a></li>
+										</ul>
+									</div>
+								</div>
+								<!-- Single Footer Area Start -->
+								<div class="col-12 col-sm-6 col-md-3 col-lg-2">
+									<div class="single_footer_area">
+										<ul class="footer_widget_menu">
+											<li><a href="#">My Account</a></li>
+											<li><a href="showRetailerHomepage.do">Afiliates</a></li>
+										</ul>
+									</div>
+								</div>
+								<!-- Single Footer Area Start -->
+								<!-- 
 						<div class="col-12 col-lg-5">
 							<div class="single_footer_area">
 								<div class="footer_heading mb-30">
@@ -300,18 +359,18 @@ html, body, h1, h2, h3, h4, h5 {
 							</div>
 						</div>
 						-->
-					</div>
+							</div>
 
+						</div>
+						<!-- </div> -->
 				</div>
-				<!-- </div> -->
+				</footer>
+				<!-- ****** Footer Area End ****** -->
+			</div>
 		</div>
-		</footer>
-		<!-- ****** Footer Area End ****** -->
-	</div>
-	</div>
-	<!-- /.wrapper end -->
+		<!-- /.wrapper end -->
 
-	<script>
+		<script>
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
 
@@ -338,17 +397,16 @@ function w3_close() {
 
 
 
-	<!-- jQuery (Necessary for All JavaScript Plugins) -->
-	<script
-		src="<c:url value="/resources/js/jquery/jquery-2.2.4.min.js" />"></script>
-	<!-- Popper js -->
-	<script src="<c:url value="/resources/js/popper.min.js" />"></script>
-	<!-- Bootstrap js -->
-	<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-	<!-- Plugins js -->
-	<script src="<c:url value="/resources/js/plugins.js" />"></script>
-	<!-- Active js -->
-	<script src="<c:url value="/resources/js/active.js" />"></script>
-
+		<!-- jQuery (Necessary for All JavaScript Plugins) -->
+		<script
+			src="<c:url value="/resources/js/jquery/jquery-2.2.4.min.js" />"></script>
+		<!-- Popper js -->
+		<script src="<c:url value="/resources/js/popper.min.js" />"></script>
+		<!-- Bootstrap js -->
+		<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+		<!-- Plugins js -->
+		<script src="<c:url value="/resources/js/plugins.js" />"></script>
+		<!-- Active js -->
+		<script src="<c:url value="/resources/js/active.js" />"></script>
 </body>
 </html>

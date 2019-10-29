@@ -1,6 +1,7 @@
 package com.lti.training.projectgladiator.service;
 
 import java.util.List;
+import java.util.Set;
 
 import com.lti.training.projectgladiator.exceptions.MultipleUsersFoundException;
 import com.lti.training.projectgladiator.exceptions.NoUserFoundException;
@@ -17,4 +18,5 @@ public interface RetailerService {
 	void verifyRetailer(long retailerId) throws NoUserFoundException;
 	void removeRetailer(long retailerId) throws NoUserFoundException;
 	void addNewProduct(Product product);
+	Set<Product> fetchProductsForRetailer(Retailer retailer);
 }

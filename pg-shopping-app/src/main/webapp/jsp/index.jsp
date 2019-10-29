@@ -70,7 +70,7 @@
 							<a class="dropdown-item" href="showShopPage.do">Shop</a> 
 							<a class="dropdown-item" href="showDashboard.do">Dashboard</a>
 							<a class="dropdown-item" href="showCart.do">Cart</a> <a
-								class="dropdown-item" href="checkout.jsp">Checkout</a>
+								class="dropdown-item" href="showCheckout.do">Checkout</a>
 						</div></li>
 					<c:choose>
 						<c:when test="${ param.loggedin == true }">
@@ -186,7 +186,7 @@
 								data-wow-delay="0.2s">
 								<!-- Product Image -->
 								<div class="product-img">
-									<img src="<c:url value="/resources/images/uploads/${ product.imagePath }" />" alt="" width="700" height="400">
+									<img src="<c:url value="/resources/images/uploads/${ product.imagePath }" />" alt="" width="100" height="200">
 									<div class="product-quicview">
 										<a href="showProductDetails.do?id=${ product.id }" data-target="#quickview"><i
 											class="ti-plus"></i></a>

@@ -18,6 +18,7 @@ import com.lti.training.projectgladiator.model.Retailer;
 import com.lti.training.projectgladiator.repository.RetailerRepository;
 
 @Repository
+@Transactional
 public class RetailerRepositoryImpl extends GenericRepositoryImpl implements RetailerRepository {
 
 	@PersistenceContext

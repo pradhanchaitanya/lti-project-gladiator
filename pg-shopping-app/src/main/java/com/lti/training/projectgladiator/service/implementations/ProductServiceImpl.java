@@ -60,4 +60,8 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.fetchTopProducts();
 	}
 
+	@Override
+	public Set<Product> fetchProductsForRetailer(Retailer retailer) {
+		return productRepository.fetchProductsForRetailer(retailer);
+	}
 }

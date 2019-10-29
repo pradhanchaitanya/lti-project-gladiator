@@ -1,5 +1,6 @@
 package com.lti.training.projectgladiator.controller;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.lti.training.projectgladiator.dto.UserDTO;
 import com.lti.training.projectgladiator.model.Cart;
+import com.lti.training.projectgladiator.model.Order;
 import com.lti.training.projectgladiator.model.Product;
 import com.lti.training.projectgladiator.model.User;
 import com.lti.training.projectgladiator.service.CartService;
@@ -22,7 +24,7 @@ import com.lti.training.projectgladiator.service.ProductService;
 import com.lti.training.projectgladiator.service.UserService;
 
 @Controller
-@SessionAttributes({"user", "isError", "error", "products", "noOfProducts"})
+@SessionAttributes({"user", "isError", "error", "products", "noOfProducts", "cart", "orders", "noOfOrders"})
 public class UserController {
 
 	@Autowired
@@ -65,8 +67,11 @@ public class UserController {
 	public String showDashboard(ModelMap model) {
 		if (model.containsAttribute("user")) {
 			try {
-				Set<Product> products = productService.fetchProductsFromCartOfUser((User)model.get("user"));
+				User currentUser = (User)model.get("user");
+				Set<Product> products = productService.fetchProductsFromCartOfUser(currentUser);
 				model.addAttribute("noOfProducts", products.size());
+				Set<Order> orders = userService.fetchOrdersForUser(currentUser);
+				model.addAttribute("noOfOrders", orders.size());
 			} catch (Exception e) {
 				model.addAttribute("error", e.getMessage());
 			}
@@ -100,8 +105,11 @@ public class UserController {
 	public String showCart(ModelMap model) {
 		if (model.containsAttribute("user")) {
 			try {
-				Set<Product> products = productService.fetchProductsFromCartOfUser((User)model.get("user"));
+				User currentUser = (User)model.get("user");
+				Set<Product> products = productService.fetchProductsFromCartOfUser(currentUser);
 				model.addAttribute("products", products);
+				Cart userCart =  cartService.fetchCartForUser(currentUser);
+				model.addAttribute("cart", userCart);
 			} catch (Exception e) {
 				e.printStackTrace();
 				model.addAttribute("error", e.getMessage());
@@ -148,7 +156,44 @@ public class UserController {
 	}
 	
 	@RequestMapping(path = "/showCheckout.do", method = RequestMethod.GET)
-	public String showCheckoutForUser() {
-		return "checkout.jsp";
+	public String showCheckoutForUser(ModelMap model) {
+		if(model.containsAttribute("user")) {
+			User currentUser = (User)model.get("user");
+			Cart userCart =  cartService.fetchCartForUser(currentUser);
+			model.addAttribute("cart", userCart);
+			return "checkout.jsp";
+		} else {
+			return "redirect:/loginUser.do";
+		}
+	}
+	
+	@RequestMapping(path = "confirmOrder.do", method = RequestMethod.GET)
+	public String confirmOrder(ModelMap model) {
+		if(model.containsAttribute("user")) {
+			User currentUser = (User)model.get("user");
+			Cart userCart =  cartService.fetchCartForUser(currentUser);
+			
+			Order order = new Order();
+			order.setOrderedOn(LocalDate.now());
+			order.setCart(userCart);
+			order.setTotalPrice(userCart.getTotalPrice());
+			
+			userService.placeOrder(order);
+			return "redirect:/showDashboard.do";
+		} else {
+			return "redirect:/loginUser.do";
+		}
+	}
+	
+	@RequestMapping(path = "showOrders.do", method = RequestMethod.GET)
+	public String showOrders(ModelMap model) {
+		if(model.containsAttribute("user")) {
+			User currentUser = (User)model.get("user");
+			Set<Order> orders = userService.fetchOrdersForUser(currentUser);
+			model.addAttribute("orders", orders);
+			return "orders.jsp";
+		} else {
+			return "redirect:/loginUser.do";
+		}
 	}
 }

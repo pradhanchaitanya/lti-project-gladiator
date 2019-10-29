@@ -72,10 +72,9 @@
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">Pages</a>
 						<div class="dropdown-menu" aria-labelledby="karlDropdown">
-							<a class="dropdown-item" href="#">Shop</a> <a
-								class="dropdown-item" href="product-details.html">Product
-								Details</a> <a class="dropdown-item" href="#">Cart</a> <a
-								class="dropdown-item" href="showCheckout.do">Checkout</a>
+							<a class="dropdown-item" href="showHomepage.do">Shop</a> 
+							<a class="dropdown-item" href="#">Cart</a> 
+							<a class="dropdown-item" href="showCheckout.do">Checkout</a>
 						</div></li>
 					<li class="navitem"><a class="nav-link" href="logoutUser.do">Logout</a>
 					</li>
@@ -113,7 +112,7 @@
 				<div class="col-12">
 					<div class="cart-table clearfix">
 						<c:choose>
-							<c:when test="${ sessionScope.error != null }">
+							<c:when test="${ error == 'No product in your cart' }">
 								<div>
 									<p>No products in your cart right now!</p>
 								</div>
@@ -122,10 +121,10 @@
 								<table class="table table-responsive">
 									<thead>
 										<tr>
-											<th>Product</th>
+											<th>Product Details</th>
 											<th>Price</th>
 											<th>Action</th>
-											<th>Total</th>
+											<th>Discounted Price</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -133,33 +132,22 @@
 
 										<c:forEach items="${ products }" var="product"
 											varStatus="status">
-											<script>
-												var $qty = 'qty' + $
-												{
-													status.count
-												}
-											</script>
 											<tr>
 												<td class="cart_product_img d-flex align-items-center"><a
 													href="#"><img
-														src="<c:url value="/resources/images/tp1.png" />"
+														src="<c:url value="/resources/images/uploads/${ product.imagePath }" />"
 														alt="Product"></a>
 													<h6>${ product.name }</h6></td>
 												<td class="price"><span>${ product.price }</span></td>
 												<td class="qty">
 													<div class="quantity">
-														<!--
-                                                <span class="qty-minus" onclick="var effect = document.getElementById($qty); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                                <input type="number" class="qty-text" id=qty step="1" min="1" max="99" name="quantity" value="1">
-                                                <span class="qty-plus" onclick="var effect = document.getElementById($qty); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-												-->
 														<a href="removeFromCart.do?id=${ product.id }"><button
 																type="button" class="btn btn-danger btn-sm">
 																<span class="glyphicon glyphicon-trash"></span>Remove
 															</button> </span></a>
 													</div>
 												</td>
-												<td class="total_price"><span id="totalPrice">${ product.price }</span></td>
+												<td class="total_price"><span id="totalPrice">${ product.price - product.discount * product.price / 100 }</span></td>
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -196,9 +184,10 @@
 							<input type="radio" id="customRadio1" name="customRadio"
 								class="custom-control-input"> <label
 								class="custom-control-label d-flex align-items-center justify-content-between"
-								for="customRadio1"><span>Cash On Delivery</span><span>Rs.37,999</span></label>
+								for="customRadio1"><span>Cash On Delivery</span><span>Rs. ${ cart.totalPrice }</span></label>
 						</div>
-
+						
+						<!--
 						<div class="custom-control custom-radio mb-30">
 							<input type="radio" id="customRadio2" name="customRadio"
 								class="custom-control-input"> <label
@@ -214,6 +203,7 @@
 								for="customRadio3"><span>Credit Card(10% off on
 									Select banks)</span><span>Rs.36,550*</span></label>
 						</div>
+						-->
 					</div>
 				</div>
 				<div class="col-md-12">
@@ -224,9 +214,9 @@
 						</div>
 
 						<ul class="cart-total-chart">
-							<li><span>Subtotal</span> <span>Rs.36,250</span></li>
+							<li><span>Subtotal</span> <span>Rs. ${ cart.totalPrice }</span></li>
 							<li><span>Shipping</span> <span>Free</span></li>
-							<li><span><strong>Total</strong></span> <span><strong>Rs.36,250</strong></span></li>
+							<li><span><strong>Total</strong></span> <span><strong>Rs. ${ cart.totalPrice }</strong></span></li>
 						</ul>
 						<a href="showCheckout.do" class="btn karl-checkout-btn">Proceed
 							to checkout</a>

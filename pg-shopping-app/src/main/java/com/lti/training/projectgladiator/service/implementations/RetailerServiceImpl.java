@@ -1,6 +1,7 @@
 package com.lti.training.projectgladiator.service.implementations;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -93,5 +94,10 @@ public class RetailerServiceImpl implements RetailerService {
 	@Override
 	public void addNewProduct(Product product) {
 		productService.addNewProduct(product);
+	}
+	
+	@Override
+	public Set<Product> fetchProductsForRetailer(Retailer retailer) {
+		return productService.fetchProductsForRetailer(retailer);
 	}
 }
